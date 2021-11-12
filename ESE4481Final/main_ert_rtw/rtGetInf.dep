@@ -1,0 +1,14 @@
+rtGetInf.o rtGetInf.o: \
+ C:/Users/tomwh/OneDrive/Documents/MATLAB/ESE4481Final/main_ert_rtw/rtGetInf.c \
+ C:/Users/tomwh/OneDrive/Documents/MATLAB/ESE4481Final/main_ert_rtw/rtGetInf.h \
+ C:/Users/tomwh/OneDrive/Documents/MATLAB/ESE4481Final/main_ert_rtw/rtwtypes.h \
+ C:/PROGRA~1/MATLAB/R2021a/extern/include/tmwtypes.h \
+ C:/Users/tomwh/OneDrive/Documents/MATLAB/ESE4481Final/main_ert_rtw/rt_nonfinite.h
+
+C:/Users/tomwh/OneDrive/Documents/MATLAB/ESE4481Final/main_ert_rtw/rtGetInf.h:
+
+C:/Users/tomwh/OneDrive/Documents/MATLAB/ESE4481Final/main_ert_rtw/rtwtypes.h:
+
+C:/PROGRA~1/MATLAB/R2021a/extern/include/tmwtypes.h:
+
+C:/Users/tomwh/OneDrive/Documents/MATLAB/ESE4481Final/main_ert_rtw/rt_nonfinite.h:
