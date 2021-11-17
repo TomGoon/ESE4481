@@ -32,6 +32,7 @@ Jxx = 0.69 * 10^-4;
 Jyy = 0.775 * 10^-4;
 Jzz = 1.5*10^-4;
 J = [Jxx, 0, 0; 0 Jyy 0; 0 0 Jzz];
+J_inv = inv(J);
 Jp = 0.027;
 R_phi = [1,0,0;0 cos(phi) sin(phi); 0 -sin(phi) cos(phi)];
 R_theta = [cos(theta), 0 -sin(theta); 0 1 0; sin(theta) 0 cos(theta)];
@@ -102,7 +103,7 @@ y = A*x + B*u_in;
 Ft = 0.6522; 
 %% Throttle 
 A_T = A(3:4,3:4)
-B_T = B(3:4,1)
+B_T = B(3:4,1)  
 C = eye(2);
 sys = ss(A_T,B_T, C, 0);
 tf_T = tf(sys)
