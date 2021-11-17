@@ -1,6 +1,6 @@
 K_T = place(A_T, B_T, [-2,-4])
 K_A = place(A_A, B_A, [-2,-4,-1]);
-K_E = place(A_E, B_E, [-2,-4,-1]);
+K_E = place(A_E, B_E, [-4,-2,-1]);
 K_R = place(A_R, B_R, [-2,-4]);
 
 s = tf('s');
