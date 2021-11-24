@@ -2,7 +2,7 @@
 ## Makefile generated for component 'main'. 
 ## 
 ## Makefile     : main.mk
-## Generated on : Thu Nov 11 20:34:59 2021
+## Generated on : Tue Nov 23 17:47:10 2021
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/main.so
 ## Product type : executable
 ## 
@@ -21,7 +21,7 @@ MAKEFILE                  = main.mk
 MATLAB_ROOT               = C:/PROGRA~1/MATLAB/R2021a
 MATLAB_BIN                = C:/PROGRA~1/MATLAB/R2021a/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = C:/Users/tomwh/OneDrive/Documents/MATLAB/ESE4481Final
+START_DIR                 = C:/Users/tomwh/Documents/ese4481/ESE4481/ESE4481Final
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
