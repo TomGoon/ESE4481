@@ -1,8 +1,0 @@
-rtiostream_tcpip.o: \
- /Applications/MATLAB_R2021a.app/toolbox/coder/rtiostream/src/rtiostreamtcpip/rtiostream_tcpip.c \
- /Applications/MATLAB_R2021a.app/toolbox/coder/rtiostream/src/rtiostream.h \
- /Applications/MATLAB_R2021a.app/extern/include/tmwtypes.h
-
-/Applications/MATLAB_R2021a.app/toolbox/coder/rtiostream/src/rtiostream.h:
-
-/Applications/MATLAB_R2021a.app/extern/include/tmwtypes.h:

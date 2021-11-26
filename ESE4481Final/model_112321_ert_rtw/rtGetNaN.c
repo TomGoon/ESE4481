@@ -7,9 +7,9 @@
  *
  * Code generation for model "model_112321".
  *
- * Model version              : 1.0
+ * Model version              : 1.3
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Nov 23 19:15:55 2021
+ * C source code generated on : Fri Nov 26 15:50:01 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

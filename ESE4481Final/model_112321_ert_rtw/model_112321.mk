@@ -2,7 +2,7 @@
 ## Makefile generated for component 'model_112321'. 
 ## 
 ## Makefile     : model_112321.mk
-## Generated on : Tue Nov 23 17:51:45 2021
+## Generated on : Fri Nov 26 15:50:05 2021
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/model_112321.so
 ## Product type : executable
 ## 
@@ -18,10 +18,10 @@
 
 PRODUCT_NAME              = model_112321
 MAKEFILE                  = model_112321.mk
-MATLAB_ROOT               = C:/PROGRA~1/MATLAB/R2021a
-MATLAB_BIN                = C:/PROGRA~1/MATLAB/R2021a/bin
-MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = C:/Users/tomwh/Documents/ese4481/ESE4481/ESE4481Final
+MATLAB_ROOT               = /Applications/MATLAB_R2021a.app
+MATLAB_BIN                = /Applications/MATLAB_R2021a.app/bin
+MATLAB_ARCH_BIN           = $(MATLAB_BIN)/maci64
+START_DIR                 = /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
@@ -49,11 +49,6 @@ CPP_STANDARD_OPTS         =
 # PARROT_GCCCOMPILER_LIB_DIR
 # PARROT_GCCSourceryLite
 
-#-----------
-# MACROS
-#-----------
-
-SHELL                      = %SystemRoot%/system32/cmd.exe
 
 TOOLCHAIN_SRCS = 
 TOOLCHAIN_INCS = 
@@ -94,7 +89,7 @@ DOWNLOAD =
 EXECUTE = $(PRODUCT)
 
 # Builder: GMAKE Utility
-MAKE_PATH = %MATLAB%\bin\win64
+MAKE_PATH = %MATLAB%/bin/maci64
 MAKE = "$(MAKE_PATH)/gmake"
 
 
@@ -113,9 +108,9 @@ OUTPUT_FLAG         = -o
 ARDEBUG             =
 STATICLIB_OUTPUT_FLAG =
 MEX_DEBUG           = -g
-RM                  = @del /F
+RM                  = @rm -f
 ECHO                = @echo
-MV                  = @move
+MV                  = @mv
 RUN                 =
 
 #----------------------------------------
@@ -156,7 +151,7 @@ BUILD_TYPE = "Top-Level Standalone Executable"
 ## INCLUDE PATHS
 ###########################################################################
 
-INCLUDES_BUILDINFO = -I$(START_DIR) -I$(START_DIR)/model_112321_ert_rtw -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -IC:/PROGRA~3/MATLAB/SUPPOR~1/R2021a/toolbox/target/SUPPOR~1/parrot/include -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils
+INCLUDES_BUILDINFO = -I$(START_DIR) -I$(START_DIR)/model_112321_ert_rtw -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I/Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/include -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils
 
 INCLUDES = $(INCLUDES_BUILDINFO)
 
@@ -177,7 +172,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(MATLAB_ROOT)/rtw/c/src/rt_logging.c $(START_DIR)/model_112321_ert_rtw/model_112321.c $(START_DIR)/model_112321_ert_rtw/model_112321_data.c $(START_DIR)/model_112321_ert_rtw/rtGetInf.c $(START_DIR)/model_112321_ert_rtw/rtGetNaN.c $(START_DIR)/model_112321_ert_rtw/rt_nonfinite.c C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_control.c C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_of.c C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_vis.c C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/ptimer.c C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/controlCommand.c C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/mw_extrathreads.c
+SRCS = $(MATLAB_ROOT)/rtw/c/src/rt_logging.c $(START_DIR)/model_112321_ert_rtw/model_112321.c $(START_DIR)/model_112321_ert_rtw/model_112321_data.c $(START_DIR)/model_112321_ert_rtw/rtGetInf.c $(START_DIR)/model_112321_ert_rtw/rtGetNaN.c $(START_DIR)/model_112321_ert_rtw/rt_nonfinite.c /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_control.c /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_of.c /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_vis.c /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/ptimer.c /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/controlCommand.c /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/mw_extrathreads.c
 
 ALL_SRCS = $(SRCS)
 
@@ -403,27 +398,27 @@ rt_nonfinite.o : $(START_DIR)/model_112321_ert_rtw/rt_nonfinite.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-rsedu_control.o : C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_control.c
+rsedu_control.o : /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_control.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-rsedu_of.o : C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_of.c
+rsedu_of.o : /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_of.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-rsedu_vis.o : C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_vis.c
+rsedu_vis.o : /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_vis.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-ptimer.o : C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/ptimer.c
+ptimer.o : /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/ptimer.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-controlCommand.o : C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/controlCommand.c
+controlCommand.o : /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/controlCommand.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-mw_extrathreads.o : C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/mw_extrathreads.c
+mw_extrathreads.o : /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/mw_extrathreads.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
@@ -468,8 +463,8 @@ info :
 
 clean : 
 	$(ECHO) "### Deleting all derived files..."
-	$(RM) $(subst /,\,$(PRODUCT))
-	$(RM) $(subst /,\,$(ALL_OBJS))
+	$(RM) $(PRODUCT)
+	$(RM) $(ALL_OBJS)
 	$(RM) *.dep
 	$(ECHO) "### Deleted all derived files."
 

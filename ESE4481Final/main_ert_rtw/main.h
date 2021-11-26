@@ -9,7 +9,7 @@
  *
  * Model version              : 1.1
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Nov 23 17:47:06 2021
+ * C source code generated on : Fri Nov 26 15:54:17 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -21,8 +21,8 @@
 #ifndef RTW_HEADER_main_h_
 #define RTW_HEADER_main_h_
 #include <stddef.h>
-#include <math.h>
 #include <string.h>
+#include <math.h>
 #include <float.h>
 #ifndef main_COMMON_INCLUDES_
 #define main_COMMON_INCLUDES_
@@ -80,11 +80,56 @@
 #define rtmGetTPtr(rtm)                (&(rtm)->Timing.taskTime0)
 #endif
 
+/* Block signals (default storage) */
+typedef struct {
+  real32_T SensorCalibration[8];
+} B_main_T;
+
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
   struct {
     void *LoggedData;
   } Scope_PWORK;                       /* '<S1>/Scope' */
+
+  struct {
+    void *LoggedData;
+  } Scope1_PWORK;                      /* '<S1>/Scope1' */
+
+  struct {
+    void *LoggedData;
+  } Scope10_PWORK;                     /* '<S1>/Scope10' */
+
+  struct {
+    void *LoggedData;
+  } Scope2_PWORK;                      /* '<S1>/Scope2' */
+
+  struct {
+    void *LoggedData;
+  } Scope3_PWORK;                      /* '<S1>/Scope3' */
+
+  struct {
+    void *LoggedData;
+  } Scope4_PWORK;                      /* '<S1>/Scope4' */
+
+  struct {
+    void *LoggedData;
+  } Scope5_PWORK;                      /* '<S1>/Scope5' */
+
+  struct {
+    void *LoggedData;
+  } Scope6_PWORK;                      /* '<S1>/Scope6' */
+
+  struct {
+    void *LoggedData;
+  } Scope7_PWORK;                      /* '<S1>/Scope7' */
+
+  struct {
+    void *LoggedData;
+  } Scope8_PWORK;                      /* '<S1>/Scope8' */
+
+  struct {
+    void *LoggedData;
+  } Scope9_PWORK;                      /* '<S1>/Scope9' */
 
   int32_T clockTickCounter;            /* '<S1>/Pulse Generator1' */
   int32_T clockTickCounter_h;          /* '<S1>/Pulse Generator3' */
@@ -186,6 +231,9 @@ struct tag_RTM_main_T {
 
 /* Block parameters (default storage) */
 extern P_main_T main_P;
+
+/* Block signals (default storage) */
+extern B_main_T main_B;
 
 /* Block states (default storage) */
 extern DW_main_T main_DW;

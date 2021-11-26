@@ -184,8 +184,8 @@ this.def["rt_StopDataLogging"] = {file: "rt_logging_c.html",line:4270,type:"fcn"
 CodeDefine.instance = new CodeDefine();
 var testHarnessInfo = {OwnerFileName: "", HarnessOwner: "", HarnessName: "", IsTestHarness: "0"};
 var relPathToBuildDir = "../ert_main.c";
-var fileSep = "\\";
-var isPC = true;
+var fileSep = "/";
+var isPC = false;
 function Html2SrcLink() {
 	this.html2SrcPath = new Array;
 	this.html2Root = new Array;
@@ -223,19 +223,19 @@ function Html2SrcLink() {
 	this.html2Root["rtmodel_h.html"] = "rtmodel_h.html";
 	this.html2SrcPath["MW_target_hardware_resources_h.html"] = "../MW_target_hardware_resources.h";
 	this.html2Root["MW_target_hardware_resources_h.html"] = "MW_target_hardware_resources_h.html";
-	this.html2SrcPath["controlCommand_c.html"] = "../../../../../../../../ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/controlCommand.c";
+	this.html2SrcPath["controlCommand_c.html"] = "../../../../../../Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/controlCommand.c";
 	this.html2Root["controlCommand_c.html"] = "controlCommand_c.html";
-	this.html2SrcPath["mw_extrathreads_c.html"] = "../../../../../../../../ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/mw_extrathreads.c";
+	this.html2SrcPath["mw_extrathreads_c.html"] = "../../../../../../Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/mw_extrathreads.c";
 	this.html2Root["mw_extrathreads_c.html"] = "mw_extrathreads_c.html";
-	this.html2SrcPath["ptimer_c.html"] = "../../../../../../../../ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/ptimer.c";
+	this.html2SrcPath["ptimer_c.html"] = "../../../../../../Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/ptimer.c";
 	this.html2Root["ptimer_c.html"] = "ptimer_c.html";
-	this.html2SrcPath["rsedu_control_c.html"] = "../../../../../../../../ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_control.c";
+	this.html2SrcPath["rsedu_control_c.html"] = "../../../../../../Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_control.c";
 	this.html2Root["rsedu_control_c.html"] = "rsedu_control_c.html";
-	this.html2SrcPath["rsedu_of_c.html"] = "../../../../../../../../ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_of.c";
+	this.html2SrcPath["rsedu_of_c.html"] = "../../../../../../Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_of.c";
 	this.html2Root["rsedu_of_c.html"] = "rsedu_of_c.html";
-	this.html2SrcPath["rsedu_vis_c.html"] = "../../../../../../../../ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_vis.c";
+	this.html2SrcPath["rsedu_vis_c.html"] = "../../../../../../Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_vis.c";
 	this.html2Root["rsedu_vis_c.html"] = "rsedu_vis_c.html";
-	this.html2SrcPath["rt_logging_c.html"] = "../../../../../../../../Program Files/MATLAB/R2021a/rtw/c/src/rt_logging.c";
+	this.html2SrcPath["rt_logging_c.html"] = "../../../../../../../../Applications/MATLAB_R2021a.app/rtw/c/src/rt_logging.c";
 	this.html2Root["rt_logging_c.html"] = "rt_logging_c.html";
 	this.getLink2Src = function (htmlFileName) {
 		 if (this.html2SrcPath[htmlFileName])

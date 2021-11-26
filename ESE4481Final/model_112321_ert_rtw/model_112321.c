@@ -7,9 +7,9 @@
  *
  * Code generation for model "model_112321".
  *
- * Model version              : 1.0
+ * Model version              : 1.3
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Nov 23 19:15:55 2021
+ * C source code generated on : Fri Nov 26 15:50:01 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -616,10 +616,10 @@ void model_112321_initialize(void)
 
     static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
 
-    static const char_T *rt_ScopeSignalLabels[] = { "" };
+    static const char_T *rt_ScopeSignalLabels[] = { "optical_flow" };
 
-    static char_T rt_ScopeSignalTitles[] = "";
-    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+    static char_T rt_ScopeSignalTitles[] = "optical_flow";
+    static int_T rt_ScopeSignalTitleLengths[] = { 12 };
 
     static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
 
@@ -756,10 +756,10 @@ void model_112321_initialize(void)
 
     static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
 
-    static const char_T *rt_ScopeSignalLabels[] = { "" };
+    static const char_T *rt_ScopeSignalLabels[] = { "a_x" };
 
-    static char_T rt_ScopeSignalTitles[] = "";
-    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+    static char_T rt_ScopeSignalTitles[] = "a_x";
+    static int_T rt_ScopeSignalTitleLengths[] = { 3 };
 
     static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
 
@@ -826,10 +826,10 @@ void model_112321_initialize(void)
 
     static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
 
-    static const char_T *rt_ScopeSignalLabels[] = { "" };
+    static const char_T *rt_ScopeSignalLabels[] = { "a_y" };
 
-    static char_T rt_ScopeSignalTitles[] = "";
-    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+    static char_T rt_ScopeSignalTitles[] = "a_y";
+    static int_T rt_ScopeSignalTitleLengths[] = { 3 };
 
     static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
 
@@ -896,10 +896,10 @@ void model_112321_initialize(void)
 
     static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
 
-    static const char_T *rt_ScopeSignalLabels[] = { "" };
+    static const char_T *rt_ScopeSignalLabels[] = { "a_z" };
 
-    static char_T rt_ScopeSignalTitles[] = "";
-    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+    static char_T rt_ScopeSignalTitles[] = "a_z";
+    static int_T rt_ScopeSignalTitleLengths[] = { 3 };
 
     static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
 
@@ -966,10 +966,10 @@ void model_112321_initialize(void)
 
     static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
 
-    static const char_T *rt_ScopeSignalLabels[] = { "" };
+    static const char_T *rt_ScopeSignalLabels[] = { "p" };
 
-    static char_T rt_ScopeSignalTitles[] = "";
-    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+    static char_T rt_ScopeSignalTitles[] = "p";
+    static int_T rt_ScopeSignalTitleLengths[] = { 1 };
 
     static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
 
@@ -1036,10 +1036,10 @@ void model_112321_initialize(void)
 
     static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
 
-    static const char_T *rt_ScopeSignalLabels[] = { "" };
+    static const char_T *rt_ScopeSignalLabels[] = { "q" };
 
-    static char_T rt_ScopeSignalTitles[] = "";
-    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+    static char_T rt_ScopeSignalTitles[] = "q";
+    static int_T rt_ScopeSignalTitleLengths[] = { 1 };
 
     static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
 
@@ -1106,10 +1106,10 @@ void model_112321_initialize(void)
 
     static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
 
-    static const char_T *rt_ScopeSignalLabels[] = { "" };
+    static const char_T *rt_ScopeSignalLabels[] = { "r" };
 
-    static char_T rt_ScopeSignalTitles[] = "";
-    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+    static char_T rt_ScopeSignalTitles[] = "r";
+    static int_T rt_ScopeSignalTitleLengths[] = { 1 };
 
     static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
 
@@ -1176,10 +1176,10 @@ void model_112321_initialize(void)
 
     static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
 
-    static const char_T *rt_ScopeSignalLabels[] = { "" };
+    static const char_T *rt_ScopeSignalLabels[] = { "pressure" };
 
-    static char_T rt_ScopeSignalTitles[] = "";
-    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+    static char_T rt_ScopeSignalTitles[] = "pressure";
+    static int_T rt_ScopeSignalTitleLengths[] = { 8 };
 
     static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
 
@@ -1246,10 +1246,10 @@ void model_112321_initialize(void)
 
     static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
 
-    static const char_T *rt_ScopeSignalLabels[] = { "" };
+    static const char_T *rt_ScopeSignalLabels[] = { "z_ultrasonic" };
 
-    static char_T rt_ScopeSignalTitles[] = "";
-    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+    static char_T rt_ScopeSignalTitles[] = "z_ultrasonic";
+    static int_T rt_ScopeSignalTitleLengths[] = { 12 };
 
     static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
 
