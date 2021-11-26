@@ -1,0 +1,14 @@
+rsedu_of.o: \
+ /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_of.c \
+ /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/include/rsedu_of.h \
+ /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/include/rsedu_globalparams.h \
+ /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/untitled_ert_rtw/MW_target_hardware_resources.h \
+ /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/include/ptimer.h
+
+/Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/include/rsedu_of.h:
+
+/Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/include/rsedu_globalparams.h:
+
+/Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/untitled_ert_rtw/MW_target_hardware_resources.h:
+
+/Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/include/ptimer.h:
