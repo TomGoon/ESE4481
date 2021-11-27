@@ -1,15 +1,5 @@
 #include "main.h"
 #include "rtwtypes.h"
-#include "rt_logging.h"
-#ifndef SAVEFILE
-#define MATFILE2(file)                 #file ".mat"
-#define MATFILE1(file)                 MATFILE2(file)
-#define MATFILE                        MATFILE1(MODEL)
-#else
-#define QUOTE1(name)                   #name
-#define QUOTE(name)                    QUOTE1(name)              /* need to expand name */
-#define MATFILE                        QUOTE(SAVEFILE)
-#endif
 
 volatile int IsrOverrun = 0;
 static boolean_T OverrunFlag = 0;
@@ -54,8 +44,6 @@ int main(void)
                       rtmGetErrorStatus(main_M) == (NULL));
     runModel = !(stopRequested);
   }
-
-  rt_StopDataLogging(MATFILE, main_M->rtwLogInfo);
 
   /* Disable rt_OneStep() here */
 

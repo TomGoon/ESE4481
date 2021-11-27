@@ -7,9 +7,9 @@
  *
  * Code generation for model "main".
  *
- * Model version              : 1.1
+ * Model version              : 1.2
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Fri Nov 26 15:54:17 2021
+ * C source code generated on : Sat Nov 27 13:16:06 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -20,16 +20,14 @@
 
 #ifndef RTW_HEADER_main_h_
 #define RTW_HEADER_main_h_
-#include <stddef.h>
-#include <string.h>
 #include <math.h>
-#include <float.h>
+#include <string.h>
+#include <stddef.h>
 #ifndef main_COMMON_INCLUDES_
 #define main_COMMON_INCLUDES_
 #include "rtwtypes.h"
 #include "rtw_continuous.h"
 #include "rtw_solver.h"
-#include "rt_logging.h"
 #endif                                 /* main_COMMON_INCLUDES_ */
 
 #include "main_types.h"
@@ -37,47 +35,14 @@
 /* Shared type includes */
 #include "multiword_types.h"
 #include "MW_target_hardware_resources.h"
-#include "rt_nonfinite.h"
 
 /* Macros for accessing real-time model data structure */
-#ifndef rtmGetFinalTime
-#define rtmGetFinalTime(rtm)           ((rtm)->Timing.tFinal)
-#endif
-
-#ifndef rtmGetRTWLogInfo
-#define rtmGetRTWLogInfo(rtm)          ((rtm)->rtwLogInfo)
-#endif
-
 #ifndef rtmGetErrorStatus
 #define rtmGetErrorStatus(rtm)         ((rtm)->errorStatus)
 #endif
 
 #ifndef rtmSetErrorStatus
 #define rtmSetErrorStatus(rtm, val)    ((rtm)->errorStatus = (val))
-#endif
-
-#ifndef rtmGetStopRequested
-#define rtmGetStopRequested(rtm)       ((rtm)->Timing.stopRequestedFlag)
-#endif
-
-#ifndef rtmSetStopRequested
-#define rtmSetStopRequested(rtm, val)  ((rtm)->Timing.stopRequestedFlag = (val))
-#endif
-
-#ifndef rtmGetStopRequestedPtr
-#define rtmGetStopRequestedPtr(rtm)    (&((rtm)->Timing.stopRequestedFlag))
-#endif
-
-#ifndef rtmGetT
-#define rtmGetT(rtm)                   ((rtm)->Timing.taskTime0)
-#endif
-
-#ifndef rtmGetTFinal
-#define rtmGetTFinal(rtm)              ((rtm)->Timing.tFinal)
-#endif
-
-#ifndef rtmGetTPtr
-#define rtmGetTPtr(rtm)                (&(rtm)->Timing.taskTime0)
 #endif
 
 /* Block signals (default storage) */
@@ -87,61 +52,11 @@ typedef struct {
 
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
-  struct {
-    void *LoggedData;
-  } Scope_PWORK;                       /* '<S1>/Scope' */
-
-  struct {
-    void *LoggedData;
-  } Scope1_PWORK;                      /* '<S1>/Scope1' */
-
-  struct {
-    void *LoggedData;
-  } Scope10_PWORK;                     /* '<S1>/Scope10' */
-
-  struct {
-    void *LoggedData;
-  } Scope2_PWORK;                      /* '<S1>/Scope2' */
-
-  struct {
-    void *LoggedData;
-  } Scope3_PWORK;                      /* '<S1>/Scope3' */
-
-  struct {
-    void *LoggedData;
-  } Scope4_PWORK;                      /* '<S1>/Scope4' */
-
-  struct {
-    void *LoggedData;
-  } Scope5_PWORK;                      /* '<S1>/Scope5' */
-
-  struct {
-    void *LoggedData;
-  } Scope6_PWORK;                      /* '<S1>/Scope6' */
-
-  struct {
-    void *LoggedData;
-  } Scope7_PWORK;                      /* '<S1>/Scope7' */
-
-  struct {
-    void *LoggedData;
-  } Scope8_PWORK;                      /* '<S1>/Scope8' */
-
-  struct {
-    void *LoggedData;
-  } Scope9_PWORK;                      /* '<S1>/Scope9' */
-
   int32_T clockTickCounter;            /* '<S1>/Pulse Generator1' */
   int32_T clockTickCounter_h;          /* '<S1>/Pulse Generator3' */
   int32_T clockTickCounter_a;          /* '<S1>/Pulse Generator4' */
   int32_T clockTickCounter_n;          /* '<S1>/Pulse Generator2' */
 } DW_main_T;
-
-/* External outputs (root outports fed by signals with default storage) */
-typedef struct {
-  real32_T Motors[4];                  /* '<Root>/Motors' */
-  uint8_T Flag;                        /* '<Root>/Flag' */
-} ExtY_main_T;
 
 /* Parameters (default storage) */
 struct P_main_T_ {
@@ -212,21 +127,6 @@ struct P_main_T_ {
 /* Real-time Model Data Structure */
 struct tag_RTM_main_T {
   const char_T *errorStatus;
-  RTWLogInfo *rtwLogInfo;
-
-  /*
-   * Timing:
-   * The following substructure contains information regarding
-   * the timing information for the model.
-   */
-  struct {
-    time_T taskTime0;
-    uint32_T clockTick0;
-    uint32_T clockTickH0;
-    time_T stepSize0;
-    time_T tFinal;
-    boolean_T stopRequestedFlag;
-  } Timing;
 };
 
 /* Block parameters (default storage) */
@@ -237,9 +137,6 @@ extern B_main_T main_B;
 
 /* Block states (default storage) */
 extern DW_main_T main_DW;
-
-/* External outputs (root outports fed by signals with default storage) */
-extern ExtY_main_T main_Y;
 
 /*
  * Exported Global Signals
