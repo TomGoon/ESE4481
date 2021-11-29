@@ -7,9 +7,9 @@
  *
  * Code generation for model "main".
  *
- * Model version              : 1.2
+ * Model version              : 1.4
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Sat Nov 27 13:16:06 2021
+ * C source code generated on : Mon Nov 29 16:16:52 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -26,12 +26,7 @@ P_main_T main_P = {
   /* Variable: M
    * Referenced by: '<S1>/Gain'
    */
-  { 492234.81092037243, 492234.81092037243, 492234.81092037243,
-    492234.81092037243, 1.0335639074443517E+7, -1.0335639074443517E+7,
-    -1.0335639074443517E+7, 1.0335639074443517E+7, 1.0335639074443517E+7,
-    1.0335639074443517E+7, -1.0335639074443517E+7, -1.0335639074443517E+7,
-    -9.4640670625353619E+7, 9.4640670625353619E+7, -9.4640670625353619E+7,
-    9.4640670625353619E+7 },
+  0.0289644,
 
   /* Variable: W
    * Referenced by:
@@ -102,6 +97,16 @@ P_main_T main_P = {
    */
   1200.0,
 
+  /* Computed Parameter: Lykyhatkk1_Y0
+   * Referenced by: '<S56>/L*(y[k]-yhat[k|k-1])'
+   */
+  0.0F,
+
+  /* Computed Parameter: deltax_Y0
+   * Referenced by: '<S58>/deltax'
+   */
+  0.0F,
+
   /* Computed Parameter: Saturation1_UpperSat
    * Referenced by: '<S1>/Saturation1'
    */
@@ -111,6 +116,56 @@ P_main_T main_P = {
    * Referenced by: '<S1>/Saturation1'
    */
   0.0F,
+
+  /* Computed Parameter: A_Value
+   * Referenced by: '<S2>/A'
+   */
+  { 1.0F, 0.0F, 0.00488821371F, 1.0F },
+
+  /* Computed Parameter: X0_Value
+   * Referenced by: '<S2>/X0'
+   */
+  { 0.0F, 0.0F },
+
+  /* Computed Parameter: B_Value
+   * Referenced by: '<S2>/B'
+   */
+  { 0.0F, -0.0735294148F },
+
+  /* Computed Parameter: D_Value
+   * Referenced by: '<S2>/D'
+   */
+  0.0F,
+
+  /* Computed Parameter: C_Value
+   * Referenced by: '<S2>/C'
+   */
+  { 1.0F, 0.0F },
+
+  /* Expression: pInitialization.L
+   * Referenced by: '<S5>/KalmanGainL'
+   */
+  { 0.0602179058F, 0.359342784F },
+
+  /* Expression: pInitialization.M
+   * Referenced by: '<S5>/KalmanGainM'
+   */
+  { 0.058465492F, 0.359474838F },
+
+  /* Expression: pInitialization.Z
+   * Referenced by: '<S5>/CovarianceZ'
+   */
+  { 0.000103017432F, 0.000633402204F, 0.000633402204F, 0.008044824F },
+
+  /* Expression: true()
+   * Referenced by: '<S2>/Enable'
+   */
+  true,
+
+  /* Expression: pInitialization.isSqrtUsed
+   * Referenced by: '<S54>/isSqrtUsed'
+   */
+  false,
 
   /* Computed Parameter: Constant2_Value
    * Referenced by: '<S1>/Constant2'

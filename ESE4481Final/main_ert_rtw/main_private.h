@@ -7,9 +7,9 @@
  *
  * Code generation for model "main".
  *
- * Model version              : 1.2
+ * Model version              : 1.4
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Sat Nov 27 13:16:06 2021
+ * C source code generated on : Mon Nov 29 16:16:52 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -21,5 +21,11 @@
 #ifndef RTW_HEADER_main_private_h_
 #define RTW_HEADER_main_private_h_
 #include "rtwtypes.h"
+#include "builtin_typeid_types.h"
 #include "multiword_types.h"
+
+/* Private macros used by the generated code to access rtModel */
+#ifndef rtmSetTFinal
+#define rtmSetTFinal(rtm, val)         ((rtm)->Timing.tFinal = (val))
+#endif
 #endif                                 /* RTW_HEADER_main_private_h_ */
