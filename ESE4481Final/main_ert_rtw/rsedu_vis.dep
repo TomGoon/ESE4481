@@ -25,6 +25,7 @@ rsedu_vis.o: \
  /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/main_ert_rtw/rt_nonfinite.h \
  /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/main_ert_rtw/main_types.h \
  /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/main_ert_rtw/main_private.h \
+ /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/main_ert_rtw/main.h \
  /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/main_ert_rtw/MW_target_hardware_resources.h
 
 /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/include/rsedu_vis.h:
@@ -76,5 +77,7 @@ rsedu_vis.o: \
 /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/main_ert_rtw/main_types.h:
 
 /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/main_ert_rtw/main_private.h:
+
+/Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/main_ert_rtw/main.h:
 
 /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/main_ert_rtw/MW_target_hardware_resources.h:
