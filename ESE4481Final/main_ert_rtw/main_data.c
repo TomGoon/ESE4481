@@ -7,9 +7,9 @@
  *
  * Code generation for model "main".
  *
- * Model version              : 1.9
+ * Model version              : 1.10
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Nov 30 20:40:31 2021
+ * C source code generated on : Thu Dec  2 22:42:29 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -219,12 +219,12 @@ P_main_T main_P = {
   /* Expression: pInitialization.L
    * Referenced by: '<S115>/KalmanGainL'
    */
-  { 0.034121290441254282, 0.11709933061585914 },
+  { 0.012662769650270243, 0.016298232430642653 },
 
   /* Expression: pInitialization.M
    * Referenced by: '<S115>/KalmanGainM'
    */
-  { 0.03354888387967616, 0.11709933061586207 },
+  { 0.012583100405908548, 0.016298232430642632 },
 
   /* Expression: pInitialization.Z
    * Referenced by: '<S7>/CovarianceZ'
@@ -241,8 +241,8 @@ P_main_T main_P = {
   /* Expression: pInitialization.Z
    * Referenced by: '<S115>/CovarianceZ'
    */
-  { 5.91138373187872E-5, 0.00020633147752370968, 0.00020633147752370968,
-    0.0014527559095052871 },
+  { 0.0011693572497724581, 0.0015146073413114804, 0.0015146073413114802,
+    0.003936043916390161 },
 
   /* Computed Parameter: Saturation1_UpperSat
    * Referenced by: '<S1>/Saturation1'
