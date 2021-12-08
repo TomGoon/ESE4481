@@ -7,9 +7,9 @@
  *
  * Code generation for model "main".
  *
- * Model version              : 1.9
+ * Model version              : 1.10
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Nov 30 20:40:31 2021
+ * C source code generated on : Wed Dec  1 17:09:56 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -115,8 +115,8 @@ P_main_T main_P = {
   /* Expression: pInitialization.M
    * Referenced by: '<S61>/KalmanGainM'
    */
-  { 0.020113695651352223, 0.0044769133696415967, 0.0044769133696415959,
-    0.0021093711942085885 },
+  { 0.0201136956513522, 0.0044769133696415976, 0.0044769133696415959,
+    0.0021093711942085851 },
 
   /* Expression: pInitialization.C
    * Referenced by: '<S3>/C'
@@ -126,8 +126,8 @@ P_main_T main_P = {
   /* Expression: pInitialization.M
    * Referenced by: '<S7>/KalmanGainM'
    */
-  { 0.020113695651352223, -0.0044769133696415967, -0.0044769133696415959,
-    0.0021093711942085885 },
+  { 0.0201136956513522, -0.0044769133696415976, -0.0044769133696415959,
+    0.0021093711942085851 },
 
   /* Expression: pInitialization.C
    * Referenced by: '<S2>/C'
@@ -142,8 +142,8 @@ P_main_T main_P = {
   /* Expression: pInitialization.L
    * Referenced by: '<S7>/KalmanGainL'
    */
-  { 0.020328159925692955, -0.0044769133696416436, -0.0045779617315662826,
-    0.0021093711942085903 },
+  { 0.0203281599256929, -0.004476913369641634, -0.0045779617315662834,
+    0.0021093711942085868 },
 
   /* Expression: pInitialization.A
    * Referenced by: '<S3>/A'
@@ -153,8 +153,8 @@ P_main_T main_P = {
   /* Expression: pInitialization.L
    * Referenced by: '<S61>/KalmanGainL'
    */
-  { 0.020328159925692955, 0.0044769133696416436, 0.0045779617315662826,
-    0.0021093711942085903 },
+  { 0.0203281599256929, 0.004476913369641634, 0.0045779617315662834,
+    0.0021093711942085868 },
 
   /* Expression: pInitialization.A
    * Referenced by: '<S4>/A'
@@ -219,30 +219,30 @@ P_main_T main_P = {
   /* Expression: pInitialization.L
    * Referenced by: '<S115>/KalmanGainL'
    */
-  { 0.034121290441254282, 0.11709933061585914 },
+  { 0.045214145719483491, 0.20450915467864744 },
 
   /* Expression: pInitialization.M
    * Referenced by: '<S115>/KalmanGainM'
    */
-  { 0.03354888387967616, 0.11709933061586207 },
+  { 0.044214461251390211, 0.20450915467864828 },
 
   /* Expression: pInitialization.Z
    * Referenced by: '<S7>/CovarianceZ'
    */
-  { 0.020113695651352223, -0.0044769133696415976, -0.0044769133696415967,
-    0.0021093711942085881 },
+  { 0.020113695651352188, -0.0044769133696415967, -0.0044769133696415959,
+    0.0021093711942085846 },
 
   /* Expression: pInitialization.Z
    * Referenced by: '<S61>/CovarianceZ'
    */
-  { 0.020113695651352223, 0.0044769133696415976, 0.0044769133696415967,
-    0.0021093711942085881 },
+  { 0.020113695651352188, 0.0044769133696415967, 0.0044769133696415959,
+    0.0021093711942085846 },
 
   /* Expression: pInitialization.Z
    * Referenced by: '<S115>/CovarianceZ'
    */
-  { 5.91138373187872E-5, 0.00020633147752370968, 0.00020633147752370968,
-    0.0014527559095052871 },
+  { 2.5260345961127878E-5, 0.00011683896745972538, 0.00011683896745972538,
+    0.0010932104182007226 },
 
   /* Computed Parameter: Saturation1_UpperSat
    * Referenced by: '<S1>/Saturation1'
