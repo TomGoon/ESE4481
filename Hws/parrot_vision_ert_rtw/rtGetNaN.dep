@@ -1,0 +1,14 @@
+rtGetNaN.o: \
+ /Users/Liza/Desktop/ESE4481/ESE4481/Hws/parrot_vision_ert_rtw/rtGetNaN.c \
+ /Users/Liza/Desktop/ESE4481/ESE4481/Hws/parrot_vision_ert_rtw/rtGetNaN.h \
+ /Users/Liza/Desktop/ESE4481/ESE4481/Hws/parrot_vision_ert_rtw/rtwtypes.h \
+ /Applications/MATLAB_R2021a.app/extern/include/tmwtypes.h \
+ /Users/Liza/Desktop/ESE4481/ESE4481/Hws/parrot_vision_ert_rtw/rt_nonfinite.h
+
+/Users/Liza/Desktop/ESE4481/ESE4481/Hws/parrot_vision_ert_rtw/rtGetNaN.h:
+
+/Users/Liza/Desktop/ESE4481/ESE4481/Hws/parrot_vision_ert_rtw/rtwtypes.h:
+
+/Applications/MATLAB_R2021a.app/extern/include/tmwtypes.h:
+
+/Users/Liza/Desktop/ESE4481/ESE4481/Hws/parrot_vision_ert_rtw/rt_nonfinite.h:

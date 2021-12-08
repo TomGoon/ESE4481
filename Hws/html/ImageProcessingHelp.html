@@ -1,0 +1,311 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>ImageProcessingHelp</title><meta name="generator" content="MATLAB 9.10"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2021-12-07"><meta name="DC.source" content="ImageProcessingHelp.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Load an Image</a></li><li><a href="#3">Grab the edges</a></li></ul></div><pre class="codeinput"><span class="comment">%Dr. Sankalp Bhan</span>
+<span class="comment">%ESE 448</span>
+
+<span class="comment">%References:</span>
+<span class="comment">% #1. Digital Image Processing with Matlab: Gonzalez, Woods, Eddins</span>
+<span class="comment">% #2. https://www.mathworks.com/help/images/hough-transform.html#buh9ylp-26</span>
+
+<span class="comment">% load up some image data</span>
+<span class="comment">%load('ThirdTurnSuccess.mat');</span>
+</pre><h2 id="2">Load an Image</h2><pre class="codeinput">figure;
+idx = 28;
+<span class="comment">% R = rt_colorR.signals.values(:,:,idx);</span>
+<span class="comment">% G = rt_colorG.signals.values(:,:,idx);</span>
+<span class="comment">% B = rt_colorB.signals.values(:,:,idx);</span>
+R = rt_R.signals.values(:,:,idx);
+G = rt_G.signals.values(:,:,idx);
+B = rt_B.signals.values(:,:,idx);
+
+picture = cat(3,R,G,B);
+greyImage = rgb2gray(picture);
+
+imshow(picture)
+
+<span class="comment">% apply an intensity transformation (to be discussed later)</span>
+greyImage = imcomplement(greyImage);
+<span class="comment">% (x-1,y-1)  (x-1,y )   (x-1,y+1)</span>
+<span class="comment">% (x,y-)     (x,y)      (x,y+1)</span>
+<span class="comment">% (x+1,y-1)  (x+1,y)    (x+1,y+1)</span>
+<span class="comment">% w(-1,-1)  w(-1,0)    w(-1,+1)</span>
+<span class="comment">% w(0,-1)   w(0,0)     w(0,+1)</span>
+<span class="comment">% w(+1,-1)  w(1,0)     w(+1,+1)</span>
+<span class="comment">% 1/9  1/9  1/9</span>
+<span class="comment">% 1/9  1/9  1/9  = M</span>
+<span class="comment">% 1/9  1/9  1/9</span>
+N=3
+w = ones(N)/N^2;
+filtered_image = imfilter(greyImage,w);
+figure
+subplot(1,2,1); imshow(greyImage);
+
+subplot(1,2,2); imshow(filtered_image)
+adjGreyImage = imadjust(filtered_image,[0 0.15],[0,1]);
+
+figure
+imhist(greyImage);
+hold <span class="string">on</span>;
+imhist(filtered_image)
+imhist(adjGreyImage)
+
+
+figure;
+imshow(adjGreyImage)
+<span class="comment">% detect horizontal lines</span>
+w_h = [-1 -1 -1 ;<span class="keyword">...</span>
+      2  2  2  ;<span class="keyword">...</span>
+     -1 -1 -1 ] ;
+w_v = [-1 2 -1 ; -1 2 -1 ; -1 2 -1];
+N = 15;
+w_v_15 = [-N*ones(N+2,1) 2*ones(N+2,N)  -N*ones(N+2,1)];
+h = imfilter(adjGreyImage , w_h) ;
+v = imfilter(adjGreyImage, w_v);
+v_15 = imfilter(adjGreyImage, w_v_15);
+
+
+figure
+subplot(131)
+imshow ( h )
+subplot(132)
+imshow(v);
+subplot(133)
+imshow(v_15)
+figure
+sob_thresh = [0.3]; <span class="comment">% try 0.3</span>
+can_thres = [1/2, 7/8]; <span class="comment">% try [1/2, 7/8] with lo/hi</span>
+can_sigma = [];
+</pre><pre class="codeoutput error">Unable to resolve the name rt_R.signals.values.
+
+Error in ImageProcessingHelp (line 18)
+R = rt_R.signals.values(:,:,idx);
+</pre><h2 id="3">Grab the edges</h2><pre class="codeinput">v_151 = edge(adjGreyImage,<span class="string">'sobel'</span>,<span class="string">'vertical'</span>, sob_thresh);
+v_152 = edge(adjGreyImage,<span class="string">'canny'</span>,can_thres);
+subplot(1,2,1); imshow(v_151); subplot(1,2,2);imshow(v_152)
+[H,theta,rho] = hough(v_15);
+figure
+imshow(imadjust(rescale(H)),[],<span class="keyword">...</span>
+       <span class="string">'XData'</span>,theta,<span class="keyword">...</span>
+       <span class="string">'YData'</span>,rho,<span class="keyword">...</span>
+       <span class="string">'InitialMagnification'</span>,<span class="string">'fit'</span>);
+xlabel(<span class="string">'\theta (degrees)'</span>)
+ylabel(<span class="string">'\rho'</span>)
+axis <span class="string">on</span>
+axis <span class="string">normal</span>
+hold <span class="string">on</span>
+colormap(gca,hot)
+P = houghpeaks(H,5,<span class="string">'threshold'</span>,ceil(0.3*max(H(:))));
+x = theta(P(:,2));
+y = rho(P(:,1));
+plot(x,y,<span class="string">'s'</span>,<span class="string">'color'</span>,<span class="string">'black'</span>);
+lines = houghlines(v_15,theta,rho,P,<span class="string">'FillGap'</span>,5,<span class="string">'MinLength'</span>,7);
+figure, imshow(v_15), hold <span class="string">on</span>
+max_len = 0;
+<span class="keyword">for</span> k = 1:length(lines)
+   xy = [lines(k).point1; lines(k).point2];
+   plot(xy(:,1),xy(:,2),<span class="string">'LineWidth'</span>,2,<span class="string">'Color'</span>,<span class="string">'green'</span>);
+
+   <span class="comment">% Plot beginnings and ends of lines</span>
+   plot(xy(1,1),xy(1,2),<span class="string">'x'</span>,<span class="string">'LineWidth'</span>,2,<span class="string">'Color'</span>,<span class="string">'yellow'</span>);
+   plot(xy(2,1),xy(2,2),<span class="string">'x'</span>,<span class="string">'LineWidth'</span>,2,<span class="string">'Color'</span>,<span class="string">'red'</span>);
+
+   <span class="comment">% Determine the endpoints of the longest line segment</span>
+   len = norm(lines(k).point1 - lines(k).point2);
+   <span class="keyword">if</span> ( len &gt; max_len)
+      max_len = len;
+      xy_long = xy;
+   <span class="keyword">end</span>
+<span class="keyword">end</span>
+<span class="comment">% highlight the longest line segment</span>
+plot(xy_long(:,1),xy_long(:,2),<span class="string">'LineWidth'</span>,2,<span class="string">'Color'</span>,<span class="string">'red'</span>);
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2021a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%Dr. Sankalp Bhan
+%ESE 448
+
+%References:
+% #1. Digital Image Processing with Matlab: Gonzalez, Woods, Eddins 
+% #2. https://www.mathworks.com/help/images/hough-transform.html#buh9ylp-26
+
+% load up some image data
+%load('ThirdTurnSuccess.mat');
+
+
+%% Load an Image
+figure;
+idx = 28;
+% R = rt_colorR.signals.values(:,:,idx);
+% G = rt_colorG.signals.values(:,:,idx);
+% B = rt_colorB.signals.values(:,:,idx);
+R = rt_R.signals.values(:,:,idx);
+G = rt_G.signals.values(:,:,idx);
+B = rt_B.signals.values(:,:,idx);
+
+picture = cat(3,R,G,B);
+greyImage = rgb2gray(picture);
+
+imshow(picture)
+
+% apply an intensity transformation (to be discussed later)
+greyImage = imcomplement(greyImage); 
+% (x-1,y-1)  (x-1,y )   (x-1,y+1)
+% (x,y-)     (x,y)      (x,y+1) 
+% (x+1,y-1)  (x+1,y)    (x+1,y+1)
+% w(-1,-1)  w(-1,0)    w(-1,+1)
+% w(0,-1)   w(0,0)     w(0,+1) 
+% w(+1,-1)  w(1,0)     w(+1,+1)
+% 1/9  1/9  1/9
+% 1/9  1/9  1/9  = M
+% 1/9  1/9  1/9
+N=3
+w = ones(N)/N^2;
+filtered_image = imfilter(greyImage,w);
+figure
+subplot(1,2,1); imshow(greyImage);
+
+subplot(1,2,2); imshow(filtered_image)
+adjGreyImage = imadjust(filtered_image,[0 0.15],[0,1]);
+
+figure
+imhist(greyImage);
+hold on;
+imhist(filtered_image)
+imhist(adjGreyImage)
+
+
+figure;
+imshow(adjGreyImage)
+% detect horizontal lines
+w_h = [-1 -1 -1 ;...
+      2  2  2  ;...
+     -1 -1 -1 ] ;
+w_v = [-1 2 -1 ; -1 2 -1 ; -1 2 -1];
+N = 15;
+w_v_15 = [-N*ones(N+2,1) 2*ones(N+2,N)  -N*ones(N+2,1)];
+h = imfilter(adjGreyImage , w_h) ;
+v = imfilter(adjGreyImage, w_v);
+v_15 = imfilter(adjGreyImage, w_v_15);
+
+
+figure
+subplot(131)
+imshow ( h )
+subplot(132)
+imshow(v);
+subplot(133)
+imshow(v_15)
+figure
+sob_thresh = [0.3]; % try 0.3
+can_thres = [1/2, 7/8]; % try [1/2, 7/8] with lo/hi
+can_sigma = [];
+
+%% Grab the edges
+v_151 = edge(adjGreyImage,'sobel','vertical', sob_thresh);
+v_152 = edge(adjGreyImage,'canny',can_thres);
+subplot(1,2,1); imshow(v_151); subplot(1,2,2);imshow(v_152)
+[H,theta,rho] = hough(v_15);
+figure
+imshow(imadjust(rescale(H)),[],...
+       'XData',theta,...
+       'YData',rho,...
+       'InitialMagnification','fit');
+xlabel('\theta (degrees)')
+ylabel('\rho')
+axis on
+axis normal 
+hold on
+colormap(gca,hot)
+P = houghpeaks(H,5,'threshold',ceil(0.3*max(H(:))));
+x = theta(P(:,2));
+y = rho(P(:,1));
+plot(x,y,'s','color','black');
+lines = houghlines(v_15,theta,rho,P,'FillGap',5,'MinLength',7);
+figure, imshow(v_15), hold on
+max_len = 0;
+for k = 1:length(lines)
+   xy = [lines(k).point1; lines(k).point2];
+   plot(xy(:,1),xy(:,2),'LineWidth',2,'Color','green');
+
+   % Plot beginnings and ends of lines
+   plot(xy(1,1),xy(1,2),'x','LineWidth',2,'Color','yellow');
+   plot(xy(2,1),xy(2,2),'x','LineWidth',2,'Color','red');
+
+   % Determine the endpoints of the longest line segment
+   len = norm(lines(k).point1 - lines(k).point2);
+   if ( len > max_len)
+      max_len = len;
+      xy_long = xy;
+   end
+end
+% highlight the longest line segment
+plot(xy_long(:,1),xy_long(:,2),'LineWidth',2,'Color','red');
+
+##### SOURCE END #####
+--></body></html>
