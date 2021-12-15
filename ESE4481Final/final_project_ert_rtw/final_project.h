@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.16
+ * Model version              : 1.21
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Dec 14 18:20:11 2021
+ * C source code generated on : Tue Dec 14 20:10:11 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -21,20 +21,16 @@
 #ifndef RTW_HEADER_final_project_h_
 #define RTW_HEADER_final_project_h_
 #include <stddef.h>
-#include <string.h>
 #include <math.h>
+#include <string.h>
 #include <float.h>
 #ifndef final_project_COMMON_INCLUDES_
 #define final_project_COMMON_INCLUDES_
 #include <stdlib.h>
 #include "rtwtypes.h"
-#include "rtw_extmode.h"
-#include "sysran_types.h"
 #include "rtw_continuous.h"
 #include "rtw_solver.h"
 #include "rt_logging.h"
-#include "dt_info.h"
-#include "ext_work.h"
 #endif                                 /* final_project_COMMON_INCLUDES_ */
 
 #include "final_project_types.h"
@@ -47,10 +43,6 @@
 /* Macros for accessing real-time model data structure */
 #ifndef rtmGetFinalTime
 #define rtmGetFinalTime(rtm)           ((rtm)->Timing.tFinal)
-#endif
-
-#ifndef rtmGetRTWExtModeInfo
-#define rtmGetRTWExtModeInfo(rtm)      ((rtm)->extModeInfo)
 #endif
 
 #ifndef rtmGetRTWLogInfo
@@ -96,7 +88,6 @@ typedef struct {
 
 /* Block states (default storage) for system '<S32>/MeasurementUpdate' */
 typedef struct {
-  int8_T MeasurementUpdate_SubsysRanBC;/* '<S32>/MeasurementUpdate' */
   boolean_T MeasurementUpdate_MODE;    /* '<S32>/MeasurementUpdate' */
 } DW_MeasurementUpdate_final_pr_T;
 
@@ -107,7 +98,6 @@ typedef struct {
 
 /* Block states (default storage) for system '<S39>/Enabled Subsystem' */
 typedef struct {
-  int8_T EnabledSubsystem_SubsysRanBC; /* '<S39>/Enabled Subsystem' */
   boolean_T EnabledSubsystem_MODE;     /* '<S39>/Enabled Subsystem' */
 } DW_EnabledSubsystem_final_pro_T;
 
@@ -129,7 +119,8 @@ typedef struct {
   real_T Divide3;                      /* '<S1>/Divide3' */
   real_T CastToDouble3;                /* '<S1>/Cast To Double3' */
   real_T CastToDouble2;                /* '<S1>/Cast To Double2' */
-  real_T CastToDouble6;                /* '<S1>/Cast To Double6' */
+  real_T Sum10;                        /* '<S1>/Sum10' */
+  real_T Sum16;                        /* '<S1>/Sum16' */
   real_T CastToDouble1;                /* '<S1>/Cast To Double1' */
   real_T CastToDouble5;                /* '<S1>/Cast To Double5' */
   real_T MatrixMultiply1[2];           /* '<S1>/MatrixMultiply1' */
@@ -152,19 +143,19 @@ typedef struct {
   real32_T Gain1;                      /* '<S1>/Gain1' */
   real32_T Gain3;                      /* '<S1>/Gain3' */
   real32_T Gain4;                      /* '<S1>/Gain4' */
-  real32_T x;
+  real32_T Sum12;                      /* '<S1>/Sum12' */
   real32_T Gain7;                      /* '<S1>/Gain7' */
   real32_T Gain8;                      /* '<S1>/Gain8' */
-  real32_T y;
-  real32_T z;
-  real32_T z_p;
-  real32_T x_c;
-  real32_T y_n;
-  real32_T SensorCalibration[8];
+  real32_T Sum17;                      /* '<S1>/Sum17' */
+  real32_T Sum18;                      /* '<S1>/Sum18' */
+  real32_T Sum2;                       /* '<S1>/Sum2' */
+  real32_T Sum3;                       /* '<S1>/Sum3' */
   real32_T opticalFlow_data[3];
   real32_T altitude;
   real32_T pressure;
   real32_T bias;                       /* '<S1>/MATLAB Function7' */
+  real32_T theta_measured;             /* '<S1>/MATLAB Function' */
+  real32_T phi_measured;               /* '<S1>/MATLAB Function' */
   B_EnabledSubsystem_final_proj_T EnabledSubsystem_g;/* '<S93>/Enabled Subsystem' */
   B_MeasurementUpdate_final_pro_T MeasurementUpdate_f;/* '<S86>/MeasurementUpdate' */
   B_EnabledSubsystem_final_proj_T EnabledSubsystem;/* '<S39>/Enabled Subsystem' */
@@ -188,11 +179,27 @@ typedef struct {
 
   struct {
     void *LoggedData;
+  } Scope_PWORK;                       /* '<S1>/Scope' */
+
+  struct {
+    void *LoggedData;
+  } Scope10_PWORK;                     /* '<S1>/Scope10' */
+
+  struct {
+    void *LoggedData;
   } Scope14_PWORK;                     /* '<S1>/Scope14' */
 
   struct {
     void *LoggedData;
   } Scope11_PWORK;                     /* '<S1>/Scope11' */
+
+  struct {
+    void *LoggedData;
+  } Scope16_PWORK;                     /* '<S1>/Scope16' */
+
+  struct {
+    void *LoggedData;
+  } Scope17_PWORK;                     /* '<S1>/Scope17' */
 
   struct {
     void *LoggedData;
@@ -212,7 +219,11 @@ typedef struct {
 
   struct {
     void *LoggedData;
-  } Scope6_PWORK;                      /* '<S1>/Scope6' */
+  } Scope19_PWORK;                     /* '<S1>/Scope19' */
+
+  struct {
+    void *LoggedData;
+  } Scope21_PWORK;                     /* '<S1>/Scope21' */
 
   struct {
     void *LoggedData;
@@ -224,7 +235,7 @@ typedef struct {
 
   struct {
     void *LoggedData;
-  } Scope10_PWORK;                     /* '<S1>/Scope10' */
+  } Scope6_PWORK;                      /* '<S1>/Scope6' */
 
   struct {
     void *LoggedData;
@@ -240,14 +251,20 @@ typedef struct {
 
   struct {
     void *LoggedData;
+  } Scope18_PWORK;                     /* '<S1>/Scope18' */
+
+  struct {
+    void *LoggedData;
+  } Scope20_PWORK;                     /* '<S1>/Scope20' */
+
+  struct {
+    void *LoggedData;
   } Scope13_PWORK;                     /* '<S1>/Scope13' */
 
   struct {
     void *LoggedData;
   } Scope12_PWORK;                     /* '<S1>/Scope12' */
 
-  int8_T EnabledSubsystem_SubsysRanBC; /* '<S147>/Enabled Subsystem' */
-  int8_T MeasurementUpdate_SubsysRanBC;/* '<S140>/MeasurementUpdate' */
   boolean_T icLoad;                    /* '<S3>/MemoryX' */
   boolean_T icLoad_k;                  /* '<S2>/MemoryX' */
   boolean_T icLoad_i;                  /* '<S4>/MemoryX' */
@@ -293,6 +310,9 @@ struct P_final_project_T_ {
   real_T F_throttle;                   /* Variable: F_throttle
                                         * Referenced by: '<S1>/Gain2'
                                         */
+  real_T Kappa;                        /* Variable: Kappa
+                                        * Referenced by: '<S1>/Constant3'
+                                        */
   real_T M_inv[16];                    /* Variable: M_inv
                                         * Referenced by: '<S1>/M_inv'
                                         */
@@ -303,7 +323,10 @@ struct P_final_project_T_ {
                                         * Referenced by: '<S1>/Rise and Hover'
                                         */
   real_T g;                            /* Variable: g
-                                        * Referenced by: '<S1>/Constant5'
+                                        * Referenced by:
+                                        *   '<S1>/Constant'
+                                        *   '<S1>/Constant5'
+                                        *   '<S1>/Constant8'
                                         */
   real_T m;                            /* Variable: m
                                         * Referenced by: '<S1>/Constant5'
@@ -474,9 +497,6 @@ struct P_final_project_T_ {
   real_T CovarianceZ_Value_n[4];       /* Expression: pInitialization.Z
                                         * Referenced by: '<S120>/CovarianceZ'
                                         */
-  real_T Constant3_Value;              /* Expression: 1
-                                        * Referenced by: '<S1>/Constant3'
-                                        */
   real32_T Multiply2_Gain;             /* Expression: orbit_speed
                                         * Referenced by: '<S1>/Multiply2'
                                         */
@@ -551,27 +571,7 @@ struct P_final_project_T_ {
 struct tag_RTM_final_project_T {
   const char_T *errorStatus;
   RTWLogInfo *rtwLogInfo;
-  RTWExtModeInfo *extModeInfo;
   RTWSolverInfo solverInfo;
-
-  /*
-   * Sizes:
-   * The following substructure contains sizes information
-   * for many of the model attributes such as inputs, outputs,
-   * dwork, sample times, etc.
-   */
-  struct {
-    uint32_T checksums[4];
-  } Sizes;
-
-  /*
-   * SpecialInfo:
-   * The following substructure contains special information
-   * related to other components that are dependent on RTW.
-   */
-  struct {
-    const void *mappingInfo;
-  } SpecialInfo;
 
   /*
    * Timing:
@@ -713,6 +713,7 @@ extern volatile boolean_T runModel;
  * Block '<S162>/CheckSignalProperties' : Unused code path elimination
  * Block '<S1>/Cast To Double' : Eliminate redundant data type conversion
  * Block '<S1>/Cast To Double4' : Eliminate redundant data type conversion
+ * Block '<S1>/Cast To Double6' : Eliminate redundant data type conversion
  * Block '<S55>/Conversion' : Eliminate redundant data type conversion
  * Block '<S56>/Conversion' : Eliminate redundant data type conversion
  * Block '<S58>/Conversion' : Eliminate redundant data type conversion

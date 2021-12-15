@@ -2,7 +2,7 @@
 ## Makefile generated for component 'final_project'. 
 ## 
 ## Makefile     : final_project.mk
-## Generated on : Tue Dec 14 18:20:45 2021
+## Generated on : Tue Dec 14 19:43:06 2021
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/final_project.so
 ## Product type : executable
 ## 
@@ -18,10 +18,10 @@
 
 PRODUCT_NAME              = final_project
 MAKEFILE                  = final_project.mk
-MATLAB_ROOT               = C:/PROGRA~1/MATLAB/R2021a
-MATLAB_BIN                = C:/PROGRA~1/MATLAB/R2021a/bin
-MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = C:/Users/tomwh/Documents/ese4481/ESE4481/ESE4481Final
+MATLAB_ROOT               = /Applications/MATLAB_R2021a.app
+MATLAB_BIN                = /Applications/MATLAB_R2021a.app/bin
+MATLAB_ARCH_BIN           = $(MATLAB_BIN)/maci64
+START_DIR                 = /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
@@ -49,11 +49,6 @@ CPP_STANDARD_OPTS         =
 # PARROT_GCCCOMPILER_LIB_DIR
 # PARROT_GCCSourceryLite
 
-#-----------
-# MACROS
-#-----------
-
-SHELL                      = %SystemRoot%/system32/cmd.exe
 
 TOOLCHAIN_SRCS = 
 TOOLCHAIN_INCS = 
@@ -94,7 +89,7 @@ DOWNLOAD =
 EXECUTE = $(PRODUCT)
 
 # Builder: GMAKE Utility
-MAKE_PATH = %MATLAB%\bin\win64
+MAKE_PATH = %MATLAB%/bin/maci64
 MAKE = "$(MAKE_PATH)/gmake"
 
 
@@ -113,9 +108,9 @@ OUTPUT_FLAG         = -o
 ARDEBUG             =
 STATICLIB_OUTPUT_FLAG =
 MEX_DEBUG           = -g
-RM                  = @del /F
+RM                  = @rm -f
 ECHO                = @echo
-MV                  = @move
+MV                  = @mv
 RUN                 =
 
 #----------------------------------------
@@ -156,7 +151,7 @@ BUILD_TYPE = "Top-Level Standalone Executable"
 ## INCLUDE PATHS
 ###########################################################################
 
-INCLUDES_BUILDINFO = -I$(START_DIR) -I$(START_DIR)/final_project_ert_rtw -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils -IC:/PROGRA~3/MATLAB/SUPPOR~1/R2021a/toolbox/target/SUPPOR~1/parrot/include
+INCLUDES_BUILDINFO = -I$(START_DIR) -I$(START_DIR)/final_project_ert_rtw -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I/Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/include -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils
 
 INCLUDES = $(INCLUDES_BUILDINFO)
 
@@ -165,10 +160,10 @@ INCLUDES = $(INCLUDES_BUILDINFO)
 ###########################################################################
 
 DEFINES_ = -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__ -DMW_HAS_OPTICAL_FLOW_LOGIC
-DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DEXT_MODE=1 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0
+DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0
 DEFINES_CUSTOM = 
-DEFINES_OPTS = -DON_TARGET_WAIT_FOR_START=0 -DTID01EQ=1
-DEFINES_SKIPFORSIL = -DXCP_CUSTOM_PLATFORM -D__linux__ -DDELOS -DDELOS_EDU -DEXTMODE_DISABLETESTING -DEXTMODE_STATIC_SIZE=16384 -DEXTMODE_DISABLE_ARGS_PROCESSING=1 -DPARROT_LINUX_COMM -DSTACK_SIZE=64 -DRT -DMATFILE_LOGGING=1 -DSTOP_TIME=10 -DMAMBO=1
+DEFINES_OPTS = -DTID01EQ=1
+DEFINES_SKIPFORSIL = -DXCP_CUSTOM_PLATFORM -D__linux__ -DDELOS -DDELOS_EDU -DEXTMODE_DISABLETESTING -DEXTMODE_STATIC_SIZE=16384 -DEXTMODE_DISABLE_ARGS_PROCESSING=1 -DPARROT_LINUX_COMM -DSTACK_SIZE=64 -DRT -DMATFILE_LOGGING=1 -DSTOP_TIME=50 -DMAMBO=1
 DEFINES_STANDARD = -DMODEL=final_project -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=0
 
 DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(DEFINES_SKIPFORSIL) $(DEFINES_STANDARD)
@@ -177,7 +172,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(MATLAB_ROOT)/rtw/c/src/rt_logging.c $(START_DIR)/final_project_ert_rtw/final_project.c $(START_DIR)/final_project_ert_rtw/final_project_data.c $(START_DIR)/final_project_ert_rtw/rtGetInf.c $(START_DIR)/final_project_ert_rtw/rtGetNaN.c $(START_DIR)/final_project_ert_rtw/rt_nonfinite.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_svr.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/updown.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_work.c $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils/rtiostream_utils.c C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_control.c C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_of.c C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_vis.c C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/ptimer.c C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/controlCommand.c C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/mw_extrathreads.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/rtiostream_interface.c $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/rtiostreamtcpip/rtiostream_tcpip.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/mem_mgr.c
+SRCS = $(MATLAB_ROOT)/rtw/c/src/rt_logging.c $(START_DIR)/final_project_ert_rtw/final_project.c $(START_DIR)/final_project_ert_rtw/final_project_data.c $(START_DIR)/final_project_ert_rtw/rtGetInf.c $(START_DIR)/final_project_ert_rtw/rtGetNaN.c $(START_DIR)/final_project_ert_rtw/rt_nonfinite.c /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_control.c /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_of.c /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_vis.c /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/ptimer.c /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/controlCommand.c /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/mw_extrathreads.c
 
 ALL_SRCS = $(SRCS)
 
@@ -185,7 +180,7 @@ ALL_SRCS = $(SRCS)
 ## OBJECTS
 ###########################################################################
 
-OBJS = rt_logging.o final_project.o final_project_data.o rtGetInf.o rtGetNaN.o rt_nonfinite.o ext_svr.o updown.o ext_work.o rtiostream_utils.o rsedu_control.o rsedu_of.o rsedu_vis.o ptimer.o controlCommand.o mw_extrathreads.o rtiostream_interface.o rtiostream_tcpip.o mem_mgr.o
+OBJS = rt_logging.o final_project.o final_project_data.o rtGetInf.o rtGetNaN.o rt_nonfinite.o rsedu_control.o rsedu_of.o rsedu_vis.o ptimer.o controlCommand.o mw_extrathreads.o
 
 ALL_OBJS = $(OBJS)
 
@@ -379,22 +374,6 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS)
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-%.o : $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/%.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-%.o : $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/%.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-%.o : $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils/%.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-%.o : $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils/%.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
 rt_logging.o : $(MATLAB_ROOT)/rtw/c/src/rt_logging.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
@@ -419,55 +398,27 @@ rt_nonfinite.o : $(START_DIR)/final_project_ert_rtw/rt_nonfinite.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-ext_svr.o : $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_svr.c
+rsedu_control.o : /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_control.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-updown.o : $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/updown.c
+rsedu_of.o : /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_of.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-ext_work.o : $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_work.c
+rsedu_vis.o : /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_vis.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-rtiostream_utils.o : $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils/rtiostream_utils.c
+ptimer.o : /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/ptimer.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-rsedu_control.o : C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_control.c
+controlCommand.o : /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/controlCommand.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-rsedu_of.o : C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_of.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-rsedu_vis.o : C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/rsedu_vis.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-ptimer.o : C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/ptimer.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-controlCommand.o : C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/controlCommand.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-mw_extrathreads.o : C:/ProgramData/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/mw_extrathreads.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-rtiostream_interface.o : $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/rtiostream_interface.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-rtiostream_tcpip.o : $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/rtiostreamtcpip/rtiostream_tcpip.c
-	$(CC) $(CFLAGS) -o "$@" "$<"
-
-
-mem_mgr.o : $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/mem_mgr.c
+mw_extrathreads.o : /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/mw_extrathreads.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
@@ -512,8 +463,8 @@ info :
 
 clean : 
 	$(ECHO) "### Deleting all derived files..."
-	$(RM) $(subst /,\,$(PRODUCT))
-	$(RM) $(subst /,\,$(ALL_OBJS))
+	$(RM) $(PRODUCT)
+	$(RM) $(ALL_OBJS)
 	$(RM) *.dep
 	$(ECHO) "### Deleted all derived files."
 

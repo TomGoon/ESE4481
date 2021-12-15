@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.16
+ * Model version              : 1.21
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Dec 14 18:20:11 2021
+ * C source code generated on : Tue Dec 14 20:10:11 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -26,22 +26,27 @@ P_final_project_T final_project_P = {
   /* Variable: F_aileron
    * Referenced by: '<S1>/Gain5'
    */
-  5.7614635063083692E-5,
+  5.7614635063083664E-5,
 
   /* Variable: F_elevator
    * Referenced by: '<S1>/Gain9'
    */
-  -6.4712090107087021E-5,
+  -6.47120901070872E-5,
 
   /* Variable: F_rudder
    * Referenced by: '<S1>/Gain14'
    */
-  0.00087987848045057023,
+  0.00087987848045057045,
 
   /* Variable: F_throttle
    * Referenced by: '<S1>/Gain2'
    */
-  -0.41733035658738171,
+  -0.41733035658738188,
+
+  /* Variable: Kappa
+   * Referenced by: '<S1>/Constant3'
+   */
+  1.0,
 
   /* Variable: M_inv
    * Referenced by: '<S1>/M_inv'
@@ -64,7 +69,10 @@ P_final_project_T final_project_P = {
   { -1.0, 0.0, 0.0, 0.0 },
 
   /* Variable: g
-   * Referenced by: '<S1>/Constant5'
+   * Referenced by:
+   *   '<S1>/Constant'
+   *   '<S1>/Constant5'
+   *   '<S1>/Constant8'
    */
   9.8,
 
@@ -130,8 +138,8 @@ P_final_project_T final_project_P = {
   /* Expression: pInitialization.M
    * Referenced by: '<S66>/KalmanGainM'
    */
-  { 0.046824129202381985, -0.03398451039357521, -0.000679690207871504,
-    0.0008507923532510371 },
+  { 0.046824129202381985, -0.033984510393575106, -0.00067969020787150185,
+    0.0008507923532510384 },
 
   /* Expression: pInitialization.C
    * Referenced by: '<S3>/C'
@@ -151,8 +159,8 @@ P_final_project_T final_project_P = {
   /* Expression: pInitialization.M
    * Referenced by: '<S12>/KalmanGainM'
    */
-  { 0.012093199631291133, 0.004399502353177407, 0.0043995023531774088,
-    0.0023030960844769919 },
+  { 0.012093199631291138, 0.0043995023531774079, 0.00439950235317741,
+    0.0023030960844769915 },
 
   /* Expression: pInitialization.C
    * Referenced by: '<S2>/C'
@@ -252,7 +260,7 @@ P_final_project_T final_project_P = {
   /* Expression: pInitialization.M
    * Referenced by: '<S120>/KalmanGainM'
    */
-  { 0.035603934606229515, 0.13202385626180205 },
+  { 0.035603934606230056, 0.13202385626180374 },
 
   /* Expression: pInitialization.C
    * Referenced by: '<S4>/C'
@@ -267,8 +275,8 @@ P_final_project_T final_project_P = {
   /* Expression: pInitialization.L
    * Referenced by: '<S12>/KalmanGainL'
    */
-  { 0.012176068031580544, 0.004399502353177394, 0.0044631288333366,
-    0.0023030960844769911 },
+  { 0.012176068031580552, 0.0043995023531773975, 0.0044631288333366031,
+    0.0023030960844769919 },
 
   /* Expression: pInitialization.A
    * Referenced by: '<S3>/A'
@@ -278,8 +286,8 @@ P_final_project_T final_project_P = {
   /* Expression: pInitialization.L
    * Referenced by: '<S66>/KalmanGainL'
    */
-  { 0.047952703571515355, -0.033984510393575432, -0.000713107337696511,
-    0.000850792353251038 },
+  { 0.047952703571515327, -0.033984510393575175, -0.00071310733769651218,
+    0.0008507923532510397 },
 
   /* Expression: pInitialization.A
    * Referenced by: '<S4>/A'
@@ -304,7 +312,7 @@ P_final_project_T final_project_P = {
   /* Expression: pInitialization.L
    * Referenced by: '<S120>/KalmanGainL'
    */
-  { 0.036249295439734416, 0.13202385626180421 },
+  { 0.0362492954397347, 0.13202385626179919 },
 
   /* Expression: 0
    * Referenced by: '<S1>/Unit Delay2'
@@ -339,25 +347,20 @@ P_final_project_T final_project_P = {
   /* Expression: pInitialization.Z
    * Referenced by: '<S12>/CovarianceZ'
    */
-  { 0.012093199631291133, 0.004399502353177407, 0.0043995023531774079,
-    0.0023030960844769919 },
+  { 0.012093199631291138, 0.0043995023531774079, 0.0043995023531774088,
+    0.0023030960844769915 },
 
   /* Expression: pInitialization.Z
    * Referenced by: '<S66>/CovarianceZ'
    */
-  { 0.00093648258404763966, -0.000679690207871504, -0.00067969020787150413,
-    0.00085079235325103732 },
+  { 0.00093648258404763955, -0.00067969020787150207, -0.000679690207871502,
+    0.00085079235325103851 },
 
   /* Expression: pInitialization.Z
    * Referenced by: '<S120>/CovarianceZ'
    */
-  { 4.9248000838862833E-5, 0.00018261776558800647, 0.00018261776558800647,
-    0.001366725882552944 },
-
-  /* Expression: 1
-   * Referenced by: '<S1>/Constant3'
-   */
-  1.0,
+  { 4.9248000838863545E-5, 0.0001826177655880087, 0.0001826177655880087,
+    0.0013667258825528635 },
 
   /* Expression: orbit_speed
    * Referenced by: '<S1>/Multiply2'

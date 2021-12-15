@@ -1,0 +1,1758 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><link rel="stylesheet" type="text/css" href="rtwreport.css" /><script language="JavaScript" type="text/javascript">function rtwTableShrink(o) {var t = o.nextSibling;if (t.nodeType != 1) {t = t.nextSibling;}if (t.style.display == "none") {t.style.display = "";o.innerHTML = "[-]"} else {t.style.display = "none";o.innerHTML = "[+] ... "}}</script><script language="JavaScript" type="text/javascript" src="rtwreport_utils.js"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>
+Code Interface Report for final_project
+</title>
+
+</head>
+<body ONLOAD="try {if (top) {if (top.rtwPageOnLoad) top.rtwPageOnLoad('rtwIdCodeInterface'); else local_onload();}} catch(err) {};">
+<h1>
+Code Interface Report for final_project
+</h1>
+<h3>
+Table of Contents
+</h3>
+<ul>
+<li>
+<a href="#sec_Entry-Point_Functions">
+Entry-Point Functions
+</a>
+
+</li>
+<li>
+<a href="#sec_Inports">
+Inports
+</a>
+
+</li>
+<li>
+<a href="#sec_Outports">
+Outports
+</a>
+
+</li>
+<li>
+<a href="#sec_Interface_Parameters">
+Interface Parameters
+</a>
+
+</li>
+<li>
+<a href="#sec_Data_Stores">
+Data Stores
+</a>
+
+</li>
+
+</ul>
+<h3>
+<a name="sec_Entry-Point_Functions">
+Entry-Point Functions
+</a>
+
+</h3>
+<p>
+Function: <a href="final_project_c.html#fcn_final_project_initialize">final_project_initialize</a>
+</p>
+<table width="100%" class="AltRow" cellspacing="0">
+<tr class="even">
+<td width="25%" align="left" valign="top">
+Prototype
+</td>
+<td width="75%" align="left" valign="top">
+<b>
+void final_project_initialize(void)
+</b>
+
+</td>
+
+</tr>
+<tr class="odd">
+<td width="25%" align="left" valign="top">
+Description
+</td>
+<td width="75%" align="left" valign="top">
+Initialization entry point of generated code
+</td>
+
+</tr>
+<tr class="even">
+<td width="25%" align="left" valign="top">
+Timing
+</td>
+<td width="75%" align="left" valign="top">
+Must be called exactly once
+</td>
+
+</tr>
+<tr class="odd">
+<td width="25%" align="left" valign="top">
+Arguments
+</td>
+<td width="75%" align="left" valign="top">
+None
+</td>
+
+</tr>
+<tr class="even">
+<td width="25%" align="left" valign="top">
+Return value
+</td>
+<td width="75%" align="left" valign="top">
+None
+</td>
+
+</tr>
+<tr class="odd">
+<td width="25%" align="left" valign="top">
+Header file
+</td>
+<td width="75%" align="left" valign="top">
+<a href="final_project_h.html">final_project.h</a>
+</td>
+
+</tr>
+
+</table>
+<p>
+Function: <a href="final_project_c.html#fcn_final_project_step">final_project_step</a>
+</p>
+<table width="100%" class="AltRow" cellspacing="0">
+<tr class="even">
+<td width="25%" align="left" valign="top">
+Prototype
+</td>
+<td width="75%" align="left" valign="top">
+<b>
+void final_project_step(void)
+</b>
+
+</td>
+
+</tr>
+<tr class="odd">
+<td width="25%" align="left" valign="top">
+Description
+</td>
+<td width="75%" align="left" valign="top">
+Output entry point of generated code
+</td>
+
+</tr>
+<tr class="even">
+<td width="25%" align="left" valign="top">
+Timing
+</td>
+<td width="75%" align="left" valign="top">
+Must be called periodically, every 0.005 seconds
+</td>
+
+</tr>
+<tr class="odd">
+<td width="25%" align="left" valign="top">
+Arguments
+</td>
+<td width="75%" align="left" valign="top">
+None
+</td>
+
+</tr>
+<tr class="even">
+<td width="25%" align="left" valign="top">
+Return value
+</td>
+<td width="75%" align="left" valign="top">
+None
+</td>
+
+</tr>
+<tr class="odd">
+<td width="25%" align="left" valign="top">
+Header file
+</td>
+<td width="75%" align="left" valign="top">
+<a href="final_project_h.html">final_project.h</a>
+</td>
+
+</tr>
+
+</table>
+<p>
+Function: <a href="final_project_c.html#fcn_final_project_terminate">final_project_terminate</a>
+</p>
+<table width="100%" class="AltRow" cellspacing="0">
+<tr class="even">
+<td width="25%" align="left" valign="top">
+Prototype
+</td>
+<td width="75%" align="left" valign="top">
+<b>
+void final_project_terminate(void)
+</b>
+
+</td>
+
+</tr>
+<tr class="odd">
+<td width="25%" align="left" valign="top">
+Description
+</td>
+<td width="75%" align="left" valign="top">
+Termination entry point of generated code
+</td>
+
+</tr>
+<tr class="even">
+<td width="25%" align="left" valign="top">
+Timing
+</td>
+<td width="75%" align="left" valign="top">
+Must be called exactly once
+</td>
+
+</tr>
+<tr class="odd">
+<td width="25%" align="left" valign="top">
+Arguments
+</td>
+<td width="75%" align="left" valign="top">
+None
+</td>
+
+</tr>
+<tr class="even">
+<td width="25%" align="left" valign="top">
+Return value
+</td>
+<td width="75%" align="left" valign="top">
+None
+</td>
+
+</tr>
+<tr class="odd">
+<td width="25%" align="left" valign="top">
+Header file
+</td>
+<td width="75%" align="left" valign="top">
+<a href="final_project_h.html">final_project.h</a>
+</td>
+
+</tr>
+
+</table>
+<h3>
+<a name="sec_Inports">
+Inports
+</a>
+
+</h3>
+<table width="100%" class="AltRow FirstColumn" cellspacing="0">
+<tr class="heading">
+<th width="42%" align="left" valign="top">
+<b>
+Block Name
+</b>
+
+</th>
+<th width="26%" align="left" valign="top">
+<b>
+Code Identifier
+</b>
+
+</th>
+<th width="21%" align="left" valign="top">
+<b>
+Data Type
+</b>
+
+</th>
+<th width="10%" align="right" valign="top">
+<b>
+Dimension
+</b>
+
+</th>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;Root&gt;/AC cmd
+</td>
+<td width="26%" align="left" valign="top">
+cmd_inport
+</td>
+<td width="21%" align="left" valign="top">
+CommandBus
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;Root&gt;/Sensors
+</td>
+<td width="26%" align="left" valign="top">
+sensor_inport
+</td>
+<td width="21%" align="left" valign="top">
+SensorsBus
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+
+</table>
+<h3>
+<a name="sec_Outports">
+Outports
+</a>
+
+</h3>
+<table width="100%" class="AltRow FirstColumn" cellspacing="0">
+<tr class="heading">
+<th width="42%" align="left" valign="top">
+<b>
+Block Name
+</b>
+
+</th>
+<th width="26%" align="left" valign="top">
+<b>
+Code Identifier
+</b>
+
+</th>
+<th width="21%" align="left" valign="top">
+<b>
+Data Type
+</b>
+
+</th>
+<th width="10%" align="right" valign="top">
+<b>
+Dimension
+</b>
+
+</th>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;Root&gt;/Motors
+</td>
+<td width="26%" align="left" valign="top">
+final_project_Y.Motors
+</td>
+<td width="21%" align="left" valign="top">
+real32_T
+</td>
+<td width="10%" align="right" valign="top">
+[1  4]
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;Root&gt;/Flag
+</td>
+<td width="26%" align="left" valign="top">
+final_project_Y.Flag
+</td>
+<td width="21%" align="left" valign="top">
+uint8_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+
+</table>
+<h3>
+<a name="sec_Interface_Parameters">
+Interface Parameters
+</a>
+
+</h3>
+<span title="Click to shrink or expand table" onclick="rtwTableShrink(this)">[-]</span><table width="100%" class="AltRow FirstColumn" cellspacing="0">
+<tr class="heading">
+<th width="42%" align="left" valign="top">
+<b>
+Parameter Source
+</b>
+
+</th>
+<th width="26%" align="left" valign="top">
+<b>
+Code Identifier
+</b>
+
+</th>
+<th width="21%" align="left" valign="top">
+<b>
+Data Type
+</b>
+
+</th>
+<th width="10%" align="right" valign="top">
+<b>
+Dimension
+</b>
+
+</th>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+F_aileron
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.F_aileron
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+F_elevator
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.F_elevator
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+F_rudder
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.F_rudder
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+F_throttle
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.F_throttle
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+Kappa
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Kappa
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+M_inv
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.M_inv
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[4  4]
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+cmd_0
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.cmd_0
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[4  1]
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+cmd_hover
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.cmd_hover
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[4  1]
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+g
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.g
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+m
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.m
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+orbit_radius
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.orbit_radius
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Ramp1
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Ramp1_InitialOutput
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Ramp2
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Ramp2_InitialOutput
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Ramp1
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Ramp1_slope
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Ramp2
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Ramp2_slope
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Ramp1
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Ramp1_start
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Ramp2
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Ramp2_start
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S171&gt;/L*(y[k]-yhat[k|k-1])
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Lykyhatkk1_Y0
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S173&gt;/deltax
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.deltax_Y0
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S3&gt;/X0
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.X0_Value
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  1]
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S66&gt;/KalmanGainM
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.KalmanGainM_Value
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  2]
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S3&gt;/C
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.C_Value
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  2]
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Unit Delay3
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.UnitDelay3_InitialCondition
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S2&gt;/X0
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.X0_Value_b
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  1]
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S12&gt;/KalmanGainM
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.KalmanGainM_Value_d
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  2]
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S2&gt;/C
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.C_Value_e
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  2]
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Unit Delay1
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.UnitDelay1_InitialCondition
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Rise and Hover
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.RiseandHover_Time
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S9&gt;/Step
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Step_Y0
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S10&gt;/Step
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Step_Y0_g
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Constant4
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Constant4_Value
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Constant6
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Constant6_Value
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Constant7
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Constant7_Value
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Step3
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Step3_Time
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Step3
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Step3_Y0
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Step3
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Step3_YFinal
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Step2
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Step2_Time
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Step2
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Step2_Y0
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Step2
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Step2_YFinal
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Constant13
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Constant13_Value
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Constant12
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Constant12_Value
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Constant10
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Constant10_Value
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S4&gt;/X0
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.X0_Value_o
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  1]
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Unit Delay5
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.UnitDelay5_InitialCondition
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S120&gt;/KalmanGainM
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.KalmanGainM_Value_do
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  1]
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S4&gt;/C
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.C_Value_n
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[1  2]
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S2&gt;/A
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.A_Value
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  2]
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S12&gt;/KalmanGainL
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.KalmanGainL_Value
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  2]
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S3&gt;/A
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.A_Value_d
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  2]
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S66&gt;/KalmanGainL
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.KalmanGainL_Value_b
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  2]
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S4&gt;/A
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.A_Value_i
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  2]
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Unit Delay4
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.UnitDelay4_InitialCondition
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S4&gt;/B
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.B_Value
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  1]
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S4&gt;/D
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.D_Value
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S120&gt;/KalmanGainL
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.KalmanGainL_Value_c
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  1]
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Unit Delay2
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.UnitDelay2_InitialCondition
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S3&gt;/D
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.D_Value_n
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  1]
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S3&gt;/B
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.B_Value_g
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  1]
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Unit Delay
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.UnitDelay_InitialCondition
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S2&gt;/D
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.D_Value_e
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  1]
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S2&gt;/B
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.B_Value_m
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  1]
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S12&gt;/CovarianceZ
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.CovarianceZ_Value
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  2]
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S66&gt;/CovarianceZ
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.CovarianceZ_Value_a
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  2]
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S120&gt;/CovarianceZ
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.CovarianceZ_Value_n
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[2  2]
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Multiply2
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Multiply2_Gain
+</td>
+<td width="21%" align="left" valign="top">
+real32_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Gain
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Gain_Gain
+</td>
+<td width="21%" align="left" valign="top">
+real32_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Gain1
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Gain1_Gain
+</td>
+<td width="21%" align="left" valign="top">
+real32_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Gain3
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Gain3_Gain
+</td>
+<td width="21%" align="left" valign="top">
+real32_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Gain4
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Gain4_Gain
+</td>
+<td width="21%" align="left" valign="top">
+real32_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Gain6
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Gain6_Gain
+</td>
+<td width="21%" align="left" valign="top">
+real32_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Gain7
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Gain7_Gain
+</td>
+<td width="21%" align="left" valign="top">
+real32_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Gain8
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Gain8_Gain
+</td>
+<td width="21%" align="left" valign="top">
+real32_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Gain10
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Gain10_Gain
+</td>
+<td width="21%" align="left" valign="top">
+real32_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Gain13
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Gain13_Gain
+</td>
+<td width="21%" align="left" valign="top">
+real32_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Saturation1
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Saturation1_UpperSat
+</td>
+<td width="21%" align="left" valign="top">
+real32_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Saturation1
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Saturation1_LowerSat
+</td>
+<td width="21%" align="left" valign="top">
+real32_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S3&gt;/Enable
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Enable_Value
+</td>
+<td width="21%" align="left" valign="top">
+boolean_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S2&gt;/Enable
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Enable_Value_h
+</td>
+<td width="21%" align="left" valign="top">
+boolean_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S4&gt;/Enable
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Enable_Value_o
+</td>
+<td width="21%" align="left" valign="top">
+boolean_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S61&gt;/isSqrtUsed
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.isSqrtUsed_Value
+</td>
+<td width="21%" align="left" valign="top">
+boolean_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S115&gt;/isSqrtUsed
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.isSqrtUsed_Value_h
+</td>
+<td width="21%" align="left" valign="top">
+boolean_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S169&gt;/isSqrtUsed
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.isSqrtUsed_Value_e
+</td>
+<td width="21%" align="left" valign="top">
+boolean_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Constant2
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Constant2_Value
+</td>
+<td width="21%" align="left" valign="top">
+uint8_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Constant1
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.Constant1_Value
+</td>
+<td width="21%" align="left" valign="top">
+uint8_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S1&gt;/Manual Switch
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.ManualSwitch_CurrentSetting
+</td>
+<td width="21%" align="left" valign="top">
+uint8_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S65&gt;/deltax
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.EnabledSubsystem_g.deltax_Y0
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S63&gt;/L*(y[k]-yhat[k|k-1])
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.MeasurementUpdate_f.Lykyhatkk1_Y0
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="odd">
+<td width="42%" align="left" valign="top">
+&lt;S65&gt;/deltax
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.EnabledSubsystem.deltax_Y0
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+<tr class="even">
+<td width="42%" align="left" valign="top">
+&lt;S63&gt;/L*(y[k]-yhat[k|k-1])
+</td>
+<td width="26%" align="left" valign="top">
+final_project_P.MeasurementUpdate.Lykyhatkk1_Y0
+</td>
+<td width="21%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+1
+</td>
+
+</tr>
+
+</table>
+<h3>
+<a name="sec_Data_Stores">
+Data Stores
+</a>
+
+</h3>
+<p>
+No data stores in the model; note that this report lists only data stores with non-auto storage class and global data stores
+</p>
+
+</body>
+
+</html>
