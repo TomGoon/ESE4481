@@ -1,0 +1,14 @@
+*.elf
+*.so
+*.slxc
+*.txt
+*.xml
+*.o
+*.slx.autosave
+*.dmr
+*.tmw
+*.mk
+
+ESE4481/KalmanValues_ert_rtw
+ESE4481/final_project_ert_rtw
+ESE4481/main_ert_rtw
