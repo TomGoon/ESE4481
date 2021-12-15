@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.23
+ * Model version              : 1.32
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Wed Dec 15 15:38:54 2021
+ * C source code generated on : Wed Dec 15 17:06:44 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -72,80 +72,80 @@ P_final_project_T final_project_P = {
   0.068,
 
   /* Mask Parameter: Ramp3_InitialOutput
-   * Referenced by: '<S10>/Constant1'
-   */
-  0.0,
-
-  /* Mask Parameter: Ramp4_InitialOutput
    * Referenced by: '<S11>/Constant1'
    */
   0.0,
 
-  /* Mask Parameter: Ramp1_InitialOutput
-   * Referenced by: '<S8>/Constant1'
+  /* Mask Parameter: Ramp4_InitialOutput
+   * Referenced by: '<S12>/Constant1'
    */
   0.0,
 
-  /* Mask Parameter: Ramp2_InitialOutput
+  /* Mask Parameter: Ramp1_InitialOutput
    * Referenced by: '<S9>/Constant1'
    */
   0.0,
 
+  /* Mask Parameter: Ramp2_InitialOutput
+   * Referenced by: '<S10>/Constant1'
+   */
+  0.0,
+
   /* Mask Parameter: Ramp3_slope
-   * Referenced by: '<S10>/Step'
+   * Referenced by: '<S11>/Step'
    */
   -0.2,
 
   /* Mask Parameter: Ramp4_slope
-   * Referenced by: '<S11>/Step'
+   * Referenced by: '<S12>/Step'
    */
   0.2,
 
   /* Mask Parameter: Ramp1_slope
-   * Referenced by: '<S8>/Step'
+   * Referenced by: '<S9>/Step'
    */
   -0.2,
 
   /* Mask Parameter: Ramp2_slope
-   * Referenced by: '<S9>/Step'
+   * Referenced by: '<S10>/Step'
    */
   0.2,
 
   /* Mask Parameter: Ramp3_start
    * Referenced by:
-   *   '<S10>/Constant'
-   *   '<S10>/Step'
+   *   '<S11>/Constant'
+   *   '<S11>/Step'
    */
   5.0,
 
   /* Mask Parameter: Ramp4_start
    * Referenced by:
-   *   '<S11>/Constant'
-   *   '<S11>/Step'
+   *   '<S12>/Constant'
+   *   '<S12>/Step'
    */
   10.0,
 
   /* Mask Parameter: Ramp1_start
    * Referenced by:
-   *   '<S8>/Constant'
-   *   '<S8>/Step'
+   *   '<S9>/Constant'
+   *   '<S9>/Step'
    */
   25.0,
 
   /* Mask Parameter: Ramp2_start
    * Referenced by:
-   *   '<S9>/Constant'
-   *   '<S9>/Step'
+   *   '<S10>/Constant'
+   *   '<S10>/Step'
    */
   20.0,
 
   /* Expression: 0
-   * Referenced by: '<S172>/L*(y[k]-yhat[k|k-1])'
+   * Referenced by: '<S173>/L*(y[k]-yhat[k|k-1])'
    */
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S174>/deltax'
+   * Referenced by: '<S175>/deltax'
    */
   0.0,
 
@@ -164,13 +164,13 @@ P_final_project_T final_project_P = {
    */
   { 0.0, 0.0, 0.0, 0.0 },
 
-  /* Expression: [0; 0; 0.005; 0]
+  /* Expression: [0; 0; 0.0035; 0]
    * Referenced by: '<S1>/Constant10'
    */
-  { 0.0, 0.0, 0.005, 0.0 },
+  { 0.0, 0.0, 0.0035, 0.0 },
 
   /* Expression: pInitialization.M
-   * Referenced by: '<S67>/KalmanGainM'
+   * Referenced by: '<S68>/KalmanGainM'
    */
   { 0.04729237879974818, -0.038222662408278228, -0.009555665602069557,
     0.015040618246882954 },
@@ -181,7 +181,7 @@ P_final_project_T final_project_P = {
   { 1.0, 0.0, 0.0, 1.0 },
 
   /* Expression: pInitialization.M
-   * Referenced by: '<S13>/KalmanGainM'
+   * Referenced by: '<S14>/KalmanGainM'
    */
   { 0.012093199631291133, 0.004399502353177407, 0.0043995023531774088,
     0.0023030960844769919 },
@@ -217,12 +217,12 @@ P_final_project_T final_project_P = {
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S10>/Step'
+   * Referenced by: '<S11>/Step'
    */
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S11>/Step'
+   * Referenced by: '<S12>/Step'
    */
   0.0,
 
@@ -242,12 +242,12 @@ P_final_project_T final_project_P = {
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S8>/Step'
+   * Referenced by: '<S9>/Step'
    */
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S9>/Step'
+   * Referenced by: '<S10>/Step'
    */
   0.0,
 
@@ -277,7 +277,7 @@ P_final_project_T final_project_P = {
   0.0,
 
   /* Expression: pInitialization.M
-   * Referenced by: '<S121>/KalmanGainM'
+   * Referenced by: '<S122>/KalmanGainM'
    */
   { 0.035603934606229515, 0.13202385626180205 },
 
@@ -292,7 +292,7 @@ P_final_project_T final_project_P = {
   { 0.9895163516515294, 0.0, 0.047652947038502869, 1.0 },
 
   /* Expression: pInitialization.L
-   * Referenced by: '<S13>/KalmanGainL'
+   * Referenced by: '<S14>/KalmanGainL'
    */
   { 0.012176068031580544, 0.004399502353177394, 0.0044631288333366,
     0.0023030960844769911 },
@@ -303,7 +303,7 @@ P_final_project_T final_project_P = {
   { 0.9895163516515294, 0.0, -0.047652947038502869, 1.0 },
 
   /* Expression: pInitialization.L
-   * Referenced by: '<S67>/KalmanGainL'
+   * Referenced by: '<S68>/KalmanGainL'
    */
   { 0.048618004638261214, -0.038222662408278235, -0.010172217148906938,
     0.015040618246882954 },
@@ -329,7 +329,7 @@ P_final_project_T final_project_P = {
   0.0,
 
   /* Expression: pInitialization.L
-   * Referenced by: '<S121>/KalmanGainL'
+   * Referenced by: '<S122>/KalmanGainL'
    */
   { 0.036249295439734416, 0.13202385626180421 },
 
@@ -364,19 +364,19 @@ P_final_project_T final_project_P = {
   { 0.00011934162299238203, 0.005 },
 
   /* Expression: pInitialization.Z
-   * Referenced by: '<S13>/CovarianceZ'
+   * Referenced by: '<S14>/CovarianceZ'
    */
   { 0.012093199631291133, 0.004399502353177407, 0.0043995023531774079,
     0.0023030960844769919 },
 
   /* Expression: pInitialization.Z
-   * Referenced by: '<S67>/CovarianceZ'
+   * Referenced by: '<S68>/CovarianceZ'
    */
   { 0.00047292378799748187, -0.00038222662408278241, -0.0003822266240827823,
     0.00060162472987531821 },
 
   /* Expression: pInitialization.Z
-   * Referenced by: '<S121>/CovarianceZ'
+   * Referenced by: '<S122>/CovarianceZ'
    */
   { 4.9248000838862833E-5, 0.00018261776558800647, 0.00018261776558800647,
     0.001366725882552944 },
@@ -452,17 +452,17 @@ P_final_project_T final_project_P = {
   true,
 
   /* Expression: pInitialization.isSqrtUsed
-   * Referenced by: '<S62>/isSqrtUsed'
+   * Referenced by: '<S63>/isSqrtUsed'
    */
   false,
 
   /* Expression: pInitialization.isSqrtUsed
-   * Referenced by: '<S116>/isSqrtUsed'
+   * Referenced by: '<S117>/isSqrtUsed'
    */
   false,
 
   /* Expression: pInitialization.isSqrtUsed
-   * Referenced by: '<S170>/isSqrtUsed'
+   * Referenced by: '<S171>/isSqrtUsed'
    */
   false,
 
@@ -496,45 +496,45 @@ P_final_project_T final_project_P = {
    */
   1U,
 
-  /* Start of '<S94>/Enabled Subsystem' */
+  /* Start of '<S95>/Enabled Subsystem' */
   {
     /* Expression: 0
-     * Referenced by: '<S120>/deltax'
+     * Referenced by: '<S121>/deltax'
      */
     0.0
   }
   ,
 
-  /* End of '<S94>/Enabled Subsystem' */
+  /* End of '<S95>/Enabled Subsystem' */
 
-  /* Start of '<S87>/MeasurementUpdate' */
+  /* Start of '<S88>/MeasurementUpdate' */
   {
     /* Expression: 0
-     * Referenced by: '<S118>/L*(y[k]-yhat[k|k-1])'
+     * Referenced by: '<S119>/L*(y[k]-yhat[k|k-1])'
      */
     0.0
   }
   ,
 
-  /* End of '<S87>/MeasurementUpdate' */
+  /* End of '<S88>/MeasurementUpdate' */
 
-  /* Start of '<S40>/Enabled Subsystem' */
+  /* Start of '<S41>/Enabled Subsystem' */
   {
     /* Expression: 0
-     * Referenced by: '<S66>/deltax'
+     * Referenced by: '<S67>/deltax'
      */
     0.0
   }
   ,
 
-  /* End of '<S40>/Enabled Subsystem' */
+  /* End of '<S41>/Enabled Subsystem' */
 
-  /* Start of '<S33>/MeasurementUpdate' */
+  /* Start of '<S34>/MeasurementUpdate' */
   {
     /* Expression: 0
-     * Referenced by: '<S64>/L*(y[k]-yhat[k|k-1])'
+     * Referenced by: '<S65>/L*(y[k]-yhat[k|k-1])'
      */
     0.0
   }
-  /* End of '<S33>/MeasurementUpdate' */
+  /* End of '<S34>/MeasurementUpdate' */
 };
