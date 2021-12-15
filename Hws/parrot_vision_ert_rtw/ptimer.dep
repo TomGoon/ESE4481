@@ -1,8 +1,0 @@
-ptimer.o: \
- /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/src/ptimer.c \
- /Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/include/ptimer.h \
- /Users/Liza/Desktop/ESE4481/ESE4481/Hws/parrot_vision_ert_rtw/MW_target_hardware_resources.h
-
-/Users/Liza/Documents/MATLAB/SupportPackages/R2021a/toolbox/target/supportpackages/parrot/include/ptimer.h:
-
-/Users/Liza/Desktop/ESE4481/ESE4481/Hws/parrot_vision_ert_rtw/MW_target_hardware_resources.h:
