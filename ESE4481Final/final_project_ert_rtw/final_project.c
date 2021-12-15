@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.22
+ * Model version              : 1.23
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Dec 14 23:04:45 2021
+ * C source code generated on : Wed Dec 15 15:38:54 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -218,10 +218,10 @@ void final_project_step(void)
   int32_T c_tmp;
   int32_T i;
   int32_T i_0;
-  real32_T Command_tmp_tmp;
-  real32_T Command_tmp_tmp_0;
-  real32_T Command_tmp_tmp_1;
-  real32_T Command_tmp_tmp_2;
+  real32_T rtb_Sqrt1_tmp;
+  real32_T rtb_Sqrt1_tmp_0;
+  real32_T rtb_Sqrt1_tmp_1;
+  real32_T rtb_Sqrt1_tmp_2;
   static const int8_T b[9] = { 1, 0, 0, 0, 1, 0, 0, 0, 1 };
 
   /* Delay: '<S3>/MemoryX' incorporates:
@@ -306,129 +306,152 @@ void final_project_step(void)
   final_project_B.CastToSingle[1] = (real32_T)
     (final_project_B.EnabledSubsystem.Product2[1] + final_project_B.MemoryX_j[1]);
 
-  /* MATLAB Function: '<S1>/MATLAB Function3' incorporates:
-   *  MATLAB Function: '<S1>/MATLAB Function7'
+  /* ManualSwitch: '<S1>/Manual Switch3' incorporates:
+   *  Constant: '<S1>/Constant12'
+   *  Constant: '<S1>/Constant13'
+   *  Constant: '<S1>/Constant15'
+   *  Constant: '<S1>/Constant16'
+   *  DataTypeConversion: '<S1>/Cast To Double8'
+   *  MATLAB Function: '<S1>/MATLAB Function3'
    */
-  Command_tmp_tmp_0 = (real32_T)sin(final_project_B.CastToSingle[1]);
-  Command_tmp_tmp = (real32_T)cos(final_project_B.CastToSingle[1]);
-  Command_tmp_tmp_2 = (real32_T)sin(final_project_B.CastToSingle1[1]);
-  Command_tmp_tmp_1 = (real32_T)cos(final_project_B.CastToSingle1[1]);
+  if (final_project_P.ManualSwitch3_CurrentSetting == 1) {
+    /* MATLAB Function: '<S1>/MATLAB Function3' */
+    rtb_Sqrt1_tmp = (real32_T)sin(final_project_B.CastToSingle[1]);
+    rtb_Sqrt1_tmp_0 = (real32_T)cos(final_project_B.CastToSingle[1]);
+    rtb_Sqrt1_tmp_1 = (real32_T)sin(final_project_B.CastToSingle1[1]);
+    rtb_Sqrt1_tmp_2 = (real32_T)cos(final_project_B.CastToSingle1[1]);
 
-  /* Clock: '<S10>/Clock' incorporates:
-   *  Clock: '<S11>/Clock'
-   *  Clock: '<S8>/Clock'
+    /* Clock: '<S10>/Clock' incorporates:
+     *  Clock: '<S11>/Clock'
+     */
+    final_project_B.rtb_Sqrt1_idx_0 = final_project_M->Timing.t[0];
+
+    /* MATLAB Function: '<S1>/MATLAB Function3' */
+    final_project_B.c[1] = 0.0F;
+    final_project_B.c[4] = rtb_Sqrt1_tmp_0;
+    final_project_B.c[7] = rtb_Sqrt1_tmp;
+    final_project_B.c[2] = 0.0F;
+    final_project_B.c[5] = -rtb_Sqrt1_tmp;
+    final_project_B.c[8] = rtb_Sqrt1_tmp_0;
+    final_project_B.rtb_Sqrt1_tmp[0] = rtb_Sqrt1_tmp_2;
+    final_project_B.rtb_Sqrt1_tmp[3] = 0.0F;
+    final_project_B.rtb_Sqrt1_tmp[6] = -rtb_Sqrt1_tmp_1;
+    final_project_B.c[0] = 1.0F;
+    final_project_B.rtb_Sqrt1_tmp[1] = 0.0F;
+    final_project_B.c[3] = 0.0F;
+    final_project_B.rtb_Sqrt1_tmp[4] = 1.0F;
+    final_project_B.c[6] = 0.0F;
+    final_project_B.rtb_Sqrt1_tmp[7] = 0.0F;
+    final_project_B.rtb_Sqrt1_tmp[2] = rtb_Sqrt1_tmp_1;
+    final_project_B.rtb_Sqrt1_tmp[5] = 0.0F;
+    final_project_B.rtb_Sqrt1_tmp[8] = rtb_Sqrt1_tmp_2;
+    final_project_B.fv[0] = 0.0F;
+    final_project_B.fv[1] = 0.0F;
+
+    /* Step: '<S10>/Step' incorporates:
+     *  Step: '<S11>/Step'
+     */
+    final_project_B.Ckxhatkk1 = final_project_M->Timing.t[0];
+
+    /* MATLAB Function: '<S1>/MATLAB Function3' incorporates:
+     *  Clock: '<S10>/Clock'
+     *  Constant: '<S10>/Constant'
+     *  Constant: '<S10>/Constant1'
+     *  Constant: '<S11>/Constant'
+     *  Constant: '<S11>/Constant1'
+     *  Product: '<S10>/Product'
+     *  Product: '<S11>/Product'
+     *  Step: '<S10>/Step'
+     *  Step: '<S11>/Step'
+     *  Sum: '<S10>/Output'
+     *  Sum: '<S10>/Sum'
+     *  Sum: '<S11>/Output'
+     *  Sum: '<S11>/Sum'
+     *  Sum: '<S1>/Sum20'
+     */
+    if (final_project_B.Ckxhatkk1 < final_project_P.Ramp3_start) {
+      final_project_B.d = final_project_P.Step_Y0;
+    } else {
+      final_project_B.d = final_project_P.Ramp3_slope;
+    }
+
+    if (final_project_B.Ckxhatkk1 < final_project_P.Ramp4_start) {
+      final_project_B.Ckxhatkk1 = final_project_P.Step_Y0_j;
+    } else {
+      final_project_B.Ckxhatkk1 = final_project_P.Ramp4_slope;
+    }
+
+    final_project_B.fv[2] = (real32_T)(((final_project_B.rtb_Sqrt1_idx_0 -
+      final_project_P.Ramp3_start) * final_project_B.d +
+      final_project_P.Ramp3_InitialOutput) + ((final_project_B.rtb_Sqrt1_idx_0 -
+      final_project_P.Ramp4_start) * final_project_B.Ckxhatkk1 +
+      final_project_P.Ramp4_InitialOutput));
+    for (i_0 = 0; i_0 < 3; i_0++) {
+      for (i = 0; i < 3; i++) {
+        c_tmp = i_0 + 3 * i;
+        final_project_B.c_m[c_tmp] = 0.0F;
+        final_project_B.c_m[c_tmp] += final_project_B.rtb_Sqrt1_tmp[3 * i] *
+          final_project_B.c[i_0];
+        final_project_B.c_m[c_tmp] += final_project_B.rtb_Sqrt1_tmp[3 * i + 1] *
+          final_project_B.c[i_0 + 3];
+        final_project_B.c_m[c_tmp] += final_project_B.rtb_Sqrt1_tmp[3 * i + 2] *
+          final_project_B.c[i_0 + 6];
+      }
+
+      final_project_B.c_k[i_0] = 0.0F;
+      for (i = 0; i < 3; i++) {
+        c_tmp = i_0 + 3 * i;
+        final_project_B.c_c[c_tmp] = 0.0F;
+        final_project_B.c_c[c_tmp] += (real32_T)b[3 * i] *
+          final_project_B.c_m[i_0];
+        final_project_B.c_c[c_tmp] += (real32_T)b[3 * i + 1] *
+          final_project_B.c_m[i_0 + 3];
+        final_project_B.c_c[c_tmp] += (real32_T)b[3 * i + 2] *
+          final_project_B.c_m[i_0 + 6];
+        final_project_B.c_k[i_0] += final_project_B.c_c[c_tmp] *
+          final_project_B.fv[i];
+      }
+    }
+
+    final_project_B.rtb_Sqrt1_idx_0 = final_project_B.c_k[2];
+    final_project_B.rtb_Sqrt1_idx_1 = final_project_P.Constant12_Value;
+    final_project_B.rtb_Sqrt1_idx_2 = final_project_P.Constant13_Value;
+    final_project_B.rtb_Sqrt1_idx_3 = final_project_P.Constant15_Value;
+  } else {
+    final_project_B.rtb_Sqrt1_idx_0 = final_project_P.Constant16_Value[0];
+    final_project_B.rtb_Sqrt1_idx_1 = final_project_P.Constant16_Value[1];
+    final_project_B.rtb_Sqrt1_idx_2 = final_project_P.Constant16_Value[2];
+    final_project_B.rtb_Sqrt1_idx_3 = final_project_P.Constant16_Value[3];
+  }
+
+  /* End of ManualSwitch: '<S1>/Manual Switch3' */
+
+  /* Clock: '<S8>/Clock' incorporates:
    *  Clock: '<S9>/Clock'
    */
+  final_project_B.rtb_Sum13_tmp = final_project_M->Timing.t[0];
+
+  /* Step: '<S8>/Step' incorporates:
+   *  Step: '<S9>/Step'
+   */
   final_project_B.Ckxhatkk1 = final_project_M->Timing.t[0];
-
-  /* MATLAB Function: '<S1>/MATLAB Function3' */
-  final_project_B.c[1] = 0.0F;
-  final_project_B.c[4] = Command_tmp_tmp;
-  final_project_B.c[7] = Command_tmp_tmp_0;
-  final_project_B.c[2] = 0.0F;
-  final_project_B.c[5] = -Command_tmp_tmp_0;
-  final_project_B.c[8] = Command_tmp_tmp;
-  final_project_B.Command_tmp[0] = Command_tmp_tmp_1;
-  final_project_B.Command_tmp[3] = 0.0F;
-  final_project_B.Command_tmp[6] = -Command_tmp_tmp_2;
-  final_project_B.c[0] = 1.0F;
-  final_project_B.Command_tmp[1] = 0.0F;
-  final_project_B.c[3] = 0.0F;
-  final_project_B.Command_tmp[4] = 1.0F;
-  final_project_B.c[6] = 0.0F;
-  final_project_B.Command_tmp[7] = 0.0F;
-  final_project_B.Command_tmp[2] = Command_tmp_tmp_2;
-  final_project_B.Command_tmp[5] = 0.0F;
-  final_project_B.Command_tmp[8] = Command_tmp_tmp_1;
-  final_project_B.fv[0] = 0.0F;
-  final_project_B.fv[1] = 0.0F;
-
-  /* Step: '<S10>/Step' incorporates:
-   *  Step: '<S11>/Step'
-   *  Step: '<S8>/Step'
-   *  Step: '<S9>/Step'
-   */
-  final_project_B.d2 = final_project_M->Timing.t[0];
-
-  /* MATLAB Function: '<S1>/MATLAB Function3' incorporates:
-   *  Clock: '<S10>/Clock'
-   *  Constant: '<S10>/Constant'
-   *  Constant: '<S10>/Constant1'
-   *  Constant: '<S11>/Constant'
-   *  Constant: '<S11>/Constant1'
-   *  Product: '<S10>/Product'
-   *  Product: '<S11>/Product'
-   *  Step: '<S10>/Step'
-   *  Step: '<S11>/Step'
-   *  Sum: '<S10>/Output'
-   *  Sum: '<S10>/Sum'
-   *  Sum: '<S11>/Output'
-   *  Sum: '<S11>/Sum'
-   *  Sum: '<S1>/Sum20'
-   */
-  if (final_project_B.d2 < final_project_P.Ramp3_start) {
-    final_project_B.d = final_project_P.Step_Y0;
-  } else {
-    final_project_B.d = final_project_P.Ramp3_slope;
-  }
-
-  if (final_project_B.d2 < final_project_P.Ramp4_start) {
-    final_project_B.d1 = final_project_P.Step_Y0_j;
-  } else {
-    final_project_B.d1 = final_project_P.Ramp4_slope;
-  }
-
-  final_project_B.fv[2] = (real32_T)(((final_project_B.Ckxhatkk1 -
-    final_project_P.Ramp3_start) * final_project_B.d +
-    final_project_P.Ramp3_InitialOutput) + ((final_project_B.Ckxhatkk1 -
-    final_project_P.Ramp4_start) * final_project_B.d1 +
-    final_project_P.Ramp4_InitialOutput));
-  for (i_0 = 0; i_0 < 3; i_0++) {
-    for (i = 0; i < 3; i++) {
-      c_tmp = i_0 + 3 * i;
-      final_project_B.c_m[c_tmp] = 0.0F;
-      final_project_B.c_m[c_tmp] += final_project_B.Command_tmp[3 * i] *
-        final_project_B.c[i_0];
-      final_project_B.c_m[c_tmp] += final_project_B.Command_tmp[3 * i + 1] *
-        final_project_B.c[i_0 + 3];
-      final_project_B.c_m[c_tmp] += final_project_B.Command_tmp[3 * i + 2] *
-        final_project_B.c[i_0 + 6];
-    }
-
-    final_project_B.c_k[i_0] = 0.0F;
-    for (i = 0; i < 3; i++) {
-      c_tmp = i_0 + 3 * i;
-      final_project_B.c_c[c_tmp] = 0.0F;
-      final_project_B.c_c[c_tmp] += (real32_T)b[3 * i] * final_project_B.c_m[i_0];
-      final_project_B.c_c[c_tmp] += (real32_T)b[3 * i + 1] *
-        final_project_B.c_m[i_0 + 3];
-      final_project_B.c_c[c_tmp] += (real32_T)b[3 * i + 2] *
-        final_project_B.c_m[i_0 + 6];
-      final_project_B.c_k[i_0] += final_project_B.c_c[c_tmp] *
-        final_project_B.fv[i];
-    }
-  }
-
-  /* Sum: '<S1>/Sum15' incorporates:
-   *  Step: '<S8>/Step'
-   *  Step: '<S9>/Step'
-   */
-  if (final_project_B.d2 < final_project_P.Ramp1_start) {
+  if (final_project_B.Ckxhatkk1 < final_project_P.Ramp1_start) {
     final_project_B.d = final_project_P.Step_Y0_d;
   } else {
     final_project_B.d = final_project_P.Ramp1_slope;
   }
 
-  if (final_project_B.d2 < final_project_P.Ramp2_start) {
-    final_project_B.d2 = final_project_P.Step_Y0_g;
+  /* End of Step: '<S8>/Step' */
+
+  /* Step: '<S9>/Step' */
+  if (final_project_B.Ckxhatkk1 < final_project_P.Ramp2_start) {
+    final_project_B.Ckxhatkk1 = final_project_P.Step_Y0_g;
   } else {
-    final_project_B.d2 = final_project_P.Ramp2_slope;
+    final_project_B.Ckxhatkk1 = final_project_P.Ramp2_slope;
   }
 
   /* Sum: '<S1>/Sum14' incorporates:
-   *  Constant: '<S1>/Constant12'
-   *  Constant: '<S1>/Constant13'
-   *  Constant: '<S1>/Constant15'
+   *  Clock: '<S8>/Clock'
    *  Constant: '<S1>/Constant4'
    *  Constant: '<S1>/Constant6'
    *  Constant: '<S1>/Constant7'
@@ -436,8 +459,6 @@ void final_project_step(void)
    *  Constant: '<S8>/Constant1'
    *  Constant: '<S9>/Constant'
    *  Constant: '<S9>/Constant1'
-   *  DataTypeConversion: '<S1>/Cast To Double8'
-   *  MATLAB Function: '<S1>/MATLAB Function3'
    *  Product: '<S8>/Product'
    *  Product: '<S9>/Product'
    *  Sum: '<S1>/Sum15'
@@ -446,17 +467,64 @@ void final_project_step(void)
    *  Sum: '<S9>/Output'
    *  Sum: '<S9>/Sum'
    */
-  final_project_B.Command[0] = (((final_project_B.Ckxhatkk1 -
+  final_project_B.Command[0] = (((final_project_B.rtb_Sum13_tmp -
     final_project_P.Ramp1_start) * final_project_B.d +
-    final_project_P.Ramp1_InitialOutput) + ((final_project_B.Ckxhatkk1 -
-    final_project_P.Ramp2_start) * final_project_B.d2 +
-    final_project_P.Ramp2_InitialOutput)) + final_project_B.c_k[2];
-  final_project_B.Command[1] = final_project_P.Constant12_Value +
+    final_project_P.Ramp1_InitialOutput) + ((final_project_B.rtb_Sum13_tmp -
+    final_project_P.Ramp2_start) * final_project_B.Ckxhatkk1 +
+    final_project_P.Ramp2_InitialOutput)) + final_project_B.rtb_Sqrt1_idx_0;
+  final_project_B.Command[1] = final_project_B.rtb_Sqrt1_idx_1 +
     final_project_P.Constant4_Value;
-  final_project_B.Command[2] = final_project_P.Constant13_Value +
+  final_project_B.Command[2] = final_project_B.rtb_Sqrt1_idx_2 +
     final_project_P.Constant6_Value;
-  final_project_B.Command[3] = final_project_P.Constant15_Value +
+  final_project_B.Command[3] = final_project_B.rtb_Sqrt1_idx_3 +
     final_project_P.Constant7_Value;
+
+  /* Scope: '<S1>/Scope23' */
+  {
+    StructLogVar *svar = (StructLogVar *)
+      final_project_DW.Scope23_PWORK.LoggedData;
+    LogVar *var = svar->signals.values;
+
+    /* time */
+    {
+      double locTime = (((final_project_M->Timing.clockTick1+
+                          final_project_M->Timing.clockTickH1* 4294967296.0)) *
+                        0.005);
+      ;
+      rt_UpdateLogVar((LogVar *)svar->time, &locTime, 0);
+    }
+
+    /* signals */
+    {
+      real_T up0[4];
+      up0[0] = final_project_B.Command[0];
+      up0[1] = final_project_B.Command[1];
+      up0[2] = final_project_B.Command[2];
+      up0[3] = final_project_B.Command[3];
+      rt_UpdateLogVar((LogVar *)var, up0, 0);
+    }
+  }
+
+  /* ManualSwitch: '<S1>/Manual Switch1' */
+  if (final_project_P.ManualSwitch1_CurrentSetting == 1) {
+    /* ManualSwitch: '<S1>/Manual Switch1' incorporates:
+     *  Constant: '<S1>/Constant9'
+     */
+    final_project_B.ManualSwitch1[0] = final_project_P.Constant9_Value[0];
+    final_project_B.ManualSwitch1[1] = final_project_P.Constant9_Value[1];
+    final_project_B.ManualSwitch1[2] = final_project_P.Constant9_Value[2];
+    final_project_B.ManualSwitch1[3] = final_project_P.Constant9_Value[3];
+  } else {
+    /* ManualSwitch: '<S1>/Manual Switch1' incorporates:
+     *  Constant: '<S1>/Constant14'
+     */
+    final_project_B.ManualSwitch1[0] = final_project_P.Constant14_Value[0];
+    final_project_B.ManualSwitch1[1] = final_project_P.Constant14_Value[1];
+    final_project_B.ManualSwitch1[2] = final_project_P.Constant14_Value[2];
+    final_project_B.ManualSwitch1[3] = final_project_P.Constant14_Value[3];
+  }
+
+  /* End of ManualSwitch: '<S1>/Manual Switch1' */
 
   /* Delay: '<S4>/MemoryX' incorporates:
    *  Constant: '<S4>/X0'
@@ -551,21 +619,6 @@ void final_project_step(void)
   final_project_B.Sum18 = sensor_inport.HALSensors.HAL_gyro_SI.z -
     sensor_inport.SensorCalibration[5];
 
-  /* ManualSwitch: '<S1>/Manual Switch1' */
-  if (final_project_P.ManualSwitch1_CurrentSetting == 1) {
-    /* ManualSwitch: '<S1>/Manual Switch1' incorporates:
-     *  Constant: '<S1>/Constant9'
-     */
-    final_project_B.ManualSwitch1[0] = final_project_P.Constant9_Value[0];
-    final_project_B.ManualSwitch1[1] = final_project_P.Constant9_Value[1];
-  } else {
-    /* ManualSwitch: '<S1>/Manual Switch1' incorporates:
-     *  Constant: '<S1>/Constant14'
-     */
-    final_project_B.ManualSwitch1[0] = final_project_P.Constant14_Value[0];
-    final_project_B.ManualSwitch1[1] = final_project_P.Constant14_Value[1];
-  }
-
   /* ManualSwitch: '<S1>/Manual Switch2' */
   if (final_project_P.ManualSwitch2_CurrentSetting == 1) {
     /* ManualSwitch: '<S1>/Manual Switch2' incorporates:
@@ -574,6 +627,7 @@ void final_project_step(void)
     final_project_B.ManualSwitch2[0] = final_project_P.Constant11_Value[0];
     final_project_B.ManualSwitch2[1] = final_project_P.Constant11_Value[1];
     final_project_B.ManualSwitch2[2] = final_project_P.Constant11_Value[2];
+    final_project_B.ManualSwitch2[3] = final_project_P.Constant11_Value[3];
   } else {
     /* ManualSwitch: '<S1>/Manual Switch2' incorporates:
      *  Constant: '<S1>/Constant10'
@@ -581,35 +635,10 @@ void final_project_step(void)
     final_project_B.ManualSwitch2[0] = final_project_P.Constant10_Value[0];
     final_project_B.ManualSwitch2[1] = final_project_P.Constant10_Value[1];
     final_project_B.ManualSwitch2[2] = final_project_P.Constant10_Value[2];
-  }
-
-  /* ManualSwitch: '<S1>/Manual Switch1' */
-  if (final_project_P.ManualSwitch1_CurrentSetting == 1) {
-    /* ManualSwitch: '<S1>/Manual Switch1' incorporates:
-     *  Constant: '<S1>/Constant9'
-     */
-    final_project_B.ManualSwitch1[2] = final_project_P.Constant9_Value[2];
-    final_project_B.ManualSwitch1[3] = final_project_P.Constant9_Value[3];
-  } else {
-    /* ManualSwitch: '<S1>/Manual Switch1' incorporates:
-     *  Constant: '<S1>/Constant14'
-     */
-    final_project_B.ManualSwitch1[2] = final_project_P.Constant14_Value[2];
-    final_project_B.ManualSwitch1[3] = final_project_P.Constant14_Value[3];
-  }
-
-  /* ManualSwitch: '<S1>/Manual Switch2' */
-  if (final_project_P.ManualSwitch2_CurrentSetting == 1) {
-    /* ManualSwitch: '<S1>/Manual Switch2' incorporates:
-     *  Constant: '<S1>/Constant11'
-     */
-    final_project_B.ManualSwitch2[3] = final_project_P.Constant11_Value[3];
-  } else {
-    /* ManualSwitch: '<S1>/Manual Switch2' incorporates:
-     *  Constant: '<S1>/Constant10'
-     */
     final_project_B.ManualSwitch2[3] = final_project_P.Constant10_Value[3];
   }
+
+  /* End of ManualSwitch: '<S1>/Manual Switch2' */
 
   /* Sum: '<S1>/Sum19' incorporates:
    *  Constant: '<S1>/Constant5'
@@ -649,31 +678,29 @@ void final_project_step(void)
     final_project_B.ManualSwitch2[3];
   for (i_0 = 0; i_0 < 4; i_0++) {
     /* Sqrt: '<S1>/Sqrt1' incorporates:
-     *  Abs: '<S1>/Abs'
-     *  Constant: '<S1>/M_inv'
-     *  Product: '<S1>/Product'
+     *  Gain: '<S1>/Gain11'
      */
-    final_project_B.Ckxhatkk1 = sqrt(fabs(final_project_P.M_inv[i_0 + 12] *
-      final_project_B.Sum19[3] + (final_project_P.M_inv[i_0 + 8] *
-      final_project_B.Sum19[2] + (final_project_P.M_inv[i_0 + 4] *
-      final_project_B.Sum19[1] + final_project_P.M_inv[i_0] *
-      final_project_B.Sum19[0]))));
+    final_project_B.Ckxhatkk1 = sqrt(final_project_P.M[i_0 + 12] * 0.25 *
+      final_project_B.Sum19[3] + (final_project_P.M[i_0 + 8] * 0.25 *
+      final_project_B.Sum19[2] + (final_project_P.M[i_0 + 4] * 0.25 *
+      final_project_B.Sum19[1] + 0.25 * final_project_P.M[i_0] *
+      final_project_B.Sum19[0])));
 
     /* Saturate: '<S1>/Saturation1' */
     if (final_project_B.Ckxhatkk1 > final_project_P.Saturation1_UpperSat) {
       /* Saturate: '<S1>/Saturation1' incorporates:
-       *  Abs: '<S1>/Abs'
+       *  Sqrt: '<S1>/Sqrt1'
        */
       motors_outport[i_0] = final_project_P.Saturation1_UpperSat;
     } else if (final_project_B.Ckxhatkk1 < final_project_P.Saturation1_LowerSat)
     {
       /* Saturate: '<S1>/Saturation1' incorporates:
-       *  Abs: '<S1>/Abs'
+       *  Sqrt: '<S1>/Sqrt1'
        */
       motors_outport[i_0] = final_project_P.Saturation1_LowerSat;
     } else {
       /* Saturate: '<S1>/Saturation1' incorporates:
-       *  Abs: '<S1>/Abs'
+       *  Sqrt: '<S1>/Sqrt1'
        */
       motors_outport[i_0] = (real32_T)final_project_B.Ckxhatkk1;
     }
@@ -684,6 +711,32 @@ void final_project_step(void)
      *  Saturate: '<S1>/Saturation1'
      */
     final_project_Y.Motors[i_0] = motors_outport[i_0];
+  }
+
+  /* Scope: '<S1>/Scope24' */
+  {
+    StructLogVar *svar = (StructLogVar *)
+      final_project_DW.Scope24_PWORK.LoggedData;
+    LogVar *var = svar->signals.values;
+
+    /* time */
+    {
+      double locTime = (((final_project_M->Timing.clockTick1+
+                          final_project_M->Timing.clockTickH1* 4294967296.0)) *
+                        0.005);
+      ;
+      rt_UpdateLogVar((LogVar *)svar->time, &locTime, 0);
+    }
+
+    /* signals */
+    {
+      real32_T up0[4];
+      up0[0] = motors_outport[0];
+      up0[1] = motors_outport[1];
+      up0[2] = motors_outport[2];
+      up0[3] = motors_outport[3];
+      rt_UpdateLogVar((LogVar *)var, up0, 0);
+    }
   }
 
   /* Scope: '<S1>/Scope22' */
@@ -708,32 +761,6 @@ void final_project_step(void)
       up0[1] = final_project_B.Sum19[1];
       up0[2] = final_project_B.Sum19[2];
       up0[3] = final_project_B.Sum19[3];
-      rt_UpdateLogVar((LogVar *)var, up0, 0);
-    }
-  }
-
-  /* Scope: '<S1>/Scope23' */
-  {
-    StructLogVar *svar = (StructLogVar *)
-      final_project_DW.Scope23_PWORK.LoggedData;
-    LogVar *var = svar->signals.values;
-
-    /* time */
-    {
-      double locTime = (((final_project_M->Timing.clockTick1+
-                          final_project_M->Timing.clockTickH1* 4294967296.0)) *
-                        0.005);
-      ;
-      rt_UpdateLogVar((LogVar *)svar->time, &locTime, 0);
-    }
-
-    /* signals */
-    {
-      real_T up0[4];
-      up0[0] = final_project_B.Command[0];
-      up0[1] = final_project_B.Command[1];
-      up0[2] = final_project_B.Command[2];
-      up0[3] = final_project_B.Command[3];
       rt_UpdateLogVar((LogVar *)var, up0, 0);
     }
   }
@@ -1112,24 +1139,27 @@ void final_project_step(void)
    *  Constant: '<S1>/Constant8'
    */
   final_project_B.c[1] = 0.0F;
-  final_project_B.c[4] = Command_tmp_tmp;
-  final_project_B.c[7] = Command_tmp_tmp_0;
+  final_project_B.c[4] = (real32_T)cos(final_project_B.CastToSingle[1]);
+  final_project_B.c[7] = (real32_T)sin(final_project_B.CastToSingle[1]);
   final_project_B.c[2] = 0.0F;
   final_project_B.c[5] = -(real32_T)sin(final_project_B.CastToSingle[1]);
-  final_project_B.c[8] = Command_tmp_tmp;
-  final_project_B.Command_tmp[0] = Command_tmp_tmp_1;
-  final_project_B.Command_tmp[3] = 0.0F;
-  final_project_B.Command_tmp[6] = -(real32_T)sin(final_project_B.CastToSingle1
-    [1]);
+  final_project_B.c[8] = (real32_T)cos(final_project_B.CastToSingle[1]);
+  final_project_B.rtb_Sqrt1_tmp[0] = (real32_T)cos
+    (final_project_B.CastToSingle1[1]);
+  final_project_B.rtb_Sqrt1_tmp[3] = 0.0F;
+  final_project_B.rtb_Sqrt1_tmp[6] = -(real32_T)sin
+    (final_project_B.CastToSingle1[1]);
   final_project_B.c[0] = 1.0F;
-  final_project_B.Command_tmp[1] = 0.0F;
+  final_project_B.rtb_Sqrt1_tmp[1] = 0.0F;
   final_project_B.c[3] = 0.0F;
-  final_project_B.Command_tmp[4] = 1.0F;
+  final_project_B.rtb_Sqrt1_tmp[4] = 1.0F;
   final_project_B.c[6] = 0.0F;
-  final_project_B.Command_tmp[7] = 0.0F;
-  final_project_B.Command_tmp[2] = Command_tmp_tmp_2;
-  final_project_B.Command_tmp[5] = 0.0F;
-  final_project_B.Command_tmp[8] = Command_tmp_tmp_1;
+  final_project_B.rtb_Sqrt1_tmp[7] = 0.0F;
+  final_project_B.rtb_Sqrt1_tmp[2] = (real32_T)sin
+    (final_project_B.CastToSingle1[1]);
+  final_project_B.rtb_Sqrt1_tmp[5] = 0.0F;
+  final_project_B.rtb_Sqrt1_tmp[8] = (real32_T)cos
+    (final_project_B.CastToSingle1[1]);
   final_project_B.fv[0] = 0.0F;
   final_project_B.fv[1] = 0.0F;
   final_project_B.fv[2] = (real32_T)final_project_P.g;
@@ -1137,11 +1167,11 @@ void final_project_step(void)
     for (i = 0; i < 3; i++) {
       c_tmp = i_0 + 3 * i;
       final_project_B.c_m[c_tmp] = 0.0F;
-      final_project_B.c_m[c_tmp] += final_project_B.Command_tmp[3 * i] *
+      final_project_B.c_m[c_tmp] += final_project_B.rtb_Sqrt1_tmp[3 * i] *
         final_project_B.c[i_0];
-      final_project_B.c_m[c_tmp] += final_project_B.Command_tmp[3 * i + 1] *
+      final_project_B.c_m[c_tmp] += final_project_B.rtb_Sqrt1_tmp[3 * i + 1] *
         final_project_B.c[i_0 + 3];
-      final_project_B.c_m[c_tmp] += final_project_B.Command_tmp[3 * i + 2] *
+      final_project_B.c_m[c_tmp] += final_project_B.rtb_Sqrt1_tmp[3 * i + 2] *
         final_project_B.c[i_0 + 6];
     }
 
@@ -1160,6 +1190,8 @@ void final_project_step(void)
   }
 
   final_project_B.bias = final_project_B.c_k[2];
+
+  /* End of MATLAB Function: '<S1>/MATLAB Function7' */
 
   /* Sum: '<S1>/Sum10' incorporates:
    *  Constant: '<S1>/Constant'
@@ -1699,76 +1731,6 @@ void final_project_initialize(void)
     rtmGetTFinal(final_project_M), final_project_M->Timing.stepSize0,
     (&rtmGetErrorStatus(final_project_M)));
 
-  /* SetupRuntimeResources for Scope: '<S1>/Scope22' */
-  {
-    RTWLogSignalInfo rt_ScopeSignalInfo;
-    static int_T rt_ScopeSignalWidths[] = { 4 };
-
-    static int_T rt_ScopeSignalNumDimensions[] = { 1 };
-
-    static int_T rt_ScopeSignalDimensions[] = { 4 };
-
-    static void *rt_ScopeCurrSigDims[] = { (NULL) };
-
-    static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
-
-    static const char_T *rt_ScopeSignalLabels[] = { "" };
-
-    static char_T rt_ScopeSignalTitles[] = "";
-    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
-
-    static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
-
-    static int_T rt_ScopeSignalPlotStyles[] = { 0, 0, 0, 0 };
-
-    BuiltInDTypeId dTypes[1] = { SS_DOUBLE };
-
-    static char_T rt_ScopeBlockName[] =
-      "final_project/Flight Control System/Scope22";
-    static int_T rt_ScopeFrameData[] = { 0 };
-
-    static RTWPreprocessingFcnPtr rt_ScopeSignalLoggingPreprocessingFcnPtrs[] =
-      {
-      (NULL)
-    };
-
-    rt_ScopeSignalInfo.numSignals = 1;
-    rt_ScopeSignalInfo.numCols = rt_ScopeSignalWidths;
-    rt_ScopeSignalInfo.numDims = rt_ScopeSignalNumDimensions;
-    rt_ScopeSignalInfo.dims = rt_ScopeSignalDimensions;
-    rt_ScopeSignalInfo.isVarDims = rt_ScopeSignalIsVarDims;
-    rt_ScopeSignalInfo.currSigDims = rt_ScopeCurrSigDims;
-    rt_ScopeSignalInfo.currSigDimsSize = rt_ScopeCurrSigDimsSize;
-    rt_ScopeSignalInfo.dataTypes = dTypes;
-    rt_ScopeSignalInfo.complexSignals = (NULL);
-    rt_ScopeSignalInfo.frameData = rt_ScopeFrameData;
-    rt_ScopeSignalInfo.preprocessingPtrs =
-      rt_ScopeSignalLoggingPreprocessingFcnPtrs;
-    rt_ScopeSignalInfo.labels.cptr = rt_ScopeSignalLabels;
-    rt_ScopeSignalInfo.titles = rt_ScopeSignalTitles;
-    rt_ScopeSignalInfo.titleLengths = rt_ScopeSignalTitleLengths;
-    rt_ScopeSignalInfo.plotStyles = rt_ScopeSignalPlotStyles;
-    rt_ScopeSignalInfo.blockNames.cptr = (NULL);
-    rt_ScopeSignalInfo.stateNames.cptr = (NULL);
-    rt_ScopeSignalInfo.crossMdlRef = (NULL);
-    rt_ScopeSignalInfo.dataTypeConvert = (NULL);
-    final_project_DW.Scope22_PWORK.LoggedData = rt_CreateStructLogVar(
-      final_project_M->rtwLogInfo,
-      0.0,
-      rtmGetTFinal(final_project_M),
-      final_project_M->Timing.stepSize0,
-      (&rtmGetErrorStatus(final_project_M)),
-      "Wrench",
-      1,
-      0,
-      1,
-      0.005,
-      &rt_ScopeSignalInfo,
-      rt_ScopeBlockName);
-    if (final_project_DW.Scope22_PWORK.LoggedData == (NULL))
-      return;
-  }
-
   /* SetupRuntimeResources for Scope: '<S1>/Scope23' */
   {
     RTWLogSignalInfo rt_ScopeSignalInfo;
@@ -1836,6 +1798,146 @@ void final_project_initialize(void)
       &rt_ScopeSignalInfo,
       rt_ScopeBlockName);
     if (final_project_DW.Scope23_PWORK.LoggedData == (NULL))
+      return;
+  }
+
+  /* SetupRuntimeResources for Scope: '<S1>/Scope24' */
+  {
+    RTWLogSignalInfo rt_ScopeSignalInfo;
+    static int_T rt_ScopeSignalWidths[] = { 4 };
+
+    static int_T rt_ScopeSignalNumDimensions[] = { 1 };
+
+    static int_T rt_ScopeSignalDimensions[] = { 4 };
+
+    static void *rt_ScopeCurrSigDims[] = { (NULL) };
+
+    static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
+
+    static const char_T *rt_ScopeSignalLabels[] = { "" };
+
+    static char_T rt_ScopeSignalTitles[] = "";
+    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+
+    static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
+
+    static int_T rt_ScopeSignalPlotStyles[] = { 0, 0, 0, 0 };
+
+    BuiltInDTypeId dTypes[1] = { SS_SINGLE };
+
+    static char_T rt_ScopeBlockName[] =
+      "final_project/Flight Control System/Scope24";
+    static int_T rt_ScopeFrameData[] = { 0 };
+
+    static RTWPreprocessingFcnPtr rt_ScopeSignalLoggingPreprocessingFcnPtrs[] =
+      {
+      (NULL)
+    };
+
+    rt_ScopeSignalInfo.numSignals = 1;
+    rt_ScopeSignalInfo.numCols = rt_ScopeSignalWidths;
+    rt_ScopeSignalInfo.numDims = rt_ScopeSignalNumDimensions;
+    rt_ScopeSignalInfo.dims = rt_ScopeSignalDimensions;
+    rt_ScopeSignalInfo.isVarDims = rt_ScopeSignalIsVarDims;
+    rt_ScopeSignalInfo.currSigDims = rt_ScopeCurrSigDims;
+    rt_ScopeSignalInfo.currSigDimsSize = rt_ScopeCurrSigDimsSize;
+    rt_ScopeSignalInfo.dataTypes = dTypes;
+    rt_ScopeSignalInfo.complexSignals = (NULL);
+    rt_ScopeSignalInfo.frameData = rt_ScopeFrameData;
+    rt_ScopeSignalInfo.preprocessingPtrs =
+      rt_ScopeSignalLoggingPreprocessingFcnPtrs;
+    rt_ScopeSignalInfo.labels.cptr = rt_ScopeSignalLabels;
+    rt_ScopeSignalInfo.titles = rt_ScopeSignalTitles;
+    rt_ScopeSignalInfo.titleLengths = rt_ScopeSignalTitleLengths;
+    rt_ScopeSignalInfo.plotStyles = rt_ScopeSignalPlotStyles;
+    rt_ScopeSignalInfo.blockNames.cptr = (NULL);
+    rt_ScopeSignalInfo.stateNames.cptr = (NULL);
+    rt_ScopeSignalInfo.crossMdlRef = (NULL);
+    rt_ScopeSignalInfo.dataTypeConvert = (NULL);
+    final_project_DW.Scope24_PWORK.LoggedData = rt_CreateStructLogVar(
+      final_project_M->rtwLogInfo,
+      0.0,
+      rtmGetTFinal(final_project_M),
+      final_project_M->Timing.stepSize0,
+      (&rtmGetErrorStatus(final_project_M)),
+      "motor_speeds",
+      1,
+      0,
+      1,
+      0.005,
+      &rt_ScopeSignalInfo,
+      rt_ScopeBlockName);
+    if (final_project_DW.Scope24_PWORK.LoggedData == (NULL))
+      return;
+  }
+
+  /* SetupRuntimeResources for Scope: '<S1>/Scope22' */
+  {
+    RTWLogSignalInfo rt_ScopeSignalInfo;
+    static int_T rt_ScopeSignalWidths[] = { 4 };
+
+    static int_T rt_ScopeSignalNumDimensions[] = { 1 };
+
+    static int_T rt_ScopeSignalDimensions[] = { 4 };
+
+    static void *rt_ScopeCurrSigDims[] = { (NULL) };
+
+    static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
+
+    static const char_T *rt_ScopeSignalLabels[] = { "" };
+
+    static char_T rt_ScopeSignalTitles[] = "";
+    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+
+    static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
+
+    static int_T rt_ScopeSignalPlotStyles[] = { 0, 0, 0, 0 };
+
+    BuiltInDTypeId dTypes[1] = { SS_DOUBLE };
+
+    static char_T rt_ScopeBlockName[] =
+      "final_project/Flight Control System/Scope22";
+    static int_T rt_ScopeFrameData[] = { 0 };
+
+    static RTWPreprocessingFcnPtr rt_ScopeSignalLoggingPreprocessingFcnPtrs[] =
+      {
+      (NULL)
+    };
+
+    rt_ScopeSignalInfo.numSignals = 1;
+    rt_ScopeSignalInfo.numCols = rt_ScopeSignalWidths;
+    rt_ScopeSignalInfo.numDims = rt_ScopeSignalNumDimensions;
+    rt_ScopeSignalInfo.dims = rt_ScopeSignalDimensions;
+    rt_ScopeSignalInfo.isVarDims = rt_ScopeSignalIsVarDims;
+    rt_ScopeSignalInfo.currSigDims = rt_ScopeCurrSigDims;
+    rt_ScopeSignalInfo.currSigDimsSize = rt_ScopeCurrSigDimsSize;
+    rt_ScopeSignalInfo.dataTypes = dTypes;
+    rt_ScopeSignalInfo.complexSignals = (NULL);
+    rt_ScopeSignalInfo.frameData = rt_ScopeFrameData;
+    rt_ScopeSignalInfo.preprocessingPtrs =
+      rt_ScopeSignalLoggingPreprocessingFcnPtrs;
+    rt_ScopeSignalInfo.labels.cptr = rt_ScopeSignalLabels;
+    rt_ScopeSignalInfo.titles = rt_ScopeSignalTitles;
+    rt_ScopeSignalInfo.titleLengths = rt_ScopeSignalTitleLengths;
+    rt_ScopeSignalInfo.plotStyles = rt_ScopeSignalPlotStyles;
+    rt_ScopeSignalInfo.blockNames.cptr = (NULL);
+    rt_ScopeSignalInfo.stateNames.cptr = (NULL);
+    rt_ScopeSignalInfo.crossMdlRef = (NULL);
+    rt_ScopeSignalInfo.dataTypeConvert = (NULL);
+    final_project_DW.Scope22_PWORK.LoggedData = rt_CreateStructLogVar(
+      final_project_M->rtwLogInfo,
+      0.0,
+      rtmGetTFinal(final_project_M),
+      final_project_M->Timing.stepSize0,
+      (&rtmGetErrorStatus(final_project_M)),
+      "Wrench",
+      1,
+      0,
+      1,
+      0.005,
+      &rt_ScopeSignalInfo,
+      rt_ScopeBlockName);
+    if (final_project_DW.Scope22_PWORK.LoggedData == (NULL))
       return;
   }
 

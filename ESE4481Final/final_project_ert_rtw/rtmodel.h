@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.22
+ * Model version              : 1.23
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Dec 14 23:04:45 2021
+ * C source code generated on : Wed Dec 15 15:38:54 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -23,7 +23,7 @@
  * Code generation for Simulink model "final_project".
  *
  * Simulink Coder version                : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Dec 14 23:04:45 2021
+ * C source code generated on : Wed Dec 15 15:38:54 2021
  *
  * Note that the generated code is not dependent on this header file.
  * The file is used in cojuction with the automatic build procedure.

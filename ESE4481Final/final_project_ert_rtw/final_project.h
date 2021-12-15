@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.22
+ * Model version              : 1.23
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Dec 14 23:04:45 2021
+ * C source code generated on : Wed Dec 15 15:38:54 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -104,7 +104,7 @@ typedef struct {
 /* Block signals (default storage) */
 typedef struct {
   real32_T c[9];
-  real32_T Command_tmp[9];
+  real32_T rtb_Sqrt1_tmp[9];
   real32_T c_m[9];
   real32_T c_c[9];
   real_T Command[4];                   /* '<S1>/Sum14' */
@@ -131,9 +131,12 @@ typedef struct {
   real_T Product2[2];                  /* '<S174>/Product2' */
   real_T Product3[2];                  /* '<S172>/Product3' */
   real_T Ckxhatkk1;                    /* '<S172>/C[k]*xhat[k|k-1]' */
+  real_T rtb_Sum13_tmp;
+  real_T rtb_Sqrt1_idx_0;
+  real_T rtb_Sqrt1_idx_1;
+  real_T rtb_Sqrt1_idx_2;
+  real_T rtb_Sqrt1_idx_3;
   real_T d;
-  real_T d1;
-  real_T d2;
   real32_T CastToSingle1[2];           /* '<S1>/Cast To Single1' */
   real32_T CastToSingle[2];            /* '<S1>/Cast To Single' */
   real32_T CastToSingle2[2];           /* '<S1>/Cast To Single2' */
@@ -173,11 +176,15 @@ typedef struct {
   real_T UnitDelay_DSTATE;             /* '<S1>/Unit Delay' */
   struct {
     void *LoggedData;
-  } Scope22_PWORK;                     /* '<S1>/Scope22' */
+  } Scope23_PWORK;                     /* '<S1>/Scope23' */
 
   struct {
     void *LoggedData;
-  } Scope23_PWORK;                     /* '<S1>/Scope23' */
+  } Scope24_PWORK;                     /* '<S1>/Scope24' */
+
+  struct {
+    void *LoggedData;
+  } Scope22_PWORK;                     /* '<S1>/Scope22' */
 
   struct {
     void *LoggedData;
@@ -319,8 +326,8 @@ struct P_final_project_T_ {
   real_T Kappa;                        /* Variable: Kappa
                                         * Referenced by: '<S1>/Constant3'
                                         */
-  real_T M_inv[16];                    /* Variable: M_inv
-                                        * Referenced by: '<S1>/M_inv'
+  real_T M[16];                        /* Variable: M
+                                        * Referenced by: '<S1>/Gain11'
                                         */
   real_T g;                            /* Variable: g
                                         * Referenced by:
@@ -390,11 +397,8 @@ struct P_final_project_T_ {
   real_T Constant11_Value[4];          /* Expression: [0; 0; 0; 0]
                                         * Referenced by: '<S1>/Constant11'
                                         */
-  real_T Constant10_Value[4];          /* Expression: [0; 0; 0.004; 0]
+  real_T Constant10_Value[4];          /* Expression: [0; 0; 0.005; 0]
                                         * Referenced by: '<S1>/Constant10'
-                                        */
-  real_T X0_Value[2];                  /* Expression: pInitialization.X0
-                                        * Referenced by: '<S3>/X0'
                                         */
   real_T KalmanGainM_Value[4];         /* Expression: pInitialization.M
                                         * Referenced by: '<S67>/KalmanGainM'
@@ -402,17 +406,23 @@ struct P_final_project_T_ {
   real_T C_Value[4];                   /* Expression: pInitialization.C
                                         * Referenced by: '<S3>/C'
                                         */
-  real_T UnitDelay3_InitialCondition;  /* Expression: 0
-                                        * Referenced by: '<S1>/Unit Delay3'
-                                        */
-  real_T X0_Value_b[2];                /* Expression: pInitialization.X0
-                                        * Referenced by: '<S2>/X0'
-                                        */
   real_T KalmanGainM_Value_d[4];       /* Expression: pInitialization.M
                                         * Referenced by: '<S13>/KalmanGainM'
                                         */
   real_T C_Value_e[4];                 /* Expression: pInitialization.C
                                         * Referenced by: '<S2>/C'
+                                        */
+  real_T Constant16_Value[4];          /* Expression: [0; 0; 0; 0]
+                                        * Referenced by: '<S1>/Constant16'
+                                        */
+  real_T X0_Value[2];                  /* Expression: pInitialization.X0
+                                        * Referenced by: '<S3>/X0'
+                                        */
+  real_T UnitDelay3_InitialCondition;  /* Expression: 0
+                                        * Referenced by: '<S1>/Unit Delay3'
+                                        */
+  real_T X0_Value_b[2];                /* Expression: pInitialization.X0
+                                        * Referenced by: '<S2>/X0'
                                         */
   real_T UnitDelay1_InitialCondition;  /* Expression: 0
                                         * Referenced by: '<S1>/Unit Delay1'
@@ -570,6 +580,10 @@ struct P_final_project_T_ {
   uint8_T Constant1_Value;             /* Computed Parameter: Constant1_Value
                                         * Referenced by: '<S1>/Constant1'
                                         */
+  uint8_T ManualSwitch3_CurrentSetting;
+                             /* Computed Parameter: ManualSwitch3_CurrentSetting
+                              * Referenced by: '<S1>/Manual Switch3'
+                              */
   uint8_T ManualSwitch1_CurrentSetting;
                              /* Computed Parameter: ManualSwitch1_CurrentSetting
                               * Referenced by: '<S1>/Manual Switch1'

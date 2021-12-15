@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.22
+ * Model version              : 1.23
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Tue Dec 14 23:04:45 2021
+ * C source code generated on : Wed Dec 15 15:38:54 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -48,15 +48,15 @@ P_final_project_T final_project_P = {
    */
   1.0,
 
-  /* Variable: M_inv
-   * Referenced by: '<S1>/M_inv'
+  /* Variable: M
+   * Referenced by: '<S1>/Gain11'
    */
-  { 122864.40165502531, 122864.40165502531, 122864.40165502534,
-    122864.40165502534, 2.57982995601103E+6, -2.57982995601103E+6,
-    -2.5798299560110308E+6, 2.5798299560110304E+6, 2.5798299560110304E+6,
-    2.57982995601103E+6, -2.57982995601103E+6, -2.5798299560110308E+6,
-    -2.3660167656338412E+7, 2.3660167656338412E+7, -2.3660167656338412E+7,
-    2.3660167656338412E+7 },
+  { 491457.60662010126, 491457.60662010126, 491457.60662010126,
+    491457.60662010126, 1.0319319824044121E+7, -1.0319319824044121E+7,
+    -1.0319319824044121E+7, 1.0319319824044121E+7, 1.0319319824044121E+7,
+    1.0319319824044121E+7, -1.0319319824044121E+7, -1.0319319824044121E+7,
+    -9.4640670625353649E+7, 9.4640670625353649E+7, -9.4640670625353649E+7,
+    9.4640670625353649E+7 },
 
   /* Variable: g
    * Referenced by:
@@ -164,36 +164,21 @@ P_final_project_T final_project_P = {
    */
   { 0.0, 0.0, 0.0, 0.0 },
 
-  /* Expression: [0; 0; 0.004; 0]
+  /* Expression: [0; 0; 0.005; 0]
    * Referenced by: '<S1>/Constant10'
    */
-  { 0.0, 0.0, 0.004, 0.0 },
-
-  /* Expression: pInitialization.X0
-   * Referenced by: '<S3>/X0'
-   */
-  { 0.0, 0.0 },
+  { 0.0, 0.0, 0.005, 0.0 },
 
   /* Expression: pInitialization.M
    * Referenced by: '<S67>/KalmanGainM'
    */
-  { 0.046824129202381985, -0.03398451039357521, -0.000679690207871504,
-    0.0008507923532510371 },
+  { 0.04729237879974818, -0.038222662408278228, -0.009555665602069557,
+    0.015040618246882954 },
 
   /* Expression: pInitialization.C
    * Referenced by: '<S3>/C'
    */
   { 1.0, 0.0, 0.0, 1.0 },
-
-  /* Expression: 0
-   * Referenced by: '<S1>/Unit Delay3'
-   */
-  0.0,
-
-  /* Expression: pInitialization.X0
-   * Referenced by: '<S2>/X0'
-   */
-  { 0.0, 0.0 },
 
   /* Expression: pInitialization.M
    * Referenced by: '<S13>/KalmanGainM'
@@ -205,6 +190,26 @@ P_final_project_T final_project_P = {
    * Referenced by: '<S2>/C'
    */
   { 1.0, 0.0, 0.0, 1.0 },
+
+  /* Expression: [0; 0; 0; 0]
+   * Referenced by: '<S1>/Constant16'
+   */
+  { 0.0, 0.0, 0.0, 0.0 },
+
+  /* Expression: pInitialization.X0
+   * Referenced by: '<S3>/X0'
+   */
+  { 0.0, 0.0 },
+
+  /* Expression: 0
+   * Referenced by: '<S1>/Unit Delay3'
+   */
+  0.0,
+
+  /* Expression: pInitialization.X0
+   * Referenced by: '<S2>/X0'
+   */
+  { 0.0, 0.0 },
 
   /* Expression: 0
    * Referenced by: '<S1>/Unit Delay1'
@@ -300,8 +305,8 @@ P_final_project_T final_project_P = {
   /* Expression: pInitialization.L
    * Referenced by: '<S67>/KalmanGainL'
    */
-  { 0.047952703571515355, -0.033984510393575432, -0.000713107337696511,
-    0.000850792353251038 },
+  { 0.048618004638261214, -0.038222662408278235, -0.010172217148906938,
+    0.015040618246882954 },
 
   /* Expression: pInitialization.A
    * Referenced by: '<S4>/A'
@@ -367,8 +372,8 @@ P_final_project_T final_project_P = {
   /* Expression: pInitialization.Z
    * Referenced by: '<S67>/CovarianceZ'
    */
-  { 0.00093648258404763966, -0.000679690207871504, -0.00067969020787150413,
-    0.00085079235325103732 },
+  { 0.00047292378799748187, -0.00038222662408278241, -0.0003822266240827823,
+    0.00060162472987531821 },
 
   /* Expression: pInitialization.Z
    * Referenced by: '<S121>/CovarianceZ'
@@ -471,6 +476,11 @@ P_final_project_T final_project_P = {
    */
   1U,
 
+  /* Computed Parameter: ManualSwitch3_CurrentSetting
+   * Referenced by: '<S1>/Manual Switch3'
+   */
+  1U,
+
   /* Computed Parameter: ManualSwitch1_CurrentSetting
    * Referenced by: '<S1>/Manual Switch1'
    */
@@ -479,7 +489,7 @@ P_final_project_T final_project_P = {
   /* Computed Parameter: ManualSwitch2_CurrentSetting
    * Referenced by: '<S1>/Manual Switch2'
    */
-  1U,
+  0U,
 
   /* Computed Parameter: ManualSwitch_CurrentSetting
    * Referenced by: '<S1>/Manual Switch'
