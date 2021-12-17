@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.35
+ * Model version              : 1.37
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Thu Dec 16 18:18:48 2021
+ * C source code generated on : Thu Dec 16 20:28:33 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -61,10 +61,10 @@ typedef struct {
 
 #endif
 
-/* Parameters for system: '<S34>/MeasurementUpdate' */
+/* Parameters for system: '<S38>/MeasurementUpdate' */
 typedef struct P_MeasurementUpdate_final_pro_T_ P_MeasurementUpdate_final_pro_T;
 
-/* Parameters for system: '<S41>/Enabled Subsystem' */
+/* Parameters for system: '<S45>/Enabled Subsystem' */
 typedef struct P_EnabledSubsystem_final_proj_T_ P_EnabledSubsystem_final_proj_T;
 
 /* Parameters (default storage) */
