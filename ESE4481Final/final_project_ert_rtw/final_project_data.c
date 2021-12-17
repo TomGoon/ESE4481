@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.32
+ * Model version              : 1.35
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Wed Dec 15 17:06:44 2021
+ * C source code generated on : Thu Dec 16 18:18:48 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -154,10 +154,10 @@ P_final_project_T final_project_P = {
    */
   { 0.0, 0.0, 0.0, 0.0 },
 
-  /* Expression: [0.7; 0; 0; 0]
+  /* Expression: [m*g; 0; 0; 0]
    * Referenced by: '<S1>/Constant14'
    */
-  { 0.7, 0.0, 0.0, 0.0 },
+  { 0.6664000000000001, 0.0, 0.0, 0.0 },
 
   /* Expression: [0; 0; 0; 0]
    * Referenced by: '<S1>/Constant11'
@@ -263,6 +263,11 @@ P_final_project_T final_project_P = {
 
   /* Expression: 0
    * Referenced by: '<S1>/Constant7'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: '<S1>/Constant17'
    */
   0.0,
 
@@ -381,6 +386,21 @@ P_final_project_T final_project_P = {
   { 4.9248000838862833E-5, 0.00018261776558800647, 0.00018261776558800647,
     0.001366725882552944 },
 
+  /* Computed Parameter: Gain6_Gain
+   * Referenced by: '<S1>/Gain6'
+   */
+  0.000337561942F,
+
+  /* Computed Parameter: Gain10_Gain
+   * Referenced by: '<S1>/Gain10'
+   */
+  0.000379145669F,
+
+  /* Computed Parameter: Gain13_Gain
+   * Referenced by: '<S1>/Gain13'
+   */
+  0.00075F,
+
   /* Computed Parameter: Gain_Gain
    * Referenced by: '<S1>/Gain'
    */
@@ -401,11 +421,6 @@ P_final_project_T final_project_P = {
    */
   0.000254814717F,
 
-  /* Computed Parameter: Gain6_Gain
-   * Referenced by: '<S1>/Gain6'
-   */
-  0.000337561942F,
-
   /* Computed Parameter: Gain7_Gain
    * Referenced by: '<S1>/Gain7'
    */
@@ -415,16 +430,6 @@ P_final_project_T final_project_P = {
    * Referenced by: '<S1>/Gain8'
    */
   0.000286204944F,
-
-  /* Computed Parameter: Gain10_Gain
-   * Referenced by: '<S1>/Gain10'
-   */
-  0.000379145669F,
-
-  /* Computed Parameter: Gain13_Gain
-   * Referenced by: '<S1>/Gain13'
-   */
-  0.00075F,
 
   /* Computed Parameter: Saturation1_UpperSat
    * Referenced by: '<S1>/Saturation1'
@@ -484,12 +489,17 @@ P_final_project_T final_project_P = {
   /* Computed Parameter: ManualSwitch1_CurrentSetting
    * Referenced by: '<S1>/Manual Switch1'
    */
+  0U,
+
+  /* Computed Parameter: ManualSwitch4_CurrentSetting
+   * Referenced by: '<S1>/Manual Switch4'
+   */
   1U,
 
   /* Computed Parameter: ManualSwitch2_CurrentSetting
    * Referenced by: '<S1>/Manual Switch2'
    */
-  0U,
+  1U,
 
   /* Computed Parameter: ManualSwitch_CurrentSetting
    * Referenced by: '<S1>/Manual Switch'

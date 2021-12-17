@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.32
+ * Model version              : 1.35
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Wed Dec 15 17:06:44 2021
+ * C source code generated on : Thu Dec 16 18:18:48 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -131,11 +131,7 @@ typedef struct {
   real_T Product2[2];                  /* '<S175>/Product2' */
   real_T Product3[2];                  /* '<S173>/Product3' */
   real_T Ckxhatkk1;                    /* '<S173>/C[k]*xhat[k|k-1]' */
-  real_T rtb_Sum13_tmp;
-  real_T rtb_Sqrt1_idx_0;
-  real_T rtb_Sqrt1_idx_1;
-  real_T rtb_Sqrt1_idx_2;
-  real_T rtb_Sqrt1_idx_3;
+  real_T rtb_Sqrt1_tmp_c;
   real_T d;
   real32_T CastToSingle1[2];           /* '<S1>/Cast To Single1' */
   real32_T CastToSingle[2];            /* '<S1>/Cast To Single' */
@@ -151,11 +147,11 @@ typedef struct {
   real32_T Sum18;                      /* '<S1>/Sum18' */
   real32_T Sum2;                       /* '<S1>/Sum2' */
   real32_T Sum3;                       /* '<S1>/Sum3' */
+  real32_T pressure;
   real32_T opticalFlow_data[3];
   real32_T altitude;
-  real32_T pressure;
   real32_T bias;                       /* '<S1>/MATLAB Function7' */
-  real32_T P_D;                        /* '<S1>/MATLAB Function1' */
+  real32_T z_p;                        /* '<S1>/MATLAB Function1' */
   real32_T theta_measured;             /* '<S1>/MATLAB Function' */
   real32_T phi_measured;               /* '<S1>/MATLAB Function' */
   B_EnabledSubsystem_final_proj_T EnabledSubsystem_g;/* '<S95>/Enabled Subsystem' */
@@ -253,6 +249,14 @@ typedef struct {
 
   struct {
     void *LoggedData;
+  } Scope25_PWORK;                     /* '<S1>/Scope25' */
+
+  struct {
+    void *LoggedData;
+  } Scope12_PWORK;                     /* '<S1>/Scope12' */
+
+  struct {
+    void *LoggedData;
   } Scope1_PWORK;                      /* '<S1>/Scope1' */
 
   struct {
@@ -274,14 +278,6 @@ typedef struct {
   struct {
     void *LoggedData;
   } Scope13_PWORK;                     /* '<S1>/Scope13' */
-
-  struct {
-    void *LoggedData;
-  } Scope12_PWORK;                     /* '<S1>/Scope12' */
-
-  struct {
-    void *LoggedData;
-  } Scope25_PWORK;                     /* '<S1>/Scope25' */
 
   boolean_T icLoad;                    /* '<S3>/MemoryX' */
   boolean_T icLoad_k;                  /* '<S2>/MemoryX' */
@@ -396,7 +392,7 @@ struct P_final_project_T_ {
   real_T Constant9_Value[4];           /* Expression: [0; 0; 0; 0]
                                         * Referenced by: '<S1>/Constant9'
                                         */
-  real_T Constant14_Value[4];          /* Expression: [0.7; 0; 0; 0]
+  real_T Constant14_Value[4];          /* Expression: [m*g; 0; 0; 0]
                                         * Referenced by: '<S1>/Constant14'
                                         */
   real_T Constant11_Value[4];          /* Expression: [0; 0; 0; 0]
@@ -461,6 +457,9 @@ struct P_final_project_T_ {
                                         */
   real_T Constant7_Value;              /* Expression: 0
                                         * Referenced by: '<S1>/Constant7'
+                                        */
+  real_T Constant17_Value;             /* Expression: 0
+                                        * Referenced by: '<S1>/Constant17'
                                         */
   real_T X0_Value_o[2];                /* Expression: pInitialization.X0
                                         * Referenced by: '<S4>/X0'
@@ -528,6 +527,15 @@ struct P_final_project_T_ {
   real_T CovarianceZ_Value_n[4];       /* Expression: pInitialization.Z
                                         * Referenced by: '<S122>/CovarianceZ'
                                         */
+  real32_T Gain6_Gain;                 /* Computed Parameter: Gain6_Gain
+                                        * Referenced by: '<S1>/Gain6'
+                                        */
+  real32_T Gain10_Gain;                /* Computed Parameter: Gain10_Gain
+                                        * Referenced by: '<S1>/Gain10'
+                                        */
+  real32_T Gain13_Gain;                /* Computed Parameter: Gain13_Gain
+                                        * Referenced by: '<S1>/Gain13'
+                                        */
   real32_T Gain_Gain;                  /* Computed Parameter: Gain_Gain
                                         * Referenced by: '<S1>/Gain'
                                         */
@@ -540,20 +548,11 @@ struct P_final_project_T_ {
   real32_T Gain4_Gain;                 /* Computed Parameter: Gain4_Gain
                                         * Referenced by: '<S1>/Gain4'
                                         */
-  real32_T Gain6_Gain;                 /* Computed Parameter: Gain6_Gain
-                                        * Referenced by: '<S1>/Gain6'
-                                        */
   real32_T Gain7_Gain;                 /* Computed Parameter: Gain7_Gain
                                         * Referenced by: '<S1>/Gain7'
                                         */
   real32_T Gain8_Gain;                 /* Computed Parameter: Gain8_Gain
                                         * Referenced by: '<S1>/Gain8'
-                                        */
-  real32_T Gain10_Gain;                /* Computed Parameter: Gain10_Gain
-                                        * Referenced by: '<S1>/Gain10'
-                                        */
-  real32_T Gain13_Gain;                /* Computed Parameter: Gain13_Gain
-                                        * Referenced by: '<S1>/Gain13'
                                         */
   real32_T Saturation1_UpperSat;     /* Computed Parameter: Saturation1_UpperSat
                                       * Referenced by: '<S1>/Saturation1'
@@ -592,6 +591,10 @@ struct P_final_project_T_ {
   uint8_T ManualSwitch1_CurrentSetting;
                              /* Computed Parameter: ManualSwitch1_CurrentSetting
                               * Referenced by: '<S1>/Manual Switch1'
+                              */
+  uint8_T ManualSwitch4_CurrentSetting;
+                             /* Computed Parameter: ManualSwitch4_CurrentSetting
+                              * Referenced by: '<S1>/Manual Switch4'
                               */
   uint8_T ManualSwitch2_CurrentSetting;
                              /* Computed Parameter: ManualSwitch2_CurrentSetting
