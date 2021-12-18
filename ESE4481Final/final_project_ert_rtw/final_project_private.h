@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.38
+ * Model version              : 1.39
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Sat Dec 18 11:09:16 2021
+ * C source code generated on : Sat Dec 18 12:54:14 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -50,8 +50,8 @@ extern void final_MeasurementUpdate_Disable(B_MeasurementUpdate_final_pro_T
   *localB, DW_MeasurementUpdate_final_pr_T *localDW,
   P_MeasurementUpdate_final_pro_T *localP);
 extern void final_project_MeasurementUpdate(boolean_T rtu_Enable, const real_T
-  rtu_Lk[4], const real_T rtu_yk[2], const real_T rtu_Ck[4], const real_T
-  rtu_xhatkk1[2], const real_T rtu_Dk[2], real_T rtu_uk,
+  rtu_Lk[4], real_T rtu_yk, real_T rtu_yk_e, const real_T rtu_Ck[4], const
+  real_T rtu_xhatkk1[2], const real_T rtu_Dk[2], real_T rtu_uk,
   B_MeasurementUpdate_final_pro_T *localB, DW_MeasurementUpdate_final_pr_T
   *localDW, P_MeasurementUpdate_final_pro_T *localP);
 extern void final_pro_EnabledSubsystem_Init(B_EnabledSubsystem_final_proj_T
@@ -62,8 +62,8 @@ extern void final__EnabledSubsystem_Disable(B_EnabledSubsystem_final_proj_T
   *localB, DW_EnabledSubsystem_final_pro_T *localDW,
   P_EnabledSubsystem_final_proj_T *localP);
 extern void final_project_EnabledSubsystem(boolean_T rtu_Enable, const real_T
-  rtu_Mk[4], const real_T rtu_Ck[4], const real_T rtu_yk[2], const real_T
-  rtu_xhatkk1[2], B_EnabledSubsystem_final_proj_T *localB,
+  rtu_Mk[4], const real_T rtu_Ck[4], real_T rtu_yk, real_T rtu_yk_k, const
+  real_T rtu_xhatkk1[2], B_EnabledSubsystem_final_proj_T *localB,
   DW_EnabledSubsystem_final_pro_T *localDW, P_EnabledSubsystem_final_proj_T
   *localP);
 

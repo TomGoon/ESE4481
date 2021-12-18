@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.38
+ * Model version              : 1.39
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Sat Dec 18 11:09:16 2021
+ * C source code generated on : Sat Dec 18 12:54:14 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -107,41 +107,42 @@ typedef struct {
   real32_T rtb_TmpSignalConversionAtGain_m[9];
   real32_T c_c[9];
   real32_T c_k[9];
-  real_T Command[4];                   /* '<S1>/Sum14' */
-  real_T UnitDelay3[2];                /* '<S1>/Unit Delay3' */
   real_T MemoryX[2];                   /* '<S4>/MemoryX' */
-  real_T UnitDelay1[2];                /* '<S1>/Unit Delay1' */
   real_T MemoryX_j[2];                 /* '<S3>/MemoryX' */
   real_T Add[2];                       /* '<S143>/Add' */
   real_T Add_g[2];                     /* '<S89>/Add' */
   real_T Add_l[2];                     /* '<S35>/Add' */
+  real32_T opticalFlow_data[3];
   real32_T fv[3];
   real32_T c_cx[3];
+  real_T Sum10;                        /* '<S1>/Sum10' */
+  real_T CastToDouble5;                /* '<S1>/Cast To Double5' */
+  real_T MatrixMultiply1[2];           /* '<S1>/MatrixMultiply1' */
+  real_T CastToDouble1;                /* '<S1>/Cast To Double1' */
+  real_T Command[4];                   /* '<S1>/Sum14' */
+  real_T CastToDouble7;                /* '<S1>/Cast To Double7' */
   real_T Switch2;                      /* '<S1>/Switch2' */
   real_T aileron;                      /* '<S1>/Sum6' */
   real_T elevator;                     /* '<S1>/Sum9' */
   real_T rrudder;                      /* '<S1>/Sum11' */
+  real_T Sum16;                        /* '<S1>/Sum16' */
   real_T CastToDouble3;                /* '<S1>/Cast To Double3' */
   real_T CastToDouble2;                /* '<S1>/Cast To Double2' */
-  real_T Sum10;                        /* '<S1>/Sum10' */
-  real_T Sum16;                        /* '<S1>/Sum16' */
-  real_T CastToDouble1;                /* '<S1>/Cast To Double1' */
-  real_T CastToDouble5;                /* '<S1>/Cast To Double5' */
-  real_T CastToDouble7;                /* '<S1>/Cast To Double7' */
-  real_T MatrixMultiply1[2];           /* '<S1>/MatrixMultiply1' */
   real_T Product2[2];                  /* '<S176>/Product2' */
   real_T Product3[2];                  /* '<S174>/Product3' */
-  real_T Ckxhatkk1;                    /* '<S174>/C[k]*xhat[k|k-1]' */
-  real_T rtb_Product1_tmp;
+  real_T Clock;                        /* '<S11>/Clock' */
+  real_T rtb_Gain14_tmp;
   real_T rtb_TmpSignalConversionAtGain_b;
   real_T rtb_TmpSignalConversionAtGain_p;
   real_T rtb_TmpSignalConversionAtGain_c;
   real_T rtb_TmpSignalConversionAtGain_f;
-  real_T d;
-  real_T t;                            /* '<S1>/Sum21' */
   real32_T CastToSingle1[2];           /* '<S1>/Cast To Single1' */
   real32_T CastToSingle[2];            /* '<S1>/Cast To Single' */
   real32_T CastToSingle2[2];           /* '<S1>/Cast To Single2' */
+  real32_T Sum2;                       /* '<S1>/Sum2' */
+  real32_T Sum3;                       /* '<S1>/Sum3' */
+  real32_T Gain12;                     /* '<S1>/Gain12' */
+  real32_T pressure;
   real32_T Gain;                       /* '<S1>/Gain' */
   real32_T Gain1;                      /* '<S1>/Gain1' */
   real32_T Gain3;                      /* '<S1>/Gain3' */
@@ -151,11 +152,6 @@ typedef struct {
   real32_T Gain8;                      /* '<S1>/Gain8' */
   real32_T Sum17;                      /* '<S1>/Sum17' */
   real32_T Sum18;                      /* '<S1>/Sum18' */
-  real32_T Sum2;                       /* '<S1>/Sum2' */
-  real32_T Sum3;                       /* '<S1>/Sum3' */
-  real32_T pressure;
-  real32_T opticalFlow_data[3];
-  real32_T Gain12;                     /* '<S1>/Gain12' */
   real32_T bias;                       /* '<S1>/MATLAB Function7' */
   real32_T z_p;                        /* '<S1>/MATLAB Function1' */
   real32_T theta_measured;             /* '<S1>/MATLAB Function' */
@@ -170,15 +166,9 @@ typedef struct {
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
   real_T MemoryX_DSTATE[2];            /* '<S4>/MemoryX' */
-  real_T UnitDelay3_DSTATE[2];         /* '<S1>/Unit Delay3' */
   real_T MemoryX_DSTATE_n[2];          /* '<S3>/MemoryX' */
-  real_T UnitDelay1_DSTATE[2];         /* '<S1>/Unit Delay1' */
   real_T MemoryX_DSTATE_p[2];          /* '<S5>/MemoryX' */
-  real_T UnitDelay5_DSTATE;            /* '<S1>/Unit Delay5' */
   real_T Delay_DSTATE;                 /* '<S1>/Delay' */
-  real_T UnitDelay4_DSTATE;            /* '<S1>/Unit Delay4' */
-  real_T UnitDelay2_DSTATE;            /* '<S1>/Unit Delay2' */
-  real_T UnitDelay_DSTATE;             /* '<S1>/Unit Delay' */
   struct {
     void *LoggedData;
   } Scope23_PWORK;                     /* '<S1>/Scope23' */
@@ -186,6 +176,18 @@ typedef struct {
   struct {
     void *LoggedData;
   } Scope24_PWORK;                     /* '<S1>/Scope24' */
+
+  struct {
+    void *LoggedData;
+  } Scope1_PWORK;                      /* '<S1>/Scope1' */
+
+  struct {
+    void *LoggedData;
+  } Scope2_PWORK;                      /* '<S1>/Scope2' */
+
+  struct {
+    void *LoggedData;
+  } Scope3_PWORK;                      /* '<S1>/Scope3' */
 
   struct {
     void *LoggedData;
@@ -221,6 +223,18 @@ typedef struct {
 
   struct {
     void *LoggedData;
+  } Scope18_PWORK;                     /* '<S1>/Scope18' */
+
+  struct {
+    void *LoggedData;
+  } Scope20_PWORK;                     /* '<S1>/Scope20' */
+
+  struct {
+    void *LoggedData;
+  } ToWorkspace_PWORK;                 /* '<S1>/To Workspace' */
+
+  struct {
+    void *LoggedData;
   } Scope22_PWORK;                     /* '<S1>/Scope22' */
 
   struct {
@@ -233,31 +247,7 @@ typedef struct {
 
   struct {
     void *LoggedData;
-  } ToWorkspace_PWORK;                 /* '<S1>/To Workspace' */
-
-  struct {
-    void *LoggedData;
   } Scope7_PWORK;                      /* '<S1>/Scope7' */
-
-  struct {
-    void *LoggedData;
-  } Scope19_PWORK;                     /* '<S1>/Scope19' */
-
-  struct {
-    void *LoggedData;
-  } Scope21_PWORK;                     /* '<S1>/Scope21' */
-
-  struct {
-    void *LoggedData;
-  } Scope5_PWORK;                      /* '<S1>/Scope5' */
-
-  struct {
-    void *LoggedData;
-  } Scope4_PWORK;                      /* '<S1>/Scope4' */
-
-  struct {
-    void *LoggedData;
-  } Scope6_PWORK;                      /* '<S1>/Scope6' */
 
   struct {
     void *LoggedData;
@@ -269,27 +259,27 @@ typedef struct {
 
   struct {
     void *LoggedData;
-  } Scope1_PWORK;                      /* '<S1>/Scope1' */
-
-  struct {
-    void *LoggedData;
-  } Scope2_PWORK;                      /* '<S1>/Scope2' */
-
-  struct {
-    void *LoggedData;
-  } Scope3_PWORK;                      /* '<S1>/Scope3' */
-
-  struct {
-    void *LoggedData;
-  } Scope18_PWORK;                     /* '<S1>/Scope18' */
-
-  struct {
-    void *LoggedData;
-  } Scope20_PWORK;                     /* '<S1>/Scope20' */
-
-  struct {
-    void *LoggedData;
   } Scope13_PWORK;                     /* '<S1>/Scope13' */
+
+  struct {
+    void *LoggedData;
+  } Scope19_PWORK;                     /* '<S1>/Scope19' */
+
+  struct {
+    void *LoggedData;
+  } Scope21_PWORK;                     /* '<S1>/Scope21' */
+
+  struct {
+    void *LoggedData;
+  } Scope6_PWORK;                      /* '<S1>/Scope6' */
+
+  struct {
+    void *LoggedData;
+  } Scope5_PWORK;                      /* '<S1>/Scope5' */
+
+  struct {
+    void *LoggedData;
+  } Scope4_PWORK;                      /* '<S1>/Scope4' */
 
   boolean_T icLoad;                    /* '<S4>/MemoryX' */
   boolean_T icLoad_k;                  /* '<S3>/MemoryX' */
@@ -425,14 +415,8 @@ struct P_final_project_T_ {
   real_T X0_Value[2];                  /* Expression: pInitialization.X0
                                         * Referenced by: '<S4>/X0'
                                         */
-  real_T UnitDelay3_InitialCondition;  /* Expression: 0
-                                        * Referenced by: '<S1>/Unit Delay3'
-                                        */
   real_T X0_Value_b[2];                /* Expression: pInitialization.X0
                                         * Referenced by: '<S3>/X0'
-                                        */
-  real_T UnitDelay1_InitialCondition;  /* Expression: 0
-                                        * Referenced by: '<S1>/Unit Delay1'
                                         */
   real_T Step_Y0;                      /* Expression: 0
                                         * Referenced by: '<S12>/Step'
@@ -482,9 +466,6 @@ struct P_final_project_T_ {
   real_T X0_Value_o[2];                /* Expression: pInitialization.X0
                                         * Referenced by: '<S5>/X0'
                                         */
-  real_T UnitDelay5_InitialCondition;  /* Expression: 0
-                                        * Referenced by: '<S1>/Unit Delay5'
-                                        */
   real_T KalmanGainM_Value_do[2];      /* Expression: pInitialization.M
                                         * Referenced by: '<S123>/KalmanGainM'
                                         */
@@ -500,26 +481,17 @@ struct P_final_project_T_ {
   real_T D_Value;                      /* Expression: pInitialization.D
                                         * Referenced by: '<S5>/D'
                                         */
-  real_T UnitDelay4_InitialCondition;  /* Expression: 0
-                                        * Referenced by: '<S1>/Unit Delay4'
-                                        */
   real_T KalmanGainL_Value_c[2];       /* Expression: pInitialization.L
                                         * Referenced by: '<S123>/KalmanGainL'
                                         */
   real_T B_Value[2];                   /* Expression: pInitialization.B
                                         * Referenced by: '<S5>/B'
                                         */
-  real_T UnitDelay2_InitialCondition;  /* Expression: 0
-                                        * Referenced by: '<S1>/Unit Delay2'
-                                        */
   real_T D_Value_n[2];                 /* Expression: pInitialization.D
                                         * Referenced by: '<S4>/D'
                                         */
   real_T B_Value_g[2];                 /* Expression: pInitialization.B
                                         * Referenced by: '<S4>/B'
-                                        */
-  real_T UnitDelay_InitialCondition;   /* Expression: 0
-                                        * Referenced by: '<S1>/Unit Delay'
                                         */
   real_T D_Value_e[2];                 /* Expression: pInitialization.D
                                         * Referenced by: '<S3>/D'
@@ -535,6 +507,9 @@ struct P_final_project_T_ {
                                         */
   real_T CovarianceZ_Value_n[4];       /* Expression: pInitialization.Z
                                         * Referenced by: '<S123>/CovarianceZ'
+                                        */
+  real32_T Gain12_Gain;                /* Computed Parameter: Gain12_Gain
+                                        * Referenced by: '<S1>/Gain12'
                                         */
   real32_T Gain_Gain;                  /* Computed Parameter: Gain_Gain
                                         * Referenced by: '<S1>/Gain'
@@ -569,9 +544,6 @@ struct P_final_project_T_ {
   real32_T Saturation1_LowerSat;     /* Computed Parameter: Saturation1_LowerSat
                                       * Referenced by: '<S1>/Saturation1'
                                       */
-  real32_T Gain12_Gain;                /* Computed Parameter: Gain12_Gain
-                                        * Referenced by: '<S1>/Gain12'
-                                        */
   boolean_T Enable_Value;              /* Expression: true()
                                         * Referenced by: '<S4>/Enable'
                                         */

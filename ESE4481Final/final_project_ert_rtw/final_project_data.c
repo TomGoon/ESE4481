@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.38
+ * Model version              : 1.39
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Sat Dec 18 11:09:16 2021
+ * C source code generated on : Sat Dec 18 12:54:14 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -189,20 +189,10 @@ P_final_project_T final_project_P = {
    */
   { 0.0, 0.0 },
 
-  /* Expression: 0
-   * Referenced by: '<S1>/Unit Delay3'
-   */
-  0.0,
-
   /* Expression: pInitialization.X0
    * Referenced by: '<S3>/X0'
    */
   { 0.0, 0.0 },
-
-  /* Expression: 0
-   * Referenced by: '<S1>/Unit Delay1'
-   */
-  0.0,
 
   /* Expression: 0
    * Referenced by: '<S12>/Step'
@@ -286,11 +276,6 @@ P_final_project_T final_project_P = {
    */
   { 0.0, 0.0 },
 
-  /* Expression: 0
-   * Referenced by: '<S1>/Unit Delay5'
-   */
-  0.0,
-
   /* Expression: pInitialization.M
    * Referenced by: '<S123>/KalmanGainM'
    */
@@ -316,11 +301,6 @@ P_final_project_T final_project_P = {
    */
   0.0,
 
-  /* Expression: 0
-   * Referenced by: '<S1>/Unit Delay4'
-   */
-  0.0,
-
   /* Expression: pInitialization.L
    * Referenced by: '<S123>/KalmanGainL'
    */
@@ -331,11 +311,6 @@ P_final_project_T final_project_P = {
    */
   { 1.2220534450702375E-5, 0.005 },
 
-  /* Expression: 0
-   * Referenced by: '<S1>/Unit Delay2'
-   */
-  0.0,
-
   /* Expression: pInitialization.D
    * Referenced by: '<S4>/D'
    */
@@ -345,11 +320,6 @@ P_final_project_T final_project_P = {
    * Referenced by: '<S4>/B'
    */
   { -0.00011934162299238203, 0.005 },
-
-  /* Expression: 0
-   * Referenced by: '<S1>/Unit Delay'
-   */
-  0.0,
 
   /* Expression: pInitialization.D
    * Referenced by: '<S3>/D'
@@ -378,6 +348,11 @@ P_final_project_T final_project_P = {
    */
   { 0.00021891955746076639, 0.00049488641100019378, 0.00049488641100019378,
     0.0022498971783312077 },
+
+  /* Computed Parameter: Gain12_Gain
+   * Referenced by: '<S1>/Gain12'
+   */
+  -1.0F,
 
   /* Computed Parameter: Gain_Gain
    * Referenced by: '<S1>/Gain'
@@ -433,11 +408,6 @@ P_final_project_T final_project_P = {
    * Referenced by: '<S1>/Saturation1'
    */
   0.0F,
-
-  /* Computed Parameter: Gain12_Gain
-   * Referenced by: '<S1>/Gain12'
-   */
-  -1.0F,
 
   /* Expression: true()
    * Referenced by: '<S4>/Enable'
