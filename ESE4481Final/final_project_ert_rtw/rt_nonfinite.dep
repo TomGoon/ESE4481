@@ -1,17 +1,17 @@
-rt_nonfinite.o rt_nonfinite.o: \
- C:/Users/tomwh/Documents/ese4481/ESE4481/ESE4481Final/final_project_ert_rtw/rt_nonfinite.c \
- C:/Users/tomwh/Documents/ese4481/ESE4481/ESE4481Final/final_project_ert_rtw/rt_nonfinite.h \
- C:/Users/tomwh/Documents/ese4481/ESE4481/ESE4481Final/final_project_ert_rtw/rtwtypes.h \
- C:/PROGRA~1/MATLAB/R2021a/extern/include/tmwtypes.h \
- C:/Users/tomwh/Documents/ese4481/ESE4481/ESE4481Final/final_project_ert_rtw/rtGetNaN.h \
- C:/Users/tomwh/Documents/ese4481/ESE4481/ESE4481Final/final_project_ert_rtw/rtGetInf.h
+rt_nonfinite.o: \
+ /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/final_project_ert_rtw/rt_nonfinite.c \
+ /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/final_project_ert_rtw/rt_nonfinite.h \
+ /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/final_project_ert_rtw/rtwtypes.h \
+ /Applications/MATLAB_R2021a.app/extern/include/tmwtypes.h \
+ /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/final_project_ert_rtw/rtGetNaN.h \
+ /Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/final_project_ert_rtw/rtGetInf.h
 
-C:/Users/tomwh/Documents/ese4481/ESE4481/ESE4481Final/final_project_ert_rtw/rt_nonfinite.h:
+/Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/final_project_ert_rtw/rt_nonfinite.h:
 
-C:/Users/tomwh/Documents/ese4481/ESE4481/ESE4481Final/final_project_ert_rtw/rtwtypes.h:
+/Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/final_project_ert_rtw/rtwtypes.h:
 
-C:/PROGRA~1/MATLAB/R2021a/extern/include/tmwtypes.h:
+/Applications/MATLAB_R2021a.app/extern/include/tmwtypes.h:
 
-C:/Users/tomwh/Documents/ese4481/ESE4481/ESE4481Final/final_project_ert_rtw/rtGetNaN.h:
+/Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/final_project_ert_rtw/rtGetNaN.h:
 
-C:/Users/tomwh/Documents/ese4481/ESE4481/ESE4481Final/final_project_ert_rtw/rtGetInf.h:
+/Users/Liza/Desktop/ESE4481/ESE4481/ESE4481Final/final_project_ert_rtw/rtGetInf.h:

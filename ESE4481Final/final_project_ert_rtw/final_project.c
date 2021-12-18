@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.37
+ * Model version              : 1.38
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Thu Dec 16 20:28:33 2021
+ * C source code generated on : Sat Dec 18 11:09:16 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -42,14 +42,14 @@ RT_MODEL_final_project_T *const final_project_M = &final_project_M_;
 
 /*
  * System initialize for enable system:
- *    '<S38>/MeasurementUpdate'
- *    '<S92>/MeasurementUpdate'
+ *    '<S35>/MeasurementUpdate'
+ *    '<S89>/MeasurementUpdate'
  */
 void final_pr_MeasurementUpdate_Init(B_MeasurementUpdate_final_pro_T *localB,
   P_MeasurementUpdate_final_pro_T *localP)
 {
-  /* SystemInitialize for Product: '<S69>/Product3' incorporates:
-   *  Outport: '<S69>/L*(y[k]-yhat[k|k-1])'
+  /* SystemInitialize for Product: '<S66>/Product3' incorporates:
+   *  Outport: '<S66>/L*(y[k]-yhat[k|k-1])'
    */
   localB->Product3[0] = localP->Lykyhatkk1_Y0;
   localB->Product3[1] = localP->Lykyhatkk1_Y0;
@@ -57,15 +57,15 @@ void final_pr_MeasurementUpdate_Init(B_MeasurementUpdate_final_pro_T *localB,
 
 /*
  * Disable for enable system:
- *    '<S38>/MeasurementUpdate'
- *    '<S92>/MeasurementUpdate'
+ *    '<S35>/MeasurementUpdate'
+ *    '<S89>/MeasurementUpdate'
  */
 void final_MeasurementUpdate_Disable(B_MeasurementUpdate_final_pro_T *localB,
   DW_MeasurementUpdate_final_pr_T *localDW, P_MeasurementUpdate_final_pro_T
   *localP)
 {
-  /* Disable for Product: '<S69>/Product3' incorporates:
-   *  Outport: '<S69>/L*(y[k]-yhat[k|k-1])'
+  /* Disable for Product: '<S66>/Product3' incorporates:
+   *  Outport: '<S66>/L*(y[k]-yhat[k|k-1])'
    */
   localB->Product3[0] = localP->Lykyhatkk1_Y0;
   localB->Product3[1] = localP->Lykyhatkk1_Y0;
@@ -74,8 +74,8 @@ void final_MeasurementUpdate_Disable(B_MeasurementUpdate_final_pro_T *localB,
 
 /*
  * Start for enable system:
- *    '<S38>/MeasurementUpdate'
- *    '<S92>/MeasurementUpdate'
+ *    '<S35>/MeasurementUpdate'
+ *    '<S89>/MeasurementUpdate'
  */
 void final_p_MeasurementUpdate_Start(DW_MeasurementUpdate_final_pr_T *localDW)
 {
@@ -84,8 +84,8 @@ void final_p_MeasurementUpdate_Start(DW_MeasurementUpdate_final_pr_T *localDW)
 
 /*
  * Output and update for enable system:
- *    '<S38>/MeasurementUpdate'
- *    '<S92>/MeasurementUpdate'
+ *    '<S35>/MeasurementUpdate'
+ *    '<S89>/MeasurementUpdate'
  */
 void final_project_MeasurementUpdate(boolean_T rtu_Enable, const real_T rtu_Lk[4],
   const real_T rtu_yk[2], const real_T rtu_Ck[4], const real_T rtu_xhatkk1[2],
@@ -96,23 +96,23 @@ void final_project_MeasurementUpdate(boolean_T rtu_Enable, const real_T rtu_Lk[4
   real_T rtu_yk_idx_0;
   real_T rtu_yk_idx_1;
 
-  /* Outputs for Enabled SubSystem: '<S38>/MeasurementUpdate' incorporates:
-   *  EnablePort: '<S69>/Enable'
+  /* Outputs for Enabled SubSystem: '<S35>/MeasurementUpdate' incorporates:
+   *  EnablePort: '<S66>/Enable'
    */
   if (rtu_Enable) {
     localDW->MeasurementUpdate_MODE = true;
 
-    /* Sum: '<S69>/Sum' incorporates:
-     *  Product: '<S69>/C[k]*xhat[k|k-1]'
-     *  Product: '<S69>/D[k]*u[k]'
-     *  Sum: '<S69>/Add1'
+    /* Sum: '<S66>/Sum' incorporates:
+     *  Product: '<S66>/C[k]*xhat[k|k-1]'
+     *  Product: '<S66>/D[k]*u[k]'
+     *  Sum: '<S66>/Add1'
      */
     rtu_yk_idx_0 = rtu_yk[0] - ((rtu_Ck[0] * rtu_xhatkk1[0] + rtu_xhatkk1[1] *
       rtu_Ck[2]) + rtu_Dk[0] * rtu_uk);
     rtu_yk_idx_1 = rtu_yk[1] - ((rtu_xhatkk1[0] * rtu_Ck[1] + rtu_xhatkk1[1] *
       rtu_Ck[3]) + rtu_Dk[1] * rtu_uk);
 
-    /* Product: '<S69>/Product3' */
+    /* Product: '<S66>/Product3' */
     localB->Product3[0] = 0.0;
     localB->Product3[0] += rtu_Lk[0] * rtu_yk_idx_0;
     localB->Product3[0] += rtu_Lk[2] * rtu_yk_idx_1;
@@ -123,19 +123,19 @@ void final_project_MeasurementUpdate(boolean_T rtu_Enable, const real_T rtu_Lk[4
     final_MeasurementUpdate_Disable(localB, localDW, localP);
   }
 
-  /* End of Outputs for SubSystem: '<S38>/MeasurementUpdate' */
+  /* End of Outputs for SubSystem: '<S35>/MeasurementUpdate' */
 }
 
 /*
  * System initialize for enable system:
- *    '<S45>/Enabled Subsystem'
- *    '<S99>/Enabled Subsystem'
+ *    '<S42>/Enabled Subsystem'
+ *    '<S96>/Enabled Subsystem'
  */
 void final_pro_EnabledSubsystem_Init(B_EnabledSubsystem_final_proj_T *localB,
   P_EnabledSubsystem_final_proj_T *localP)
 {
-  /* SystemInitialize for Product: '<S71>/Product2' incorporates:
-   *  Outport: '<S71>/deltax'
+  /* SystemInitialize for Product: '<S68>/Product2' incorporates:
+   *  Outport: '<S68>/deltax'
    */
   localB->Product2[0] = localP->deltax_Y0;
   localB->Product2[1] = localP->deltax_Y0;
@@ -143,15 +143,15 @@ void final_pro_EnabledSubsystem_Init(B_EnabledSubsystem_final_proj_T *localB,
 
 /*
  * Disable for enable system:
- *    '<S45>/Enabled Subsystem'
- *    '<S99>/Enabled Subsystem'
+ *    '<S42>/Enabled Subsystem'
+ *    '<S96>/Enabled Subsystem'
  */
 void final__EnabledSubsystem_Disable(B_EnabledSubsystem_final_proj_T *localB,
   DW_EnabledSubsystem_final_pro_T *localDW, P_EnabledSubsystem_final_proj_T
   *localP)
 {
-  /* Disable for Product: '<S71>/Product2' incorporates:
-   *  Outport: '<S71>/deltax'
+  /* Disable for Product: '<S68>/Product2' incorporates:
+   *  Outport: '<S68>/deltax'
    */
   localB->Product2[0] = localP->deltax_Y0;
   localB->Product2[1] = localP->deltax_Y0;
@@ -160,8 +160,8 @@ void final__EnabledSubsystem_Disable(B_EnabledSubsystem_final_proj_T *localB,
 
 /*
  * Start for enable system:
- *    '<S45>/Enabled Subsystem'
- *    '<S99>/Enabled Subsystem'
+ *    '<S42>/Enabled Subsystem'
+ *    '<S96>/Enabled Subsystem'
  */
 void final_pr_EnabledSubsystem_Start(DW_EnabledSubsystem_final_pro_T *localDW)
 {
@@ -170,8 +170,8 @@ void final_pr_EnabledSubsystem_Start(DW_EnabledSubsystem_final_pro_T *localDW)
 
 /*
  * Output and update for enable system:
- *    '<S45>/Enabled Subsystem'
- *    '<S99>/Enabled Subsystem'
+ *    '<S42>/Enabled Subsystem'
+ *    '<S96>/Enabled Subsystem'
  */
 void final_project_EnabledSubsystem(boolean_T rtu_Enable, const real_T rtu_Mk[4],
   const real_T rtu_Ck[4], const real_T rtu_yk[2], const real_T rtu_xhatkk1[2],
@@ -181,21 +181,21 @@ void final_project_EnabledSubsystem(boolean_T rtu_Enable, const real_T rtu_Mk[4]
   real_T rtu_yk_idx_0;
   real_T rtu_yk_idx_1;
 
-  /* Outputs for Enabled SubSystem: '<S45>/Enabled Subsystem' incorporates:
-   *  EnablePort: '<S71>/Enable'
+  /* Outputs for Enabled SubSystem: '<S42>/Enabled Subsystem' incorporates:
+   *  EnablePort: '<S68>/Enable'
    */
   if (rtu_Enable) {
     localDW->EnabledSubsystem_MODE = true;
 
-    /* Sum: '<S71>/Add1' incorporates:
-     *  Product: '<S71>/Product'
+    /* Sum: '<S68>/Add1' incorporates:
+     *  Product: '<S68>/Product'
      */
     rtu_yk_idx_0 = rtu_yk[0] - (rtu_Ck[0] * rtu_xhatkk1[0] + rtu_xhatkk1[1] *
       rtu_Ck[2]);
     rtu_yk_idx_1 = rtu_yk[1] - (rtu_xhatkk1[0] * rtu_Ck[1] + rtu_xhatkk1[1] *
       rtu_Ck[3]);
 
-    /* Product: '<S71>/Product2' */
+    /* Product: '<S68>/Product2' */
     localB->Product2[0] = 0.0;
     localB->Product2[0] += rtu_Mk[0] * rtu_yk_idx_0;
     localB->Product2[0] += rtu_Mk[2] * rtu_yk_idx_1;
@@ -206,7 +206,7 @@ void final_project_EnabledSubsystem(boolean_T rtu_Enable, const real_T rtu_Mk[4]
     final__EnabledSubsystem_Disable(localB, localDW, localP);
   }
 
-  /* End of Outputs for SubSystem: '<S45>/Enabled Subsystem' */
+  /* End of Outputs for SubSystem: '<S42>/Enabled Subsystem' */
 }
 
 /* Model step function */
@@ -218,36 +218,36 @@ void final_project_step(void)
   int32_T c_tmp;
   int32_T i;
   int32_T i_0;
-  real32_T rtb_Switch_tmp;
-  real32_T rtb_Switch_tmp_0;
-  real32_T rtb_Switch_tmp_1;
-  real32_T rtb_Switch_tmp_2;
+  real32_T rtb_TmpSignalConversionAtGain_0;
+  real32_T rtb_TmpSignalConversionAtGain_1;
+  real32_T rtb_TmpSignalConversionAtGain_2;
+  real32_T rtb_TmpSignalConversionAtGain_3;
   static const int8_T b[9] = { 1, 0, 0, 0, 1, 0, 0, 0, 1 };
 
-  /* Delay: '<S5>/MemoryX' incorporates:
-   *  Constant: '<S5>/X0'
+  /* Delay: '<S4>/MemoryX' incorporates:
+   *  Constant: '<S4>/X0'
    */
   if (final_project_DW.icLoad) {
     final_project_DW.MemoryX_DSTATE[0] = final_project_P.X0_Value[0];
     final_project_DW.MemoryX_DSTATE[1] = final_project_P.X0_Value[1];
   }
 
-  /* Delay: '<S5>/MemoryX' */
+  /* Delay: '<S4>/MemoryX' */
   final_project_B.MemoryX[0] = final_project_DW.MemoryX_DSTATE[0];
 
   /* UnitDelay: '<S1>/Unit Delay3' */
   final_project_B.UnitDelay3[0] = final_project_DW.UnitDelay3_DSTATE[0];
 
-  /* Delay: '<S5>/MemoryX' */
+  /* Delay: '<S4>/MemoryX' */
   final_project_B.MemoryX[1] = final_project_DW.MemoryX_DSTATE[1];
 
   /* UnitDelay: '<S1>/Unit Delay3' */
   final_project_B.UnitDelay3[1] = final_project_DW.UnitDelay3_DSTATE[1];
 
-  /* Outputs for Enabled SubSystem: '<S99>/Enabled Subsystem' */
-  /* Constant: '<S5>/Enable' incorporates:
-   *  Constant: '<S5>/C'
-   *  Constant: '<S72>/KalmanGainM'
+  /* Outputs for Enabled SubSystem: '<S96>/Enabled Subsystem' */
+  /* Constant: '<S4>/Enable' incorporates:
+   *  Constant: '<S4>/C'
+   *  Constant: '<S69>/KalmanGainM'
    */
   final_project_EnabledSubsystem(final_project_P.Enable_Value,
     final_project_P.KalmanGainM_Value, final_project_P.C_Value,
@@ -255,40 +255,40 @@ void final_project_step(void)
     &final_project_B.EnabledSubsystem_g, &final_project_DW.EnabledSubsystem_g,
     &final_project_P.EnabledSubsystem_g);
 
-  /* End of Outputs for SubSystem: '<S99>/Enabled Subsystem' */
+  /* End of Outputs for SubSystem: '<S96>/Enabled Subsystem' */
 
   /* DataTypeConversion: '<S1>/Cast To Single1' incorporates:
-   *  Sum: '<S99>/Add'
+   *  Sum: '<S96>/Add'
    */
   final_project_B.CastToSingle1[0] = (real32_T)
     (final_project_B.EnabledSubsystem_g.Product2[0] + final_project_B.MemoryX[0]);
   final_project_B.CastToSingle1[1] = (real32_T)
     (final_project_B.EnabledSubsystem_g.Product2[1] + final_project_B.MemoryX[1]);
 
-  /* Delay: '<S4>/MemoryX' incorporates:
-   *  Constant: '<S4>/X0'
+  /* Delay: '<S3>/MemoryX' incorporates:
+   *  Constant: '<S3>/X0'
    */
   if (final_project_DW.icLoad_k) {
     final_project_DW.MemoryX_DSTATE_n[0] = final_project_P.X0_Value_b[0];
     final_project_DW.MemoryX_DSTATE_n[1] = final_project_P.X0_Value_b[1];
   }
 
-  /* Delay: '<S4>/MemoryX' */
+  /* Delay: '<S3>/MemoryX' */
   final_project_B.MemoryX_j[0] = final_project_DW.MemoryX_DSTATE_n[0];
 
   /* UnitDelay: '<S1>/Unit Delay1' */
   final_project_B.UnitDelay1[0] = final_project_DW.UnitDelay1_DSTATE[0];
 
-  /* Delay: '<S4>/MemoryX' */
+  /* Delay: '<S3>/MemoryX' */
   final_project_B.MemoryX_j[1] = final_project_DW.MemoryX_DSTATE_n[1];
 
   /* UnitDelay: '<S1>/Unit Delay1' */
   final_project_B.UnitDelay1[1] = final_project_DW.UnitDelay1_DSTATE[1];
 
-  /* Outputs for Enabled SubSystem: '<S45>/Enabled Subsystem' */
-  /* Constant: '<S4>/Enable' incorporates:
-   *  Constant: '<S18>/KalmanGainM'
-   *  Constant: '<S4>/C'
+  /* Outputs for Enabled SubSystem: '<S42>/Enabled Subsystem' */
+  /* Constant: '<S3>/Enable' incorporates:
+   *  Constant: '<S15>/KalmanGainM'
+   *  Constant: '<S3>/C'
    */
   final_project_EnabledSubsystem(final_project_P.Enable_Value_h,
     final_project_P.KalmanGainM_Value_d, final_project_P.C_Value_e,
@@ -296,10 +296,10 @@ void final_project_step(void)
     &final_project_B.EnabledSubsystem, &final_project_DW.EnabledSubsystem,
     &final_project_P.EnabledSubsystem);
 
-  /* End of Outputs for SubSystem: '<S45>/Enabled Subsystem' */
+  /* End of Outputs for SubSystem: '<S42>/Enabled Subsystem' */
 
   /* DataTypeConversion: '<S1>/Cast To Single' incorporates:
-   *  Sum: '<S45>/Add'
+   *  Sum: '<S42>/Add'
    */
   final_project_B.CastToSingle[0] = (real32_T)
     (final_project_B.EnabledSubsystem.Product2[0] + final_project_B.MemoryX_j[0]);
@@ -316,171 +316,189 @@ void final_project_step(void)
    */
   if (final_project_P.ManualSwitch3_CurrentSetting == 1) {
     /* MATLAB Function: '<S1>/MATLAB Function3' */
-    rtb_Switch_tmp = (real32_T)sin(final_project_B.CastToSingle[1]);
-    rtb_Switch_tmp_0 = (real32_T)cos(final_project_B.CastToSingle[1]);
-    rtb_Switch_tmp_1 = (real32_T)sin(final_project_B.CastToSingle1[1]);
-    rtb_Switch_tmp_2 = (real32_T)cos(final_project_B.CastToSingle1[1]);
+    rtb_TmpSignalConversionAtGain_0 = (real32_T)sin
+      (final_project_B.CastToSingle[1]);
+    rtb_TmpSignalConversionAtGain_1 = (real32_T)cos
+      (final_project_B.CastToSingle[1]);
+    rtb_TmpSignalConversionAtGain_2 = (real32_T)sin
+      (final_project_B.CastToSingle1[1]);
+    rtb_TmpSignalConversionAtGain_3 = (real32_T)cos
+      (final_project_B.CastToSingle1[1]);
 
-    /* Clock: '<S14>/Clock' incorporates:
-     *  Clock: '<S15>/Clock'
+    /* Clock: '<S12>/Clock' incorporates:
+     *  Clock: '<S13>/Clock'
      */
-    final_project_B.rtb_Sqrt1_idx_2 = final_project_M->Timing.t[0];
+    final_project_B.rtb_TmpSignalConversionAtGain_b = final_project_M->Timing.t
+      [0];
 
     /* MATLAB Function: '<S1>/MATLAB Function3' */
     final_project_B.c[1] = 0.0F;
-    final_project_B.c[4] = rtb_Switch_tmp_0;
-    final_project_B.c[7] = rtb_Switch_tmp;
+    final_project_B.c[4] = rtb_TmpSignalConversionAtGain_1;
+    final_project_B.c[7] = rtb_TmpSignalConversionAtGain_0;
     final_project_B.c[2] = 0.0F;
-    final_project_B.c[5] = -rtb_Switch_tmp;
-    final_project_B.c[8] = rtb_Switch_tmp_0;
-    final_project_B.rtb_Switch_tmp[0] = rtb_Switch_tmp_2;
-    final_project_B.rtb_Switch_tmp[3] = 0.0F;
-    final_project_B.rtb_Switch_tmp[6] = -rtb_Switch_tmp_1;
+    final_project_B.c[5] = -rtb_TmpSignalConversionAtGain_0;
+    final_project_B.c[8] = rtb_TmpSignalConversionAtGain_1;
+    final_project_B.rtb_TmpSignalConversionAtGain_m[0] =
+      rtb_TmpSignalConversionAtGain_3;
+    final_project_B.rtb_TmpSignalConversionAtGain_m[3] = 0.0F;
+    final_project_B.rtb_TmpSignalConversionAtGain_m[6] =
+      -rtb_TmpSignalConversionAtGain_2;
     final_project_B.c[0] = 1.0F;
-    final_project_B.rtb_Switch_tmp[1] = 0.0F;
+    final_project_B.rtb_TmpSignalConversionAtGain_m[1] = 0.0F;
     final_project_B.c[3] = 0.0F;
-    final_project_B.rtb_Switch_tmp[4] = 1.0F;
+    final_project_B.rtb_TmpSignalConversionAtGain_m[4] = 1.0F;
     final_project_B.c[6] = 0.0F;
-    final_project_B.rtb_Switch_tmp[7] = 0.0F;
-    final_project_B.rtb_Switch_tmp[2] = rtb_Switch_tmp_1;
-    final_project_B.rtb_Switch_tmp[5] = 0.0F;
-    final_project_B.rtb_Switch_tmp[8] = rtb_Switch_tmp_2;
+    final_project_B.rtb_TmpSignalConversionAtGain_m[7] = 0.0F;
+    final_project_B.rtb_TmpSignalConversionAtGain_m[2] =
+      rtb_TmpSignalConversionAtGain_2;
+    final_project_B.rtb_TmpSignalConversionAtGain_m[5] = 0.0F;
+    final_project_B.rtb_TmpSignalConversionAtGain_m[8] =
+      rtb_TmpSignalConversionAtGain_3;
     final_project_B.fv[0] = 0.0F;
     final_project_B.fv[1] = 0.0F;
 
-    /* Step: '<S14>/Step' incorporates:
-     *  Step: '<S15>/Step'
+    /* Step: '<S12>/Step' incorporates:
+     *  Step: '<S13>/Step'
      */
-    final_project_B.rtb_Sqrt1_idx_0 = final_project_M->Timing.t[0];
+    final_project_B.Ckxhatkk1 = final_project_M->Timing.t[0];
 
     /* MATLAB Function: '<S1>/MATLAB Function3' incorporates:
-     *  Clock: '<S14>/Clock'
-     *  Constant: '<S14>/Constant'
-     *  Constant: '<S14>/Constant1'
-     *  Constant: '<S15>/Constant'
-     *  Constant: '<S15>/Constant1'
-     *  Product: '<S14>/Product'
-     *  Product: '<S15>/Product'
-     *  Step: '<S14>/Step'
-     *  Step: '<S15>/Step'
-     *  Sum: '<S14>/Output'
-     *  Sum: '<S14>/Sum'
-     *  Sum: '<S15>/Output'
-     *  Sum: '<S15>/Sum'
+     *  Clock: '<S12>/Clock'
+     *  Constant: '<S12>/Constant'
+     *  Constant: '<S12>/Constant1'
+     *  Constant: '<S13>/Constant'
+     *  Constant: '<S13>/Constant1'
+     *  Product: '<S12>/Product'
+     *  Product: '<S13>/Product'
+     *  Step: '<S12>/Step'
+     *  Step: '<S13>/Step'
+     *  Sum: '<S12>/Output'
+     *  Sum: '<S12>/Sum'
+     *  Sum: '<S13>/Output'
+     *  Sum: '<S13>/Sum'
      *  Sum: '<S1>/Sum20'
      */
-    if (final_project_B.rtb_Sqrt1_idx_0 < final_project_P.Ramp3_start) {
-      final_project_B.Ckxhatkk1 = final_project_P.Step_Y0;
+    if (final_project_B.Ckxhatkk1 < final_project_P.Ramp3_start) {
+      final_project_B.d = final_project_P.Step_Y0;
     } else {
-      final_project_B.Ckxhatkk1 = final_project_P.Ramp3_slope;
+      final_project_B.d = final_project_P.Ramp3_slope;
     }
 
-    if (final_project_B.rtb_Sqrt1_idx_0 < final_project_P.Ramp4_start) {
-      final_project_B.rtb_Sqrt1_idx_0 = final_project_P.Step_Y0_j;
+    if (final_project_B.Ckxhatkk1 < final_project_P.Ramp4_start) {
+      final_project_B.Ckxhatkk1 = final_project_P.Step_Y0_j;
     } else {
-      final_project_B.rtb_Sqrt1_idx_0 = final_project_P.Ramp4_slope;
+      final_project_B.Ckxhatkk1 = final_project_P.Ramp4_slope;
     }
 
-    final_project_B.fv[2] = (real32_T)(((final_project_B.rtb_Sqrt1_idx_2 -
-      final_project_P.Ramp3_start) * final_project_B.Ckxhatkk1 +
-      final_project_P.Ramp3_InitialOutput) + ((final_project_B.rtb_Sqrt1_idx_2 -
-      final_project_P.Ramp4_start) * final_project_B.rtb_Sqrt1_idx_0 +
-      final_project_P.Ramp4_InitialOutput));
+    final_project_B.fv[2] = (real32_T)
+      (((final_project_B.rtb_TmpSignalConversionAtGain_b -
+         final_project_P.Ramp3_start) * final_project_B.d +
+        final_project_P.Ramp3_InitialOutput) +
+       ((final_project_B.rtb_TmpSignalConversionAtGain_b -
+         final_project_P.Ramp4_start) * final_project_B.Ckxhatkk1 +
+        final_project_P.Ramp4_InitialOutput));
     for (i_0 = 0; i_0 < 3; i_0++) {
       for (i = 0; i < 3; i++) {
         c_tmp = i_0 + 3 * i;
-        final_project_B.c_m[c_tmp] = 0.0F;
-        final_project_B.c_m[c_tmp] += final_project_B.rtb_Switch_tmp[3 * i] *
+        final_project_B.c_c[c_tmp] = 0.0F;
+        final_project_B.c_c[c_tmp] +=
+          final_project_B.rtb_TmpSignalConversionAtGain_m[3 * i] *
           final_project_B.c[i_0];
-        final_project_B.c_m[c_tmp] += final_project_B.rtb_Switch_tmp[3 * i + 1] *
+        final_project_B.c_c[c_tmp] +=
+          final_project_B.rtb_TmpSignalConversionAtGain_m[3 * i + 1] *
           final_project_B.c[i_0 + 3];
-        final_project_B.c_m[c_tmp] += final_project_B.rtb_Switch_tmp[3 * i + 2] *
+        final_project_B.c_c[c_tmp] +=
+          final_project_B.rtb_TmpSignalConversionAtGain_m[3 * i + 2] *
           final_project_B.c[i_0 + 6];
       }
 
-      final_project_B.c_k[i_0] = 0.0F;
+      final_project_B.c_cx[i_0] = 0.0F;
       for (i = 0; i < 3; i++) {
         c_tmp = i_0 + 3 * i;
-        final_project_B.c_c[c_tmp] = 0.0F;
-        final_project_B.c_c[c_tmp] += (real32_T)b[3 * i] *
-          final_project_B.c_m[i_0];
-        final_project_B.c_c[c_tmp] += (real32_T)b[3 * i + 1] *
-          final_project_B.c_m[i_0 + 3];
-        final_project_B.c_c[c_tmp] += (real32_T)b[3 * i + 2] *
-          final_project_B.c_m[i_0 + 6];
-        final_project_B.c_k[i_0] += final_project_B.c_c[c_tmp] *
+        final_project_B.c_k[c_tmp] = 0.0F;
+        final_project_B.c_k[c_tmp] += (real32_T)b[3 * i] *
+          final_project_B.c_c[i_0];
+        final_project_B.c_k[c_tmp] += (real32_T)b[3 * i + 1] *
+          final_project_B.c_c[i_0 + 3];
+        final_project_B.c_k[c_tmp] += (real32_T)b[3 * i + 2] *
+          final_project_B.c_c[i_0 + 6];
+        final_project_B.c_cx[i_0] += final_project_B.c_k[c_tmp] *
           final_project_B.fv[i];
       }
     }
 
-    final_project_B.Sum19[0] = final_project_B.c_k[2];
-    final_project_B.Sum19[1] = final_project_P.Constant12_Value;
-    final_project_B.Sum19[2] = final_project_P.Constant13_Value;
-    final_project_B.Sum19[3] = final_project_P.Constant15_Value;
+    final_project_B.rtb_TmpSignalConversionAtGain_b = final_project_B.c_cx[2];
+    final_project_B.rtb_TmpSignalConversionAtGain_p =
+      final_project_P.Constant12_Value;
+    final_project_B.rtb_TmpSignalConversionAtGain_c =
+      final_project_P.Constant13_Value;
+    final_project_B.rtb_TmpSignalConversionAtGain_f =
+      final_project_P.Constant15_Value;
   } else {
-    final_project_B.Sum19[0] = final_project_P.Constant16_Value[0];
-    final_project_B.Sum19[1] = final_project_P.Constant16_Value[1];
-    final_project_B.Sum19[2] = final_project_P.Constant16_Value[2];
-    final_project_B.Sum19[3] = final_project_P.Constant16_Value[3];
+    final_project_B.rtb_TmpSignalConversionAtGain_b =
+      final_project_P.Constant16_Value[0];
+    final_project_B.rtb_TmpSignalConversionAtGain_p =
+      final_project_P.Constant16_Value[1];
+    final_project_B.rtb_TmpSignalConversionAtGain_c =
+      final_project_P.Constant16_Value[2];
+    final_project_B.rtb_TmpSignalConversionAtGain_f =
+      final_project_P.Constant16_Value[3];
   }
 
   /* End of ManualSwitch: '<S1>/Manual Switch3' */
 
-  /* Clock: '<S12>/Clock' incorporates:
+  /* Clock: '<S10>/Clock' incorporates:
    *  Clock: '<S11>/Clock'
-   *  Clock: '<S13>/Clock'
-   *  Clock: '<S16>/Clock'
    */
-  final_project_B.rtb_Sqrt1_idx_2 = final_project_M->Timing.t[0];
+  final_project_B.rtb_Product1_tmp = final_project_M->Timing.t[0];
 
-  /* Step: '<S12>/Step' incorporates:
+  /* Step: '<S10>/Step' incorporates:
    *  Step: '<S11>/Step'
-   *  Step: '<S13>/Step'
-   *  Step: '<S16>/Step'
    */
-  final_project_B.rtb_Sqrt1_idx_0 = final_project_M->Timing.t[0];
-  if (final_project_B.rtb_Sqrt1_idx_0 < final_project_P.Ramp1_start) {
-    final_project_B.Ckxhatkk1 = final_project_P.Step_Y0_d;
+  final_project_B.Ckxhatkk1 = final_project_M->Timing.t[0];
+  if (final_project_B.Ckxhatkk1 < final_project_P.Ramp1_start) {
+    final_project_B.d = final_project_P.Step_Y0_d;
   } else {
-    final_project_B.Ckxhatkk1 = final_project_P.Ramp1_slope;
+    final_project_B.d = final_project_P.Ramp1_slope;
   }
 
-  /* End of Step: '<S12>/Step' */
+  /* End of Step: '<S10>/Step' */
 
-  /* Step: '<S13>/Step' */
-  if (final_project_B.rtb_Sqrt1_idx_0 < final_project_P.Ramp2_start) {
-    final_project_B.rtb_Sqrt1_idx_3 = final_project_P.Step_Y0_g;
+  /* Step: '<S11>/Step' */
+  if (final_project_B.Ckxhatkk1 < final_project_P.Ramp2_start) {
+    final_project_B.Ckxhatkk1 = final_project_P.Step_Y0_g;
   } else {
-    final_project_B.rtb_Sqrt1_idx_3 = final_project_P.Ramp2_slope;
+    final_project_B.Ckxhatkk1 = final_project_P.Ramp2_slope;
   }
 
   /* Sum: '<S1>/Sum14' incorporates:
-   *  Clock: '<S12>/Clock'
-   *  Constant: '<S12>/Constant'
-   *  Constant: '<S12>/Constant1'
-   *  Constant: '<S13>/Constant'
-   *  Constant: '<S13>/Constant1'
+   *  Clock: '<S10>/Clock'
+   *  Constant: '<S10>/Constant'
+   *  Constant: '<S10>/Constant1'
+   *  Constant: '<S11>/Constant'
+   *  Constant: '<S11>/Constant1'
    *  Constant: '<S1>/Constant4'
    *  Constant: '<S1>/Constant6'
    *  Constant: '<S1>/Constant7'
-   *  Product: '<S12>/Product'
-   *  Product: '<S13>/Product'
-   *  Sum: '<S12>/Output'
-   *  Sum: '<S12>/Sum'
-   *  Sum: '<S13>/Output'
-   *  Sum: '<S13>/Sum'
+   *  Product: '<S10>/Product'
+   *  Product: '<S11>/Product'
+   *  Sum: '<S10>/Output'
+   *  Sum: '<S10>/Sum'
+   *  Sum: '<S11>/Output'
+   *  Sum: '<S11>/Sum'
    *  Sum: '<S1>/Sum15'
    */
-  final_project_B.Command[0] = (((final_project_B.rtb_Sqrt1_idx_2 -
-    final_project_P.Ramp1_start) * final_project_B.Ckxhatkk1 +
-    final_project_P.Ramp1_InitialOutput) + ((final_project_B.rtb_Sqrt1_idx_2 -
-    final_project_P.Ramp2_start) * final_project_B.rtb_Sqrt1_idx_3 +
-    final_project_P.Ramp2_InitialOutput)) + final_project_B.Sum19[0];
-  final_project_B.Command[1] = final_project_B.Sum19[1] +
+  final_project_B.Command[0] = (((final_project_B.rtb_Product1_tmp -
+    final_project_P.Ramp1_start) * final_project_B.d +
+    final_project_P.Ramp1_InitialOutput) + ((final_project_B.rtb_Product1_tmp -
+    final_project_P.Ramp2_start) * final_project_B.Ckxhatkk1 +
+    final_project_P.Ramp2_InitialOutput)) +
+    final_project_B.rtb_TmpSignalConversionAtGain_b;
+  final_project_B.Command[1] = final_project_B.rtb_TmpSignalConversionAtGain_p +
     final_project_P.Constant4_Value;
-  final_project_B.Command[2] = final_project_B.Sum19[2] +
+  final_project_B.Command[2] = final_project_B.rtb_TmpSignalConversionAtGain_c +
     final_project_P.Constant6_Value;
-  final_project_B.Command[3] = final_project_B.Sum19[3] +
+  final_project_B.Command[3] = final_project_B.rtb_TmpSignalConversionAtGain_f +
     final_project_P.Constant7_Value;
 
   /* Scope: '<S1>/Scope23' */
@@ -509,51 +527,51 @@ void final_project_step(void)
     }
   }
 
-  /* Delay: '<S6>/MemoryX' incorporates:
-   *  Constant: '<S6>/X0'
+  /* Delay: '<S5>/MemoryX' incorporates:
+   *  Constant: '<S5>/X0'
    */
   if (final_project_DW.icLoad_i) {
     final_project_DW.MemoryX_DSTATE_p[0] = final_project_P.X0_Value_o[0];
     final_project_DW.MemoryX_DSTATE_p[1] = final_project_P.X0_Value_o[1];
   }
 
-  /* Outputs for Enabled SubSystem: '<S153>/Enabled Subsystem' incorporates:
-   *  EnablePort: '<S179>/Enable'
+  /* Outputs for Enabled SubSystem: '<S150>/Enabled Subsystem' incorporates:
+   *  EnablePort: '<S176>/Enable'
    */
-  /* Constant: '<S6>/Enable' */
+  /* Constant: '<S5>/Enable' */
   if (final_project_P.Enable_Value_o) {
     final_project_DW.EnabledSubsystem_MODE = true;
 
-    /* Sum: '<S179>/Add1' incorporates:
-     *  Constant: '<S6>/C'
-     *  Delay: '<S6>/MemoryX'
-     *  Product: '<S179>/Product'
+    /* Sum: '<S176>/Add1' incorporates:
+     *  Constant: '<S5>/C'
+     *  Delay: '<S5>/MemoryX'
+     *  Product: '<S176>/Product'
      */
     final_project_B.Ckxhatkk1 = final_project_DW.UnitDelay5_DSTATE -
       (final_project_P.C_Value_n[0] * final_project_DW.MemoryX_DSTATE_p[0] +
        final_project_P.C_Value_n[1] * final_project_DW.MemoryX_DSTATE_p[1]);
 
-    /* Product: '<S179>/Product2' incorporates:
-     *  Constant: '<S126>/KalmanGainM'
+    /* Product: '<S176>/Product2' incorporates:
+     *  Constant: '<S123>/KalmanGainM'
      */
     final_project_B.Product2[0] = final_project_P.KalmanGainM_Value_do[0] *
       final_project_B.Ckxhatkk1;
     final_project_B.Product2[1] = final_project_P.KalmanGainM_Value_do[1] *
       final_project_B.Ckxhatkk1;
   } else if (final_project_DW.EnabledSubsystem_MODE) {
-    /* Disable for Product: '<S179>/Product2' incorporates:
-     *  Outport: '<S179>/deltax'
+    /* Disable for Product: '<S176>/Product2' incorporates:
+     *  Outport: '<S176>/deltax'
      */
     final_project_B.Product2[0] = final_project_P.deltax_Y0;
     final_project_B.Product2[1] = final_project_P.deltax_Y0;
     final_project_DW.EnabledSubsystem_MODE = false;
   }
 
-  /* End of Outputs for SubSystem: '<S153>/Enabled Subsystem' */
+  /* End of Outputs for SubSystem: '<S150>/Enabled Subsystem' */
 
   /* DataTypeConversion: '<S1>/Cast To Single2' incorporates:
-   *  Delay: '<S6>/MemoryX'
-   *  Sum: '<S153>/Add'
+   *  Delay: '<S5>/MemoryX'
+   *  Sum: '<S150>/Add'
    */
   final_project_B.CastToSingle2[0] = (real32_T)(final_project_B.Product2[0] +
     final_project_DW.MemoryX_DSTATE_p[0]);
@@ -567,6 +585,40 @@ void final_project_step(void)
   /* Gain: '<S1>/Gain1' */
   final_project_B.Gain1 = final_project_P.Gain1_Gain *
     final_project_B.CastToSingle2[1];
+
+  /* Sum: '<S1>/Sum21' incorporates:
+   *  Constant: '<S1>/Constant18'
+   *  Delay: '<S1>/Delay'
+   */
+  final_project_B.t = final_project_P.Constant18_Value +
+    final_project_DW.Delay_DSTATE;
+
+  /* RelationalOperator: '<S2>/Compare' incorporates:
+   *  Constant: '<S2>/Constant'
+   */
+  final_project_B.Compare = (final_project_B.t >=
+    final_project_P.CompareToConstant2_const);
+
+  /* Switch: '<S1>/Switch2' */
+  if (final_project_B.Compare) {
+    /* Switch: '<S1>/Switch2' incorporates:
+     *  Constant: '<S1>/Constant5'
+     *  Gain: '<S1>/Gain2'
+     *  Sum: '<S1>/Sum'
+     *  Sum: '<S1>/Sum1'
+     *  Sum: '<S1>/Sum13'
+     */
+    final_project_B.Switch2 = ((final_project_P.F_throttle *
+      final_project_B.Command[0] - final_project_B.Gain) - final_project_B.Gain1)
+      + final_project_P.m * final_project_P.g;
+  } else {
+    /* Switch: '<S1>/Switch2' incorporates:
+     *  Constant: '<S1>/Constant21'
+     */
+    final_project_B.Switch2 = 1.1 * final_project_P.m * final_project_P.g;
+  }
+
+  /* End of Switch: '<S1>/Switch2' */
 
   /* Gain: '<S1>/Gain3' */
   final_project_B.Gain3 = final_project_P.Gain3_Gain *
@@ -582,6 +634,16 @@ void final_project_step(void)
   final_project_B.Sum12 = sensor_inport.HALSensors.HAL_gyro_SI.x -
     sensor_inport.SensorCalibration[3];
 
+  /* Sum: '<S1>/Sum6' incorporates:
+   *  Gain: '<S1>/Gain5'
+   *  Gain: '<S1>/Gain6'
+   *  Sum: '<S1>/Sum4'
+   *  Sum: '<S1>/Sum5'
+   */
+  final_project_B.aileron = ((final_project_P.F_aileron *
+    final_project_B.Command[1] - final_project_B.Gain3) - final_project_B.Gain4)
+    - final_project_P.Gain6_Gain * final_project_B.Sum12;
+
   /* Gain: '<S1>/Gain7' */
   final_project_B.Gain7 = final_project_P.Gain7_Gain *
     final_project_B.CastToSingle1[0];
@@ -596,214 +658,47 @@ void final_project_step(void)
   final_project_B.Sum17 = sensor_inport.HALSensors.HAL_gyro_SI.y -
     sensor_inport.SensorCalibration[4];
 
+  /* Sum: '<S1>/Sum9' incorporates:
+   *  Gain: '<S1>/Gain10'
+   *  Gain: '<S1>/Gain9'
+   *  Sum: '<S1>/Sum7'
+   *  Sum: '<S1>/Sum8'
+   */
+  final_project_B.elevator = ((final_project_P.F_elevator *
+    final_project_B.Command[2] - final_project_B.Gain7) - final_project_B.Gain8)
+    - final_project_P.Gain10_Gain * final_project_B.Sum17;
+
   /* Sum: '<S1>/Sum18' incorporates:
    *  Inport: '<Root>/Sensors'
    */
   final_project_B.Sum18 = sensor_inport.HALSensors.HAL_gyro_SI.z -
     sensor_inport.SensorCalibration[5];
 
-  /* Sum: '<S1>/Sum21' incorporates:
-   *  Constant: '<S1>/Constant18'
-   *  Delay: '<S1>/Delay'
-   */
-  final_project_B.t = final_project_P.Constant18_Value +
-    final_project_DW.Delay_DSTATE;
-
-  /* RelationalOperator: '<S2>/Compare' incorporates:
-   *  Constant: '<S2>/Constant'
-   */
-  final_project_B.Compare = (final_project_B.t >=
-    final_project_P.CompareToConstant_const);
-
-  /* Switch: '<S1>/Switch' incorporates:
-   *  Constant: '<S1>/Constant17'
-   *  Constant: '<S1>/Constant5'
-   *  Gain: '<S1>/Gain10'
+  /* Sum: '<S1>/Sum11' incorporates:
    *  Gain: '<S1>/Gain13'
    *  Gain: '<S1>/Gain14'
-   *  Gain: '<S1>/Gain2'
-   *  Gain: '<S1>/Gain5'
-   *  Gain: '<S1>/Gain6'
-   *  Gain: '<S1>/Gain9'
-   *  Sum: '<S1>/Sum'
-   *  Sum: '<S1>/Sum1'
-   *  Sum: '<S1>/Sum11'
-   *  Sum: '<S1>/Sum13'
-   *  Sum: '<S1>/Sum4'
-   *  Sum: '<S1>/Sum5'
-   *  Sum: '<S1>/Sum6'
-   *  Sum: '<S1>/Sum7'
-   *  Sum: '<S1>/Sum8'
-   *  Sum: '<S1>/Sum9'
    */
-  if (final_project_B.Compare) {
-    final_project_B.Sum19[0] = ((final_project_P.F_throttle *
-      final_project_B.Command[0] - final_project_B.Gain) - final_project_B.Gain1)
-      + final_project_P.m * final_project_P.g;
-    final_project_B.Sum19[1] = ((final_project_P.F_aileron *
-      final_project_B.Command[1] - final_project_B.Gain3) -
-      final_project_B.Gain4) - final_project_P.Gain6_Gain *
-      final_project_B.Sum12;
-    final_project_B.Sum19[2] = ((final_project_P.F_elevator *
-      final_project_B.Command[2] - final_project_B.Gain7) -
-      final_project_B.Gain8) - final_project_P.Gain10_Gain *
-      final_project_B.Sum17;
-    final_project_B.Sum19[3] = final_project_P.F_rudder *
-      final_project_B.Command[3] - final_project_P.Gain13_Gain *
-      final_project_B.Sum18;
-  } else {
-    final_project_B.Sum19[0] = final_project_P.Constant17_Value[0];
-    final_project_B.Sum19[1] = final_project_P.Constant17_Value[1];
-    final_project_B.Sum19[2] = final_project_P.Constant17_Value[2];
-    final_project_B.Sum19[3] = final_project_P.Constant17_Value[3];
-  }
-
-  /* End of Switch: '<S1>/Switch' */
-
-  /* RelationalOperator: '<S3>/Compare' incorporates:
-   *  Constant: '<S3>/Constant'
-   */
-  final_project_B.Compare_l = (final_project_B.t <
-    final_project_P.CompareToConstant1_const);
-
-  /* Switch: '<S1>/Switch1' incorporates:
-   *  Constant: '<S11>/Constant'
-   *  Constant: '<S11>/Constant1'
-   *  Constant: '<S16>/Constant'
-   *  Constant: '<S16>/Constant1'
-   *  Constant: '<S1>/Constant14'
-   *  Constant: '<S1>/Constant19'
-   *  Constant: '<S1>/Constant20'
-   *  Constant: '<S1>/Constant9'
-   *  Product: '<S11>/Product'
-   *  Product: '<S16>/Product'
-   *  Sum: '<S11>/Output'
-   *  Sum: '<S11>/Sum'
-   *  Sum: '<S16>/Output'
-   *  Sum: '<S16>/Sum'
-   *  Sum: '<S1>/Sum22'
-   */
-  if (final_project_B.Compare_l) {
-    /* Sum: '<S1>/Sum22' incorporates:
-     *  Step: '<S11>/Step'
-     *  Step: '<S16>/Step'
-     */
-    if (final_project_B.rtb_Sqrt1_idx_0 < final_project_P.Ramp_start) {
-      final_project_B.Ckxhatkk1 = final_project_P.Step_Y0_m;
-    } else {
-      final_project_B.Ckxhatkk1 = final_project_P.m * final_project_P.g / 5.0;
-    }
-
-    if (final_project_B.rtb_Sqrt1_idx_0 < final_project_P.Ramp5_start) {
-      final_project_B.rtb_Sqrt1_idx_0 = final_project_P.Step_Y0_k;
-    } else {
-      final_project_B.rtb_Sqrt1_idx_0 = -final_project_P.m * final_project_P.g /
-        5.0;
-    }
-
-    final_project_B.rtb_Sqrt1_idx_0 = ((final_project_B.rtb_Sqrt1_idx_2 -
-      final_project_P.Ramp_start) * final_project_B.Ckxhatkk1 +
-      final_project_P.Ramp_InitialOutput) + ((final_project_B.rtb_Sqrt1_idx_2 -
-      final_project_P.Ramp5_start) * final_project_B.rtb_Sqrt1_idx_0 +
-      final_project_P.Ramp5_InitialOutput);
-    final_project_B.Ckxhatkk1 = final_project_P.Constant9_Value;
-    final_project_B.rtb_Sqrt1_idx_2 = final_project_P.Constant19_Value;
-    final_project_B.rtb_Sqrt1_idx_3 = final_project_P.Constant20_Value;
-  } else {
-    final_project_B.rtb_Sqrt1_idx_0 = final_project_P.Constant14_Value[0];
-    final_project_B.Ckxhatkk1 = final_project_P.Constant14_Value[1];
-    final_project_B.rtb_Sqrt1_idx_2 = final_project_P.Constant14_Value[2];
-    final_project_B.rtb_Sqrt1_idx_3 = final_project_P.Constant14_Value[3];
-  }
-
-  /* End of Switch: '<S1>/Switch1' */
-
-  /* ManualSwitch: '<S1>/Manual Switch2' */
-  if (final_project_P.ManualSwitch2_CurrentSetting == 1) {
-    /* ManualSwitch: '<S1>/Manual Switch2' incorporates:
-     *  Constant: '<S1>/Constant11'
-     */
-    final_project_B.ManualSwitch2[0] = final_project_P.Constant11_Value[0];
-  } else {
-    /* ManualSwitch: '<S1>/Manual Switch2' incorporates:
-     *  Constant: '<S1>/Constant10'
-     */
-    final_project_B.ManualSwitch2[0] = final_project_P.Constant10_Value[0];
-  }
-
-  /* Sum: '<S1>/Sum19' */
-  final_project_B.Sum19[0] = (final_project_B.Sum19[0] +
-    final_project_B.rtb_Sqrt1_idx_0) + final_project_B.ManualSwitch2[0];
-
-  /* ManualSwitch: '<S1>/Manual Switch2' */
-  if (final_project_P.ManualSwitch2_CurrentSetting == 1) {
-    /* ManualSwitch: '<S1>/Manual Switch2' incorporates:
-     *  Constant: '<S1>/Constant11'
-     */
-    final_project_B.ManualSwitch2[1] = final_project_P.Constant11_Value[1];
-  } else {
-    /* ManualSwitch: '<S1>/Manual Switch2' incorporates:
-     *  Constant: '<S1>/Constant10'
-     */
-    final_project_B.ManualSwitch2[1] = final_project_P.Constant10_Value[1];
-  }
-
-  /* Sum: '<S1>/Sum19' */
-  final_project_B.Sum19[1] = (final_project_B.Sum19[1] +
-    final_project_B.Ckxhatkk1) + final_project_B.ManualSwitch2[1];
-
-  /* ManualSwitch: '<S1>/Manual Switch2' */
-  if (final_project_P.ManualSwitch2_CurrentSetting == 1) {
-    /* ManualSwitch: '<S1>/Manual Switch2' incorporates:
-     *  Constant: '<S1>/Constant11'
-     */
-    final_project_B.ManualSwitch2[2] = final_project_P.Constant11_Value[2];
-  } else {
-    /* ManualSwitch: '<S1>/Manual Switch2' incorporates:
-     *  Constant: '<S1>/Constant10'
-     */
-    final_project_B.ManualSwitch2[2] = final_project_P.Constant10_Value[2];
-  }
-
-  /* Sum: '<S1>/Sum19' */
-  final_project_B.Sum19[2] = (final_project_B.Sum19[2] +
-    final_project_B.rtb_Sqrt1_idx_2) + final_project_B.ManualSwitch2[2];
-
-  /* ManualSwitch: '<S1>/Manual Switch2' */
-  if (final_project_P.ManualSwitch2_CurrentSetting == 1) {
-    /* ManualSwitch: '<S1>/Manual Switch2' incorporates:
-     *  Constant: '<S1>/Constant11'
-     */
-    final_project_B.ManualSwitch2[3] = final_project_P.Constant11_Value[3];
-  } else {
-    /* ManualSwitch: '<S1>/Manual Switch2' incorporates:
-     *  Constant: '<S1>/Constant10'
-     */
-    final_project_B.ManualSwitch2[3] = final_project_P.Constant10_Value[3];
-  }
-
-  /* Sum: '<S1>/Sum19' */
-  final_project_B.Sum19[3] = (final_project_B.Sum19[3] +
-    final_project_B.rtb_Sqrt1_idx_3) + final_project_B.ManualSwitch2[3];
+  final_project_B.rrudder = final_project_P.F_rudder * final_project_B.Command[3]
+    - final_project_P.Gain13_Gain * final_project_B.Sum18;
   for (i_0 = 0; i_0 < 4; i_0++) {
     /* Sqrt: '<S1>/Sqrt1' incorporates:
      *  Gain: '<S1>/Gain11'
+     *  SignalConversion generated from: '<S1>/Gain11'
      */
-    final_project_B.rtb_Sqrt1_idx_0 = sqrt(final_project_P.M[i_0 + 12] * 0.25 *
-      final_project_B.Sum19[3] + (final_project_P.M[i_0 + 8] * 0.25 *
-      final_project_B.Sum19[2] + (final_project_P.M[i_0 + 4] * 0.25 *
-      final_project_B.Sum19[1] + 0.25 * final_project_P.M[i_0] *
-      final_project_B.Sum19[0])));
+    final_project_B.Ckxhatkk1 = sqrt(final_project_P.M[i_0 + 12] * 0.25 *
+      final_project_B.rrudder + (final_project_P.M[i_0 + 8] * 0.25 *
+      final_project_B.elevator + (final_project_P.M[i_0 + 4] * 0.25 *
+      final_project_B.aileron + 0.25 * final_project_P.M[i_0] *
+      final_project_B.Switch2)));
 
     /* Saturate: '<S1>/Saturation1' */
-    if (final_project_B.rtb_Sqrt1_idx_0 > final_project_P.Saturation1_UpperSat)
-    {
+    if (final_project_B.Ckxhatkk1 > final_project_P.Saturation1_UpperSat) {
       /* Saturate: '<S1>/Saturation1' incorporates:
        *  Sqrt: '<S1>/Sqrt1'
        */
       motors_outport[i_0] = final_project_P.Saturation1_UpperSat;
-    } else if (final_project_B.rtb_Sqrt1_idx_0 <
-               final_project_P.Saturation1_LowerSat) {
+    } else if (final_project_B.Ckxhatkk1 < final_project_P.Saturation1_LowerSat)
+    {
       /* Saturate: '<S1>/Saturation1' incorporates:
        *  Sqrt: '<S1>/Sqrt1'
        */
@@ -812,7 +707,7 @@ void final_project_step(void)
       /* Saturate: '<S1>/Saturation1' incorporates:
        *  Sqrt: '<S1>/Sqrt1'
        */
-      motors_outport[i_0] = (real32_T)final_project_B.rtb_Sqrt1_idx_0;
+      motors_outport[i_0] = (real32_T)final_project_B.Ckxhatkk1;
     }
 
     /* End of Saturate: '<S1>/Saturation1' */
@@ -848,153 +743,6 @@ void final_project_step(void)
       rt_UpdateLogVar((LogVar *)var, up0, 0);
     }
   }
-
-  /* Scope: '<S1>/Scope22' */
-  {
-    StructLogVar *svar = (StructLogVar *)
-      final_project_DW.Scope22_PWORK.LoggedData;
-    LogVar *var = svar->signals.values;
-
-    /* time */
-    {
-      double locTime = (((final_project_M->Timing.clockTick1+
-                          final_project_M->Timing.clockTickH1* 4294967296.0)) *
-                        0.005);
-      ;
-      rt_UpdateLogVar((LogVar *)svar->time, &locTime, 0);
-    }
-
-    /* signals */
-    {
-      real_T up0[4];
-      up0[0] = final_project_B.Sum19[0];
-      up0[1] = final_project_B.Sum19[1];
-      up0[2] = final_project_B.Sum19[2];
-      up0[3] = final_project_B.Sum19[3];
-      rt_UpdateLogVar((LogVar *)var, up0, 0);
-    }
-  }
-
-  /* Outputs for Enabled SubSystem: '<S146>/MeasurementUpdate' incorporates:
-   *  EnablePort: '<S177>/Enable'
-   */
-  /* Constant: '<S6>/Enable' */
-  if (final_project_P.Enable_Value_o) {
-    final_project_DW.MeasurementUpdate_MODE = true;
-
-    /* Sum: '<S177>/Sum' incorporates:
-     *  Constant: '<S6>/C'
-     *  Constant: '<S6>/D'
-     *  Delay: '<S6>/MemoryX'
-     *  Product: '<S177>/C[k]*xhat[k|k-1]'
-     *  Product: '<S177>/D[k]*u[k]'
-     *  Sum: '<S177>/Add1'
-     */
-    final_project_B.rtb_Sqrt1_idx_0 = final_project_DW.UnitDelay5_DSTATE -
-      ((final_project_P.C_Value_n[0] * final_project_DW.MemoryX_DSTATE_p[0] +
-        final_project_P.C_Value_n[1] * final_project_DW.MemoryX_DSTATE_p[1]) +
-       final_project_P.D_Value * final_project_DW.UnitDelay4_DSTATE);
-
-    /* Product: '<S177>/Product3' incorporates:
-     *  Constant: '<S126>/KalmanGainL'
-     */
-    final_project_B.Product3[0] = final_project_P.KalmanGainL_Value_c[0] *
-      final_project_B.rtb_Sqrt1_idx_0;
-    final_project_B.Product3[1] = final_project_P.KalmanGainL_Value_c[1] *
-      final_project_B.rtb_Sqrt1_idx_0;
-  } else if (final_project_DW.MeasurementUpdate_MODE) {
-    /* Disable for Product: '<S177>/Product3' incorporates:
-     *  Outport: '<S177>/L*(y[k]-yhat[k|k-1])'
-     */
-    final_project_B.Product3[0] = final_project_P.Lykyhatkk1_Y0;
-    final_project_B.Product3[1] = final_project_P.Lykyhatkk1_Y0;
-    final_project_DW.MeasurementUpdate_MODE = false;
-  }
-
-  /* End of Outputs for SubSystem: '<S146>/MeasurementUpdate' */
-
-  /* Sum: '<S146>/Add' incorporates:
-   *  Constant: '<S6>/A'
-   *  Constant: '<S6>/B'
-   *  Delay: '<S6>/MemoryX'
-   *  Product: '<S146>/A[k]*xhat[k|k-1]'
-   *  Product: '<S146>/B[k]*u[k]'
-   *  Product: '<S177>/Product3'
-   */
-  final_project_B.Add[0] = ((final_project_P.A_Value_i[0] *
-    final_project_DW.MemoryX_DSTATE_p[0] + final_project_DW.MemoryX_DSTATE_p[1] *
-    final_project_P.A_Value_i[2]) + final_project_P.B_Value[0] *
-    final_project_DW.UnitDelay4_DSTATE) + final_project_B.Product3[0];
-  final_project_B.Add[1] = ((final_project_DW.MemoryX_DSTATE_p[0] *
-    final_project_P.A_Value_i[1] + final_project_DW.MemoryX_DSTATE_p[1] *
-    final_project_P.A_Value_i[3]) + final_project_P.B_Value[1] *
-    final_project_DW.UnitDelay4_DSTATE) + final_project_B.Product3[1];
-
-  /* UnitDelay: '<S1>/Unit Delay2' */
-  rtb_UnitDelay2 = final_project_DW.UnitDelay2_DSTATE;
-
-  /* Outputs for Enabled SubSystem: '<S92>/MeasurementUpdate' */
-  /* Constant: '<S5>/Enable' incorporates:
-   *  Constant: '<S5>/C'
-   *  Constant: '<S5>/D'
-   *  Constant: '<S72>/KalmanGainL'
-   */
-  final_project_MeasurementUpdate(final_project_P.Enable_Value,
-    final_project_P.KalmanGainL_Value_b, final_project_B.UnitDelay3,
-    final_project_P.C_Value, final_project_B.MemoryX, final_project_P.D_Value_n,
-    rtb_UnitDelay2, &final_project_B.MeasurementUpdate_f,
-    &final_project_DW.MeasurementUpdate_f, &final_project_P.MeasurementUpdate_f);
-
-  /* End of Outputs for SubSystem: '<S92>/MeasurementUpdate' */
-
-  /* Sum: '<S92>/Add' incorporates:
-   *  Constant: '<S5>/A'
-   *  Constant: '<S5>/B'
-   *  Product: '<S123>/Product3'
-   *  Product: '<S92>/A[k]*xhat[k|k-1]'
-   *  Product: '<S92>/B[k]*u[k]'
-   */
-  final_project_B.Add_g[0] = ((final_project_P.A_Value_d[0] *
-    final_project_B.MemoryX[0] + final_project_B.MemoryX[1] *
-    final_project_P.A_Value_d[2]) + final_project_P.B_Value_g[0] *
-    rtb_UnitDelay2) + final_project_B.MeasurementUpdate_f.Product3[0];
-  final_project_B.Add_g[1] = ((final_project_B.MemoryX[0] *
-    final_project_P.A_Value_d[1] + final_project_B.MemoryX[1] *
-    final_project_P.A_Value_d[3]) + final_project_P.B_Value_g[1] *
-    rtb_UnitDelay2) + final_project_B.MeasurementUpdate_f.Product3[1];
-
-  /* UnitDelay: '<S1>/Unit Delay' */
-  rtb_UnitDelay = final_project_DW.UnitDelay_DSTATE;
-
-  /* Outputs for Enabled SubSystem: '<S38>/MeasurementUpdate' */
-  /* Constant: '<S4>/Enable' incorporates:
-   *  Constant: '<S18>/KalmanGainL'
-   *  Constant: '<S4>/C'
-   *  Constant: '<S4>/D'
-   */
-  final_project_MeasurementUpdate(final_project_P.Enable_Value_h,
-    final_project_P.KalmanGainL_Value, final_project_B.UnitDelay1,
-    final_project_P.C_Value_e, final_project_B.MemoryX_j,
-    final_project_P.D_Value_e, rtb_UnitDelay, &final_project_B.MeasurementUpdate,
-    &final_project_DW.MeasurementUpdate, &final_project_P.MeasurementUpdate);
-
-  /* End of Outputs for SubSystem: '<S38>/MeasurementUpdate' */
-
-  /* Sum: '<S38>/Add' incorporates:
-   *  Constant: '<S4>/A'
-   *  Constant: '<S4>/B'
-   *  Product: '<S38>/A[k]*xhat[k|k-1]'
-   *  Product: '<S38>/B[k]*u[k]'
-   *  Product: '<S69>/Product3'
-   */
-  final_project_B.Add_l[0] = ((final_project_P.A_Value[0] *
-    final_project_B.MemoryX_j[0] + final_project_B.MemoryX_j[1] *
-    final_project_P.A_Value[2]) + final_project_P.B_Value_m[0] * rtb_UnitDelay)
-    + final_project_B.MeasurementUpdate.Product3[0];
-  final_project_B.Add_l[1] = ((final_project_B.MemoryX_j[0] *
-    final_project_P.A_Value[1] + final_project_B.MemoryX_j[1] *
-    final_project_P.A_Value[3]) + final_project_P.B_Value_m[1] * rtb_UnitDelay)
-    + final_project_B.MeasurementUpdate.Product3[1];
 
   /* Scope: '<S1>/Scope15' */
   {
@@ -1042,6 +790,127 @@ void final_project_step(void)
       rt_UpdateLogVar((LogVar *)var, up0, 0);
     }
   }
+
+  /* Outputs for Enabled SubSystem: '<S143>/MeasurementUpdate' incorporates:
+   *  EnablePort: '<S174>/Enable'
+   */
+  /* Constant: '<S5>/Enable' */
+  if (final_project_P.Enable_Value_o) {
+    final_project_DW.MeasurementUpdate_MODE = true;
+
+    /* Sum: '<S174>/Sum' incorporates:
+     *  Constant: '<S5>/C'
+     *  Constant: '<S5>/D'
+     *  Delay: '<S5>/MemoryX'
+     *  Product: '<S174>/C[k]*xhat[k|k-1]'
+     *  Product: '<S174>/D[k]*u[k]'
+     *  Sum: '<S174>/Add1'
+     */
+    final_project_B.Ckxhatkk1 = final_project_DW.UnitDelay5_DSTATE -
+      ((final_project_P.C_Value_n[0] * final_project_DW.MemoryX_DSTATE_p[0] +
+        final_project_P.C_Value_n[1] * final_project_DW.MemoryX_DSTATE_p[1]) +
+       final_project_P.D_Value * final_project_DW.UnitDelay4_DSTATE);
+
+    /* Product: '<S174>/Product3' incorporates:
+     *  Constant: '<S123>/KalmanGainL'
+     */
+    final_project_B.Product3[0] = final_project_P.KalmanGainL_Value_c[0] *
+      final_project_B.Ckxhatkk1;
+    final_project_B.Product3[1] = final_project_P.KalmanGainL_Value_c[1] *
+      final_project_B.Ckxhatkk1;
+  } else if (final_project_DW.MeasurementUpdate_MODE) {
+    /* Disable for Product: '<S174>/Product3' incorporates:
+     *  Outport: '<S174>/L*(y[k]-yhat[k|k-1])'
+     */
+    final_project_B.Product3[0] = final_project_P.Lykyhatkk1_Y0;
+    final_project_B.Product3[1] = final_project_P.Lykyhatkk1_Y0;
+    final_project_DW.MeasurementUpdate_MODE = false;
+  }
+
+  /* End of Outputs for SubSystem: '<S143>/MeasurementUpdate' */
+
+  /* Sum: '<S143>/Add' incorporates:
+   *  Constant: '<S5>/A'
+   *  Constant: '<S5>/B'
+   *  Delay: '<S5>/MemoryX'
+   *  Product: '<S143>/A[k]*xhat[k|k-1]'
+   *  Product: '<S143>/B[k]*u[k]'
+   *  Product: '<S174>/Product3'
+   */
+  final_project_B.Add[0] = ((final_project_P.A_Value_i[0] *
+    final_project_DW.MemoryX_DSTATE_p[0] + final_project_DW.MemoryX_DSTATE_p[1] *
+    final_project_P.A_Value_i[2]) + final_project_P.B_Value[0] *
+    final_project_DW.UnitDelay4_DSTATE) + final_project_B.Product3[0];
+  final_project_B.Add[1] = ((final_project_DW.MemoryX_DSTATE_p[0] *
+    final_project_P.A_Value_i[1] + final_project_DW.MemoryX_DSTATE_p[1] *
+    final_project_P.A_Value_i[3]) + final_project_P.B_Value[1] *
+    final_project_DW.UnitDelay4_DSTATE) + final_project_B.Product3[1];
+
+  /* UnitDelay: '<S1>/Unit Delay2' */
+  rtb_UnitDelay2 = final_project_DW.UnitDelay2_DSTATE;
+
+  /* Outputs for Enabled SubSystem: '<S89>/MeasurementUpdate' */
+  /* Constant: '<S4>/Enable' incorporates:
+   *  Constant: '<S4>/C'
+   *  Constant: '<S4>/D'
+   *  Constant: '<S69>/KalmanGainL'
+   */
+  final_project_MeasurementUpdate(final_project_P.Enable_Value,
+    final_project_P.KalmanGainL_Value_b, final_project_B.UnitDelay3,
+    final_project_P.C_Value, final_project_B.MemoryX, final_project_P.D_Value_n,
+    rtb_UnitDelay2, &final_project_B.MeasurementUpdate_f,
+    &final_project_DW.MeasurementUpdate_f, &final_project_P.MeasurementUpdate_f);
+
+  /* End of Outputs for SubSystem: '<S89>/MeasurementUpdate' */
+
+  /* Sum: '<S89>/Add' incorporates:
+   *  Constant: '<S4>/A'
+   *  Constant: '<S4>/B'
+   *  Product: '<S120>/Product3'
+   *  Product: '<S89>/A[k]*xhat[k|k-1]'
+   *  Product: '<S89>/B[k]*u[k]'
+   */
+  final_project_B.Add_g[0] = ((final_project_P.A_Value_d[0] *
+    final_project_B.MemoryX[0] + final_project_B.MemoryX[1] *
+    final_project_P.A_Value_d[2]) + final_project_P.B_Value_g[0] *
+    rtb_UnitDelay2) + final_project_B.MeasurementUpdate_f.Product3[0];
+  final_project_B.Add_g[1] = ((final_project_B.MemoryX[0] *
+    final_project_P.A_Value_d[1] + final_project_B.MemoryX[1] *
+    final_project_P.A_Value_d[3]) + final_project_P.B_Value_g[1] *
+    rtb_UnitDelay2) + final_project_B.MeasurementUpdate_f.Product3[1];
+
+  /* UnitDelay: '<S1>/Unit Delay' */
+  rtb_UnitDelay = final_project_DW.UnitDelay_DSTATE;
+
+  /* Outputs for Enabled SubSystem: '<S35>/MeasurementUpdate' */
+  /* Constant: '<S3>/Enable' incorporates:
+   *  Constant: '<S15>/KalmanGainL'
+   *  Constant: '<S3>/C'
+   *  Constant: '<S3>/D'
+   */
+  final_project_MeasurementUpdate(final_project_P.Enable_Value_h,
+    final_project_P.KalmanGainL_Value, final_project_B.UnitDelay1,
+    final_project_P.C_Value_e, final_project_B.MemoryX_j,
+    final_project_P.D_Value_e, rtb_UnitDelay, &final_project_B.MeasurementUpdate,
+    &final_project_DW.MeasurementUpdate, &final_project_P.MeasurementUpdate);
+
+  /* End of Outputs for SubSystem: '<S35>/MeasurementUpdate' */
+
+  /* Sum: '<S35>/Add' incorporates:
+   *  Constant: '<S3>/A'
+   *  Constant: '<S3>/B'
+   *  Product: '<S35>/A[k]*xhat[k|k-1]'
+   *  Product: '<S35>/B[k]*u[k]'
+   *  Product: '<S66>/Product3'
+   */
+  final_project_B.Add_l[0] = ((final_project_P.A_Value[0] *
+    final_project_B.MemoryX_j[0] + final_project_B.MemoryX_j[1] *
+    final_project_P.A_Value[2]) + final_project_P.B_Value_m[0] * rtb_UnitDelay)
+    + final_project_B.MeasurementUpdate.Product3[0];
+  final_project_B.Add_l[1] = ((final_project_B.MemoryX_j[0] *
+    final_project_P.A_Value[1] + final_project_B.MemoryX_j[1] *
+    final_project_P.A_Value[3]) + final_project_P.B_Value_m[1] * rtb_UnitDelay)
+    + final_project_B.MeasurementUpdate.Product3[1];
 
   /* Scope: '<S1>/Scope' */
   {
@@ -1182,6 +1051,32 @@ void final_project_step(void)
     }
   }
 
+  /* Scope: '<S1>/Scope22' */
+  {
+    StructLogVar *svar = (StructLogVar *)
+      final_project_DW.Scope22_PWORK.LoggedData;
+    LogVar *var = svar->signals.values;
+
+    /* time */
+    {
+      double locTime = (((final_project_M->Timing.clockTick1+
+                          final_project_M->Timing.clockTickH1* 4294967296.0)) *
+                        0.005);
+      ;
+      rt_UpdateLogVar((LogVar *)svar->time, &locTime, 0);
+    }
+
+    /* signals */
+    {
+      real_T up0[4];
+      up0[0] = final_project_B.Switch2;
+      up0[1] = final_project_B.aileron;
+      up0[2] = final_project_B.elevator;
+      up0[3] = final_project_B.rrudder;
+      rt_UpdateLogVar((LogVar *)var, up0, 0);
+    }
+  }
+
   /* Scope: '<S1>/Scope9' */
   {
     StructLogVar *svar = (StructLogVar *)
@@ -1277,21 +1172,21 @@ void final_project_step(void)
   final_project_B.c[2] = 0.0F;
   final_project_B.c[5] = -(real32_T)sin(final_project_B.CastToSingle[1]);
   final_project_B.c[8] = (real32_T)cos(final_project_B.CastToSingle[1]);
-  final_project_B.rtb_Switch_tmp[0] = (real32_T)cos
+  final_project_B.rtb_TmpSignalConversionAtGain_m[0] = (real32_T)cos
     (final_project_B.CastToSingle1[1]);
-  final_project_B.rtb_Switch_tmp[3] = 0.0F;
-  final_project_B.rtb_Switch_tmp[6] = -(real32_T)sin
+  final_project_B.rtb_TmpSignalConversionAtGain_m[3] = 0.0F;
+  final_project_B.rtb_TmpSignalConversionAtGain_m[6] = -(real32_T)sin
     (final_project_B.CastToSingle1[1]);
   final_project_B.c[0] = 1.0F;
-  final_project_B.rtb_Switch_tmp[1] = 0.0F;
+  final_project_B.rtb_TmpSignalConversionAtGain_m[1] = 0.0F;
   final_project_B.c[3] = 0.0F;
-  final_project_B.rtb_Switch_tmp[4] = 1.0F;
+  final_project_B.rtb_TmpSignalConversionAtGain_m[4] = 1.0F;
   final_project_B.c[6] = 0.0F;
-  final_project_B.rtb_Switch_tmp[7] = 0.0F;
-  final_project_B.rtb_Switch_tmp[2] = (real32_T)sin
+  final_project_B.rtb_TmpSignalConversionAtGain_m[7] = 0.0F;
+  final_project_B.rtb_TmpSignalConversionAtGain_m[2] = (real32_T)sin
     (final_project_B.CastToSingle1[1]);
-  final_project_B.rtb_Switch_tmp[5] = 0.0F;
-  final_project_B.rtb_Switch_tmp[8] = (real32_T)cos
+  final_project_B.rtb_TmpSignalConversionAtGain_m[5] = 0.0F;
+  final_project_B.rtb_TmpSignalConversionAtGain_m[8] = (real32_T)cos
     (final_project_B.CastToSingle1[1]);
   final_project_B.fv[0] = 0.0F;
   final_project_B.fv[1] = 0.0F;
@@ -1299,30 +1194,33 @@ void final_project_step(void)
   for (i_0 = 0; i_0 < 3; i_0++) {
     for (i = 0; i < 3; i++) {
       c_tmp = i_0 + 3 * i;
-      final_project_B.c_m[c_tmp] = 0.0F;
-      final_project_B.c_m[c_tmp] += final_project_B.rtb_Switch_tmp[3 * i] *
+      final_project_B.c_c[c_tmp] = 0.0F;
+      final_project_B.c_c[c_tmp] +=
+        final_project_B.rtb_TmpSignalConversionAtGain_m[3 * i] *
         final_project_B.c[i_0];
-      final_project_B.c_m[c_tmp] += final_project_B.rtb_Switch_tmp[3 * i + 1] *
+      final_project_B.c_c[c_tmp] +=
+        final_project_B.rtb_TmpSignalConversionAtGain_m[3 * i + 1] *
         final_project_B.c[i_0 + 3];
-      final_project_B.c_m[c_tmp] += final_project_B.rtb_Switch_tmp[3 * i + 2] *
+      final_project_B.c_c[c_tmp] +=
+        final_project_B.rtb_TmpSignalConversionAtGain_m[3 * i + 2] *
         final_project_B.c[i_0 + 6];
     }
 
-    final_project_B.c_k[i_0] = 0.0F;
+    final_project_B.c_cx[i_0] = 0.0F;
     for (i = 0; i < 3; i++) {
       c_tmp = i_0 + 3 * i;
-      final_project_B.c_c[c_tmp] = 0.0F;
-      final_project_B.c_c[c_tmp] += (real32_T)b[3 * i] * final_project_B.c_m[i_0];
-      final_project_B.c_c[c_tmp] += (real32_T)b[3 * i + 1] *
-        final_project_B.c_m[i_0 + 3];
-      final_project_B.c_c[c_tmp] += (real32_T)b[3 * i + 2] *
-        final_project_B.c_m[i_0 + 6];
-      final_project_B.c_k[i_0] += final_project_B.c_c[c_tmp] *
+      final_project_B.c_k[c_tmp] = 0.0F;
+      final_project_B.c_k[c_tmp] += (real32_T)b[3 * i] * final_project_B.c_c[i_0];
+      final_project_B.c_k[c_tmp] += (real32_T)b[3 * i + 1] *
+        final_project_B.c_c[i_0 + 3];
+      final_project_B.c_k[c_tmp] += (real32_T)b[3 * i + 2] *
+        final_project_B.c_c[i_0 + 6];
+      final_project_B.c_cx[i_0] += final_project_B.c_k[c_tmp] *
         final_project_B.fv[i];
     }
   }
 
-  final_project_B.bias = final_project_B.c_k[2];
+  final_project_B.bias = final_project_B.c_cx[2];
 
   /* End of MATLAB Function: '<S1>/MATLAB Function7' */
 
@@ -1477,7 +1375,7 @@ void final_project_step(void)
     }
   }
 
-  /* SignalConversion generated from: '<S17>/Bus Selector5' incorporates:
+  /* SignalConversion generated from: '<S14>/Bus Selector5' incorporates:
    *  Inport: '<Root>/Sensors'
    */
   final_project_B.pressure = sensor_inport.HALSensors.HAL_pressure_SI.pressure;
@@ -1538,7 +1436,7 @@ void final_project_step(void)
     }
   }
 
-  /* SignalConversion generated from: '<S17>/Bus Selector1' incorporates:
+  /* SignalConversion generated from: '<S14>/Bus Selector1' incorporates:
    *  Inport: '<Root>/Sensors'
    */
   final_project_B.opticalFlow_data[0] =
@@ -1626,13 +1524,12 @@ void final_project_step(void)
   /* Product: '<S1>/Product1' incorporates:
    *  Constant: '<S1>/Constant3'
    */
-  final_project_B.rtb_Sqrt1_idx_0 = final_project_B.Gain12 *
-    final_project_P.Kappa;
+  final_project_B.Ckxhatkk1 = final_project_B.Gain12 * final_project_P.Kappa;
 
   /* Product: '<S1>/MatrixMultiply1' */
-  final_project_B.MatrixMultiply1[0] = final_project_B.rtb_Sqrt1_idx_0 *
+  final_project_B.MatrixMultiply1[0] = final_project_B.Ckxhatkk1 *
     final_project_B.opticalFlow_data[0];
-  final_project_B.MatrixMultiply1[1] = final_project_B.rtb_Sqrt1_idx_0 *
+  final_project_B.MatrixMultiply1[1] = final_project_B.Ckxhatkk1 *
     final_project_B.opticalFlow_data[1];
 
   /* Scope: '<S1>/Scope18' */
@@ -1725,39 +1622,39 @@ void final_project_step(void)
   /* Matfile logging */
   rt_UpdateTXYLogVars(final_project_M->rtwLogInfo, (final_project_M->Timing.t));
 
-  /* Update for Delay: '<S5>/MemoryX' */
+  /* Update for Delay: '<S4>/MemoryX' */
   final_project_DW.icLoad = false;
 
   /* Update for UnitDelay: '<S1>/Unit Delay3' */
   final_project_DW.UnitDelay3_DSTATE[0] = final_project_B.MatrixMultiply1[0];
   final_project_DW.UnitDelay3_DSTATE[1] = final_project_B.CastToDouble5;
 
-  /* Update for Delay: '<S4>/MemoryX' */
+  /* Update for Delay: '<S3>/MemoryX' */
   final_project_DW.icLoad_k = false;
 
   /* Update for UnitDelay: '<S1>/Unit Delay1' */
   final_project_DW.UnitDelay1_DSTATE[0] = final_project_B.MatrixMultiply1[1];
   final_project_DW.UnitDelay1_DSTATE[1] = final_project_B.CastToDouble1;
 
-  /* Update for Delay: '<S6>/MemoryX' */
+  /* Update for Delay: '<S5>/MemoryX' */
   final_project_DW.icLoad_i = false;
 
-  /* Update for Delay: '<S5>/MemoryX' */
+  /* Update for Delay: '<S4>/MemoryX' */
   final_project_DW.MemoryX_DSTATE[0] = final_project_B.Add_g[0];
 
-  /* Update for Delay: '<S4>/MemoryX' */
+  /* Update for Delay: '<S3>/MemoryX' */
   final_project_DW.MemoryX_DSTATE_n[0] = final_project_B.Add_l[0];
 
-  /* Update for Delay: '<S6>/MemoryX' */
+  /* Update for Delay: '<S5>/MemoryX' */
   final_project_DW.MemoryX_DSTATE_p[0] = final_project_B.Add[0];
 
-  /* Update for Delay: '<S5>/MemoryX' */
+  /* Update for Delay: '<S4>/MemoryX' */
   final_project_DW.MemoryX_DSTATE[1] = final_project_B.Add_g[1];
 
-  /* Update for Delay: '<S4>/MemoryX' */
+  /* Update for Delay: '<S3>/MemoryX' */
   final_project_DW.MemoryX_DSTATE_n[1] = final_project_B.Add_l[1];
 
-  /* Update for Delay: '<S6>/MemoryX' */
+  /* Update for Delay: '<S5>/MemoryX' */
   final_project_DW.MemoryX_DSTATE_p[1] = final_project_B.Add[1];
 
   /* Update for UnitDelay: '<S1>/Unit Delay5' */
@@ -2036,76 +1933,6 @@ void final_project_initialize(void)
       &rt_ScopeSignalInfo,
       rt_ScopeBlockName);
     if (final_project_DW.Scope24_PWORK.LoggedData == (NULL))
-      return;
-  }
-
-  /* SetupRuntimeResources for Scope: '<S1>/Scope22' */
-  {
-    RTWLogSignalInfo rt_ScopeSignalInfo;
-    static int_T rt_ScopeSignalWidths[] = { 4 };
-
-    static int_T rt_ScopeSignalNumDimensions[] = { 1 };
-
-    static int_T rt_ScopeSignalDimensions[] = { 4 };
-
-    static void *rt_ScopeCurrSigDims[] = { (NULL) };
-
-    static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
-
-    static const char_T *rt_ScopeSignalLabels[] = { "" };
-
-    static char_T rt_ScopeSignalTitles[] = "";
-    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
-
-    static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
-
-    static int_T rt_ScopeSignalPlotStyles[] = { 0, 0, 0, 0 };
-
-    BuiltInDTypeId dTypes[1] = { SS_DOUBLE };
-
-    static char_T rt_ScopeBlockName[] =
-      "final_project/Flight Control System/Scope22";
-    static int_T rt_ScopeFrameData[] = { 0 };
-
-    static RTWPreprocessingFcnPtr rt_ScopeSignalLoggingPreprocessingFcnPtrs[] =
-      {
-      (NULL)
-    };
-
-    rt_ScopeSignalInfo.numSignals = 1;
-    rt_ScopeSignalInfo.numCols = rt_ScopeSignalWidths;
-    rt_ScopeSignalInfo.numDims = rt_ScopeSignalNumDimensions;
-    rt_ScopeSignalInfo.dims = rt_ScopeSignalDimensions;
-    rt_ScopeSignalInfo.isVarDims = rt_ScopeSignalIsVarDims;
-    rt_ScopeSignalInfo.currSigDims = rt_ScopeCurrSigDims;
-    rt_ScopeSignalInfo.currSigDimsSize = rt_ScopeCurrSigDimsSize;
-    rt_ScopeSignalInfo.dataTypes = dTypes;
-    rt_ScopeSignalInfo.complexSignals = (NULL);
-    rt_ScopeSignalInfo.frameData = rt_ScopeFrameData;
-    rt_ScopeSignalInfo.preprocessingPtrs =
-      rt_ScopeSignalLoggingPreprocessingFcnPtrs;
-    rt_ScopeSignalInfo.labels.cptr = rt_ScopeSignalLabels;
-    rt_ScopeSignalInfo.titles = rt_ScopeSignalTitles;
-    rt_ScopeSignalInfo.titleLengths = rt_ScopeSignalTitleLengths;
-    rt_ScopeSignalInfo.plotStyles = rt_ScopeSignalPlotStyles;
-    rt_ScopeSignalInfo.blockNames.cptr = (NULL);
-    rt_ScopeSignalInfo.stateNames.cptr = (NULL);
-    rt_ScopeSignalInfo.crossMdlRef = (NULL);
-    rt_ScopeSignalInfo.dataTypeConvert = (NULL);
-    final_project_DW.Scope22_PWORK.LoggedData = rt_CreateStructLogVar(
-      final_project_M->rtwLogInfo,
-      0.0,
-      rtmGetTFinal(final_project_M),
-      final_project_M->Timing.stepSize0,
-      (&rtmGetErrorStatus(final_project_M)),
-      "Wrench",
-      1,
-      0,
-      1,
-      0.005,
-      &rt_ScopeSignalInfo,
-      rt_ScopeBlockName);
-    if (final_project_DW.Scope22_PWORK.LoggedData == (NULL))
       return;
   }
 
@@ -2666,6 +2493,76 @@ void final_project_initialize(void)
       &rt_ScopeSignalInfo,
       rt_ScopeBlockName);
     if (final_project_DW.Scope17_PWORK.LoggedData == (NULL))
+      return;
+  }
+
+  /* SetupRuntimeResources for Scope: '<S1>/Scope22' */
+  {
+    RTWLogSignalInfo rt_ScopeSignalInfo;
+    static int_T rt_ScopeSignalWidths[] = { 4 };
+
+    static int_T rt_ScopeSignalNumDimensions[] = { 1 };
+
+    static int_T rt_ScopeSignalDimensions[] = { 4 };
+
+    static void *rt_ScopeCurrSigDims[] = { (NULL) };
+
+    static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
+
+    static const char_T *rt_ScopeSignalLabels[] = { "" };
+
+    static char_T rt_ScopeSignalTitles[] = "";
+    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+
+    static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
+
+    static int_T rt_ScopeSignalPlotStyles[] = { 0, 0, 0, 0 };
+
+    BuiltInDTypeId dTypes[1] = { SS_DOUBLE };
+
+    static char_T rt_ScopeBlockName[] =
+      "final_project/Flight Control System/Scope22";
+    static int_T rt_ScopeFrameData[] = { 0 };
+
+    static RTWPreprocessingFcnPtr rt_ScopeSignalLoggingPreprocessingFcnPtrs[] =
+      {
+      (NULL)
+    };
+
+    rt_ScopeSignalInfo.numSignals = 1;
+    rt_ScopeSignalInfo.numCols = rt_ScopeSignalWidths;
+    rt_ScopeSignalInfo.numDims = rt_ScopeSignalNumDimensions;
+    rt_ScopeSignalInfo.dims = rt_ScopeSignalDimensions;
+    rt_ScopeSignalInfo.isVarDims = rt_ScopeSignalIsVarDims;
+    rt_ScopeSignalInfo.currSigDims = rt_ScopeCurrSigDims;
+    rt_ScopeSignalInfo.currSigDimsSize = rt_ScopeCurrSigDimsSize;
+    rt_ScopeSignalInfo.dataTypes = dTypes;
+    rt_ScopeSignalInfo.complexSignals = (NULL);
+    rt_ScopeSignalInfo.frameData = rt_ScopeFrameData;
+    rt_ScopeSignalInfo.preprocessingPtrs =
+      rt_ScopeSignalLoggingPreprocessingFcnPtrs;
+    rt_ScopeSignalInfo.labels.cptr = rt_ScopeSignalLabels;
+    rt_ScopeSignalInfo.titles = rt_ScopeSignalTitles;
+    rt_ScopeSignalInfo.titleLengths = rt_ScopeSignalTitleLengths;
+    rt_ScopeSignalInfo.plotStyles = rt_ScopeSignalPlotStyles;
+    rt_ScopeSignalInfo.blockNames.cptr = (NULL);
+    rt_ScopeSignalInfo.stateNames.cptr = (NULL);
+    rt_ScopeSignalInfo.crossMdlRef = (NULL);
+    rt_ScopeSignalInfo.dataTypeConvert = (NULL);
+    final_project_DW.Scope22_PWORK.LoggedData = rt_CreateStructLogVar(
+      final_project_M->rtwLogInfo,
+      0.0,
+      rtmGetTFinal(final_project_M),
+      final_project_M->Timing.stepSize0,
+      (&rtmGetErrorStatus(final_project_M)),
+      "Wrench",
+      1,
+      0,
+      1,
+      0.005,
+      &rt_ScopeSignalInfo,
+      rt_ScopeBlockName);
+    if (final_project_DW.Scope22_PWORK.LoggedData == (NULL))
       return;
   }
 
@@ -3859,40 +3756,40 @@ void final_project_initialize(void)
       return;
   }
 
-  /* Start for Enabled SubSystem: '<S99>/Enabled Subsystem' */
+  /* Start for Enabled SubSystem: '<S96>/Enabled Subsystem' */
   final_pr_EnabledSubsystem_Start(&final_project_DW.EnabledSubsystem_g);
 
-  /* End of Start for SubSystem: '<S99>/Enabled Subsystem' */
+  /* End of Start for SubSystem: '<S96>/Enabled Subsystem' */
 
-  /* Start for Enabled SubSystem: '<S45>/Enabled Subsystem' */
+  /* Start for Enabled SubSystem: '<S42>/Enabled Subsystem' */
   final_pr_EnabledSubsystem_Start(&final_project_DW.EnabledSubsystem);
 
-  /* End of Start for SubSystem: '<S45>/Enabled Subsystem' */
+  /* End of Start for SubSystem: '<S42>/Enabled Subsystem' */
 
-  /* Start for Enabled SubSystem: '<S153>/Enabled Subsystem' */
+  /* Start for Enabled SubSystem: '<S150>/Enabled Subsystem' */
   final_project_DW.EnabledSubsystem_MODE = false;
 
-  /* End of Start for SubSystem: '<S153>/Enabled Subsystem' */
+  /* End of Start for SubSystem: '<S150>/Enabled Subsystem' */
 
-  /* Start for Enabled SubSystem: '<S146>/MeasurementUpdate' */
+  /* Start for Enabled SubSystem: '<S143>/MeasurementUpdate' */
   final_project_DW.MeasurementUpdate_MODE = false;
 
-  /* End of Start for SubSystem: '<S146>/MeasurementUpdate' */
+  /* End of Start for SubSystem: '<S143>/MeasurementUpdate' */
 
-  /* Start for Enabled SubSystem: '<S92>/MeasurementUpdate' */
+  /* Start for Enabled SubSystem: '<S89>/MeasurementUpdate' */
   final_p_MeasurementUpdate_Start(&final_project_DW.MeasurementUpdate_f);
 
-  /* End of Start for SubSystem: '<S92>/MeasurementUpdate' */
+  /* End of Start for SubSystem: '<S89>/MeasurementUpdate' */
 
-  /* Start for Enabled SubSystem: '<S38>/MeasurementUpdate' */
+  /* Start for Enabled SubSystem: '<S35>/MeasurementUpdate' */
   final_p_MeasurementUpdate_Start(&final_project_DW.MeasurementUpdate);
 
-  /* End of Start for SubSystem: '<S38>/MeasurementUpdate' */
-
-  /* InitializeConditions for Delay: '<S5>/MemoryX' */
-  final_project_DW.icLoad = true;
+  /* End of Start for SubSystem: '<S35>/MeasurementUpdate' */
 
   /* InitializeConditions for Delay: '<S4>/MemoryX' */
+  final_project_DW.icLoad = true;
+
+  /* InitializeConditions for Delay: '<S3>/MemoryX' */
   final_project_DW.icLoad_k = true;
 
   /* InitializeConditions for UnitDelay: '<S1>/Unit Delay3' */
@@ -3911,7 +3808,7 @@ void final_project_initialize(void)
   final_project_DW.UnitDelay1_DSTATE[1] =
     final_project_P.UnitDelay1_InitialCondition;
 
-  /* InitializeConditions for Delay: '<S6>/MemoryX' */
+  /* InitializeConditions for Delay: '<S5>/MemoryX' */
   final_project_DW.icLoad_i = true;
 
   /* InitializeConditions for UnitDelay: '<S1>/Unit Delay5' */
@@ -3932,61 +3829,61 @@ void final_project_initialize(void)
   /* InitializeConditions for UnitDelay: '<S1>/Unit Delay' */
   final_project_DW.UnitDelay_DSTATE = final_project_P.UnitDelay_InitialCondition;
 
-  /* SystemInitialize for Enabled SubSystem: '<S99>/Enabled Subsystem' */
+  /* SystemInitialize for Enabled SubSystem: '<S96>/Enabled Subsystem' */
   final_pro_EnabledSubsystem_Init(&final_project_B.EnabledSubsystem_g,
     &final_project_P.EnabledSubsystem_g);
 
-  /* End of SystemInitialize for SubSystem: '<S99>/Enabled Subsystem' */
+  /* End of SystemInitialize for SubSystem: '<S96>/Enabled Subsystem' */
 
-  /* SystemInitialize for Enabled SubSystem: '<S45>/Enabled Subsystem' */
+  /* SystemInitialize for Enabled SubSystem: '<S42>/Enabled Subsystem' */
   final_pro_EnabledSubsystem_Init(&final_project_B.EnabledSubsystem,
     &final_project_P.EnabledSubsystem);
 
-  /* End of SystemInitialize for SubSystem: '<S45>/Enabled Subsystem' */
+  /* End of SystemInitialize for SubSystem: '<S42>/Enabled Subsystem' */
 
-  /* SystemInitialize for Enabled SubSystem: '<S153>/Enabled Subsystem' */
-  /* SystemInitialize for Product: '<S179>/Product2' incorporates:
-   *  Outport: '<S179>/deltax'
+  /* SystemInitialize for Enabled SubSystem: '<S150>/Enabled Subsystem' */
+  /* SystemInitialize for Product: '<S176>/Product2' incorporates:
+   *  Outport: '<S176>/deltax'
    */
   final_project_B.Product2[0] = final_project_P.deltax_Y0;
 
-  /* End of SystemInitialize for SubSystem: '<S153>/Enabled Subsystem' */
+  /* End of SystemInitialize for SubSystem: '<S150>/Enabled Subsystem' */
 
-  /* SystemInitialize for Enabled SubSystem: '<S146>/MeasurementUpdate' */
-  /* SystemInitialize for Product: '<S177>/Product3' incorporates:
-   *  Outport: '<S177>/L*(y[k]-yhat[k|k-1])'
+  /* SystemInitialize for Enabled SubSystem: '<S143>/MeasurementUpdate' */
+  /* SystemInitialize for Product: '<S174>/Product3' incorporates:
+   *  Outport: '<S174>/L*(y[k]-yhat[k|k-1])'
    */
   final_project_B.Product3[0] = final_project_P.Lykyhatkk1_Y0;
 
-  /* End of SystemInitialize for SubSystem: '<S146>/MeasurementUpdate' */
+  /* End of SystemInitialize for SubSystem: '<S143>/MeasurementUpdate' */
 
-  /* SystemInitialize for Enabled SubSystem: '<S153>/Enabled Subsystem' */
-  /* SystemInitialize for Product: '<S179>/Product2' incorporates:
-   *  Outport: '<S179>/deltax'
+  /* SystemInitialize for Enabled SubSystem: '<S150>/Enabled Subsystem' */
+  /* SystemInitialize for Product: '<S176>/Product2' incorporates:
+   *  Outport: '<S176>/deltax'
    */
   final_project_B.Product2[1] = final_project_P.deltax_Y0;
 
-  /* End of SystemInitialize for SubSystem: '<S153>/Enabled Subsystem' */
+  /* End of SystemInitialize for SubSystem: '<S150>/Enabled Subsystem' */
 
-  /* SystemInitialize for Enabled SubSystem: '<S146>/MeasurementUpdate' */
-  /* SystemInitialize for Product: '<S177>/Product3' incorporates:
-   *  Outport: '<S177>/L*(y[k]-yhat[k|k-1])'
+  /* SystemInitialize for Enabled SubSystem: '<S143>/MeasurementUpdate' */
+  /* SystemInitialize for Product: '<S174>/Product3' incorporates:
+   *  Outport: '<S174>/L*(y[k]-yhat[k|k-1])'
    */
   final_project_B.Product3[1] = final_project_P.Lykyhatkk1_Y0;
 
-  /* End of SystemInitialize for SubSystem: '<S146>/MeasurementUpdate' */
+  /* End of SystemInitialize for SubSystem: '<S143>/MeasurementUpdate' */
 
-  /* SystemInitialize for Enabled SubSystem: '<S92>/MeasurementUpdate' */
+  /* SystemInitialize for Enabled SubSystem: '<S89>/MeasurementUpdate' */
   final_pr_MeasurementUpdate_Init(&final_project_B.MeasurementUpdate_f,
     &final_project_P.MeasurementUpdate_f);
 
-  /* End of SystemInitialize for SubSystem: '<S92>/MeasurementUpdate' */
+  /* End of SystemInitialize for SubSystem: '<S89>/MeasurementUpdate' */
 
-  /* SystemInitialize for Enabled SubSystem: '<S38>/MeasurementUpdate' */
+  /* SystemInitialize for Enabled SubSystem: '<S35>/MeasurementUpdate' */
   final_pr_MeasurementUpdate_Init(&final_project_B.MeasurementUpdate,
     &final_project_P.MeasurementUpdate);
 
-  /* End of SystemInitialize for SubSystem: '<S38>/MeasurementUpdate' */
+  /* End of SystemInitialize for SubSystem: '<S35>/MeasurementUpdate' */
 }
 
 /* Model terminate function */

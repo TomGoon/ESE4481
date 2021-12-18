@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.37
+ * Model version              : 1.38
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Thu Dec 16 20:28:33 2021
+ * C source code generated on : Sat Dec 18 11:09:16 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -26,22 +26,22 @@ P_final_project_T final_project_P = {
   /* Variable: F_aileron
    * Referenced by: '<S1>/Gain5'
    */
-  5.7614635063083692E-5,
+  5.7614635063083664E-5,
 
   /* Variable: F_elevator
    * Referenced by: '<S1>/Gain9'
    */
-  -6.4712090107087021E-5,
+  -6.47120901070872E-5,
 
   /* Variable: F_rudder
    * Referenced by: '<S1>/Gain14'
    */
-  0.00087987848045057023,
+  0.00087987848045057045,
 
   /* Variable: F_throttle
    * Referenced by: '<S1>/Gain2'
    */
-  -0.41733035658738171,
+  -0.41733035658738188,
 
   /* Variable: Kappa
    * Referenced by: '<S1>/Constant3'
@@ -61,162 +61,121 @@ P_final_project_T final_project_P = {
   /* Variable: g
    * Referenced by:
    *   '<S1>/Constant'
+   *   '<S1>/Constant21'
    *   '<S1>/Constant5'
    *   '<S1>/Constant8'
-   *   '<S11>/Step'
-   *   '<S16>/Step'
    */
   9.8,
 
   /* Variable: m
    * Referenced by:
+   *   '<S1>/Constant21'
    *   '<S1>/Constant5'
-   *   '<S11>/Step'
-   *   '<S16>/Step'
    */
   0.068,
 
   /* Mask Parameter: Ramp3_InitialOutput
-   * Referenced by: '<S14>/Constant1'
-   */
-  0.0,
-
-  /* Mask Parameter: Ramp4_InitialOutput
-   * Referenced by: '<S15>/Constant1'
-   */
-  0.0,
-
-  /* Mask Parameter: Ramp1_InitialOutput
    * Referenced by: '<S12>/Constant1'
    */
   0.0,
 
-  /* Mask Parameter: Ramp2_InitialOutput
+  /* Mask Parameter: Ramp4_InitialOutput
    * Referenced by: '<S13>/Constant1'
    */
   0.0,
 
-  /* Mask Parameter: Ramp_InitialOutput
+  /* Mask Parameter: Ramp1_InitialOutput
+   * Referenced by: '<S10>/Constant1'
+   */
+  0.0,
+
+  /* Mask Parameter: Ramp2_InitialOutput
    * Referenced by: '<S11>/Constant1'
    */
   0.0,
 
-  /* Mask Parameter: Ramp5_InitialOutput
-   * Referenced by: '<S16>/Constant1'
-   */
-  0.0,
-
-  /* Mask Parameter: CompareToConstant_const
+  /* Mask Parameter: CompareToConstant2_const
    * Referenced by: '<S2>/Constant'
    */
-  15.0,
-
-  /* Mask Parameter: CompareToConstant1_const
-   * Referenced by: '<S3>/Constant'
-   */
-  15.0,
+  0.4,
 
   /* Mask Parameter: Ramp3_slope
-   * Referenced by: '<S14>/Step'
-   */
-  -0.2,
-
-  /* Mask Parameter: Ramp4_slope
-   * Referenced by: '<S15>/Step'
-   */
-  0.2,
-
-  /* Mask Parameter: Ramp1_slope
    * Referenced by: '<S12>/Step'
    */
   -0.2,
 
-  /* Mask Parameter: Ramp2_slope
+  /* Mask Parameter: Ramp4_slope
    * Referenced by: '<S13>/Step'
+   */
+  0.2,
+
+  /* Mask Parameter: Ramp1_slope
+   * Referenced by: '<S10>/Step'
+   */
+  -0.2,
+
+  /* Mask Parameter: Ramp2_slope
+   * Referenced by: '<S11>/Step'
    */
   0.2,
 
   /* Mask Parameter: Ramp3_start
    * Referenced by:
-   *   '<S14>/Constant'
-   *   '<S14>/Step'
+   *   '<S12>/Constant'
+   *   '<S12>/Step'
    */
   5.0,
 
   /* Mask Parameter: Ramp4_start
    * Referenced by:
-   *   '<S15>/Constant'
-   *   '<S15>/Step'
+   *   '<S13>/Constant'
+   *   '<S13>/Step'
    */
   10.0,
 
   /* Mask Parameter: Ramp1_start
    * Referenced by:
-   *   '<S12>/Constant'
-   *   '<S12>/Step'
+   *   '<S10>/Constant'
+   *   '<S10>/Step'
    */
   30.0,
 
   /* Mask Parameter: Ramp2_start
    * Referenced by:
-   *   '<S13>/Constant'
-   *   '<S13>/Step'
-   */
-  25.0,
-
-  /* Mask Parameter: Ramp_start
-   * Referenced by:
    *   '<S11>/Constant'
    *   '<S11>/Step'
    */
-  5.0,
-
-  /* Mask Parameter: Ramp5_start
-   * Referenced by:
-   *   '<S16>/Constant'
-   *   '<S16>/Step'
-   */
-  10.0,
+  25.0,
 
   /* Expression: 0
-   * Referenced by: '<S177>/L*(y[k]-yhat[k|k-1])'
+   * Referenced by: '<S174>/L*(y[k]-yhat[k|k-1])'
    */
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S179>/deltax'
+   * Referenced by: '<S176>/deltax'
    */
   0.0,
-
-  /* Expression: [0; 0; 0; 0]
-   * Referenced by: '<S1>/Constant11'
-   */
-  { 0.0, 0.0, 0.0, 0.0 },
-
-  /* Expression: [0; 0.001; 0.0035; 0]
-   * Referenced by: '<S1>/Constant10'
-   */
-  { 0.0, 0.001, 0.0035, 0.0 },
 
   /* Expression: pInitialization.M
-   * Referenced by: '<S72>/KalmanGainM'
+   * Referenced by: '<S69>/KalmanGainM'
    */
-  { 0.04729237879974818, -0.038222662408278228, -0.009555665602069557,
-    0.015040618246882954 },
+  { 0.047292378799748042, -0.038222662408278076, -0.0095556656020695189,
+    0.015040618246882919 },
 
   /* Expression: pInitialization.C
-   * Referenced by: '<S5>/C'
+   * Referenced by: '<S4>/C'
    */
   { 1.0, 0.0, 0.0, 1.0 },
 
   /* Expression: pInitialization.M
-   * Referenced by: '<S18>/KalmanGainM'
+   * Referenced by: '<S15>/KalmanGainM'
    */
-  { 0.012093199631291133, 0.004399502353177407, 0.0043995023531774088,
-    0.0023030960844769919 },
+  { 0.012093199631291138, 0.0043995023531774079, 0.00439950235317741,
+    0.0023030960844769915 },
 
   /* Expression: pInitialization.C
-   * Referenced by: '<S4>/C'
+   * Referenced by: '<S3>/C'
    */
   { 1.0, 0.0, 0.0, 1.0 },
 
@@ -226,7 +185,7 @@ P_final_project_T final_project_P = {
   { 0.0, 0.0, 0.0, 0.0 },
 
   /* Expression: pInitialization.X0
-   * Referenced by: '<S5>/X0'
+   * Referenced by: '<S4>/X0'
    */
   { 0.0, 0.0 },
 
@@ -236,7 +195,7 @@ P_final_project_T final_project_P = {
   0.0,
 
   /* Expression: pInitialization.X0
-   * Referenced by: '<S4>/X0'
+   * Referenced by: '<S3>/X0'
    */
   { 0.0, 0.0 },
 
@@ -246,12 +205,12 @@ P_final_project_T final_project_P = {
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S14>/Step'
+   * Referenced by: '<S12>/Step'
    */
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S15>/Step'
+   * Referenced by: '<S13>/Step'
    */
   0.0,
 
@@ -271,12 +230,12 @@ P_final_project_T final_project_P = {
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S12>/Step'
+   * Referenced by: '<S10>/Step'
    */
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<S13>/Step'
+   * Referenced by: '<S11>/Step'
    */
   0.0,
 
@@ -295,13 +254,35 @@ P_final_project_T final_project_P = {
    */
   0.0,
 
-  /* Expression: [0; 0; 0; 0]
-   * Referenced by: '<S1>/Constant17'
+  /* Expression: pInitialization.A
+   * Referenced by: '<S3>/A'
    */
-  { 0.0, 0.0, 0.0, 0.0 },
+  { 0.9895163516515294, 0.0, 0.047652947038502869, 1.0 },
+
+  /* Expression: pInitialization.L
+   * Referenced by: '<S15>/KalmanGainL'
+   */
+  { 0.012176068031580552, 0.0043995023531773975, 0.0044631288333366031,
+    0.0023030960844769919 },
+
+  /* Expression: pInitialization.A
+   * Referenced by: '<S4>/A'
+   */
+  { 0.9895163516515294, 0.0, -0.047652947038502869, 1.0 },
+
+  /* Expression: pInitialization.L
+   * Referenced by: '<S69>/KalmanGainL'
+   */
+  { 0.048618004638261048, -0.038222662408278027, -0.010172217148906905,
+    0.015040618246882917 },
+
+  /* Expression: pInitialization.A
+   * Referenced by: '<S5>/A'
+   */
+  { 1.0, 0.0, 0.00488821378028095, 1.0 },
 
   /* Expression: pInitialization.X0
-   * Referenced by: '<S6>/X0'
+   * Referenced by: '<S5>/X0'
    */
   { 0.0, 0.0 },
 
@@ -311,12 +292,12 @@ P_final_project_T final_project_P = {
   0.0,
 
   /* Expression: pInitialization.M
-   * Referenced by: '<S126>/KalmanGainM'
+   * Referenced by: '<S123>/KalmanGainM'
    */
-  { 0.021858246070097381, 0.049412437490098889 },
+  { 0.02185824607009796, 0.049412437490097237 },
 
   /* Expression: pInitialization.C
-   * Referenced by: '<S6>/C'
+   * Referenced by: '<S5>/C'
    */
   { 1.0, 0.0 },
 
@@ -330,100 +311,28 @@ P_final_project_T final_project_P = {
    */
   0.0,
 
-  /* Expression: 0
-   * Referenced by: '<S11>/Step'
+  /* Expression: pInitialization.D
+   * Referenced by: '<S5>/D'
    */
   0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S16>/Step'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S1>/Constant9'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S1>/Constant19'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S1>/Constant20'
-   */
-  0.0,
-
-  /* Expression: [0; 0; 0; 0]
-   * Referenced by: '<S1>/Constant14'
-   */
-  { 0.0, 0.0, 0.0, 0.0 },
-
-  /* Expression: pInitialization.A
-   * Referenced by: '<S4>/A'
-   */
-  { 0.9895163516515294, 0.0, 0.047652947038502869, 1.0 },
-
-  /* Expression: pInitialization.L
-   * Referenced by: '<S18>/KalmanGainL'
-   */
-  { 0.012176068031580544, 0.004399502353177394, 0.0044631288333366,
-    0.0023030960844769911 },
-
-  /* Expression: pInitialization.A
-   * Referenced by: '<S5>/A'
-   */
-  { 0.9895163516515294, 0.0, -0.047652947038502869, 1.0 },
-
-  /* Expression: pInitialization.L
-   * Referenced by: '<S72>/KalmanGainL'
-   */
-  { 0.048618004638261214, -0.038222662408278235, -0.010172217148906938,
-    0.015040618246882954 },
-
-  /* Expression: pInitialization.A
-   * Referenced by: '<S6>/A'
-   */
-  { 1.0, 0.0, 0.00488821378028095, 1.0 },
 
   /* Expression: 0
    * Referenced by: '<S1>/Unit Delay4'
    */
   0.0,
 
-  /* Expression: pInitialization.B
-   * Referenced by: '<S6>/B'
-   */
-  { 1.2220534450702375E-5, 0.005 },
-
-  /* Expression: pInitialization.D
-   * Referenced by: '<S6>/D'
-   */
-  0.0,
-
   /* Expression: pInitialization.L
-   * Referenced by: '<S126>/KalmanGainL'
+   * Referenced by: '<S123>/KalmanGainL'
    */
-  { 0.022099784627953756, 0.049412437490098896 },
-
-  /* Expression: 0
-   * Referenced by: '<S1>/Unit Delay2'
-   */
-  0.0,
-
-  /* Expression: pInitialization.D
-   * Referenced by: '<S5>/D'
-   */
-  { 0.0, 0.0 },
+  { 0.022099784627954311, 0.049412437490095877 },
 
   /* Expression: pInitialization.B
    * Referenced by: '<S5>/B'
    */
-  { -0.00011934162299238203, 0.005 },
+  { 1.2220534450702375E-5, 0.005 },
 
   /* Expression: 0
-   * Referenced by: '<S1>/Unit Delay'
+   * Referenced by: '<S1>/Unit Delay2'
    */
   0.0,
 
@@ -435,40 +344,40 @@ P_final_project_T final_project_P = {
   /* Expression: pInitialization.B
    * Referenced by: '<S4>/B'
    */
+  { -0.00011934162299238203, 0.005 },
+
+  /* Expression: 0
+   * Referenced by: '<S1>/Unit Delay'
+   */
+  0.0,
+
+  /* Expression: pInitialization.D
+   * Referenced by: '<S3>/D'
+   */
+  { 0.0, 0.0 },
+
+  /* Expression: pInitialization.B
+   * Referenced by: '<S3>/B'
+   */
   { 0.00011934162299238203, 0.005 },
 
   /* Expression: pInitialization.Z
-   * Referenced by: '<S18>/CovarianceZ'
+   * Referenced by: '<S15>/CovarianceZ'
    */
-  { 0.012093199631291133, 0.004399502353177407, 0.0043995023531774079,
-    0.0023030960844769919 },
+  { 0.012093199631291138, 0.0043995023531774079, 0.0043995023531774088,
+    0.0023030960844769915 },
 
   /* Expression: pInitialization.Z
-   * Referenced by: '<S72>/CovarianceZ'
+   * Referenced by: '<S69>/CovarianceZ'
    */
-  { 0.00047292378799748187, -0.00038222662408278241, -0.0003822266240827823,
-    0.00060162472987531821 },
+  { 0.00047292378799748051, -0.00038222662408278078, -0.00038222662408278078,
+    0.0006016247298753168 },
 
   /* Expression: pInitialization.Z
-   * Referenced by: '<S126>/CovarianceZ'
+   * Referenced by: '<S123>/CovarianceZ'
    */
-  { 0.00021891955746076075, 0.00049488641100021069, 0.00049488641100021069,
-    0.0022498971783311665 },
-
-  /* Computed Parameter: Gain6_Gain
-   * Referenced by: '<S1>/Gain6'
-   */
-  0.000337561942F,
-
-  /* Computed Parameter: Gain10_Gain
-   * Referenced by: '<S1>/Gain10'
-   */
-  0.000379145669F,
-
-  /* Computed Parameter: Gain13_Gain
-   * Referenced by: '<S1>/Gain13'
-   */
-  0.00075F,
+  { 0.00021891955746076639, 0.00049488641100019378, 0.00049488641100019378,
+    0.0022498971783312077 },
 
   /* Computed Parameter: Gain_Gain
    * Referenced by: '<S1>/Gain'
@@ -490,6 +399,11 @@ P_final_project_T final_project_P = {
    */
   0.000254814717F,
 
+  /* Computed Parameter: Gain6_Gain
+   * Referenced by: '<S1>/Gain6'
+   */
+  0.000337561942F,
+
   /* Computed Parameter: Gain7_Gain
    * Referenced by: '<S1>/Gain7'
    */
@@ -499,6 +413,16 @@ P_final_project_T final_project_P = {
    * Referenced by: '<S1>/Gain8'
    */
   0.000286204944F,
+
+  /* Computed Parameter: Gain10_Gain
+   * Referenced by: '<S1>/Gain10'
+   */
+  0.000379145669F,
+
+  /* Computed Parameter: Gain13_Gain
+   * Referenced by: '<S1>/Gain13'
+   */
+  0.00075F,
 
   /* Computed Parameter: Saturation1_UpperSat
    * Referenced by: '<S1>/Saturation1'
@@ -516,32 +440,32 @@ P_final_project_T final_project_P = {
   -1.0F,
 
   /* Expression: true()
-   * Referenced by: '<S5>/Enable'
-   */
-  true,
-
-  /* Expression: true()
    * Referenced by: '<S4>/Enable'
    */
   true,
 
   /* Expression: true()
-   * Referenced by: '<S6>/Enable'
+   * Referenced by: '<S3>/Enable'
+   */
+  true,
+
+  /* Expression: true()
+   * Referenced by: '<S5>/Enable'
    */
   true,
 
   /* Expression: pInitialization.isSqrtUsed
-   * Referenced by: '<S67>/isSqrtUsed'
+   * Referenced by: '<S64>/isSqrtUsed'
    */
   false,
 
   /* Expression: pInitialization.isSqrtUsed
-   * Referenced by: '<S121>/isSqrtUsed'
+   * Referenced by: '<S118>/isSqrtUsed'
    */
   false,
 
   /* Expression: pInitialization.isSqrtUsed
-   * Referenced by: '<S175>/isSqrtUsed'
+   * Referenced by: '<S172>/isSqrtUsed'
    */
   false,
 
@@ -560,55 +484,50 @@ P_final_project_T final_project_P = {
    */
   1U,
 
-  /* Computed Parameter: ManualSwitch2_CurrentSetting
-   * Referenced by: '<S1>/Manual Switch2'
-   */
-  1U,
-
   /* Computed Parameter: ManualSwitch_CurrentSetting
    * Referenced by: '<S1>/Manual Switch'
    */
   1U,
 
-  /* Start of '<S99>/Enabled Subsystem' */
+  /* Start of '<S96>/Enabled Subsystem' */
   {
     /* Expression: 0
-     * Referenced by: '<S125>/deltax'
+     * Referenced by: '<S122>/deltax'
      */
     0.0
   }
   ,
 
-  /* End of '<S99>/Enabled Subsystem' */
+  /* End of '<S96>/Enabled Subsystem' */
 
-  /* Start of '<S92>/MeasurementUpdate' */
+  /* Start of '<S89>/MeasurementUpdate' */
   {
     /* Expression: 0
-     * Referenced by: '<S123>/L*(y[k]-yhat[k|k-1])'
+     * Referenced by: '<S120>/L*(y[k]-yhat[k|k-1])'
      */
     0.0
   }
   ,
 
-  /* End of '<S92>/MeasurementUpdate' */
+  /* End of '<S89>/MeasurementUpdate' */
 
-  /* Start of '<S45>/Enabled Subsystem' */
+  /* Start of '<S42>/Enabled Subsystem' */
   {
     /* Expression: 0
-     * Referenced by: '<S71>/deltax'
+     * Referenced by: '<S68>/deltax'
      */
     0.0
   }
   ,
 
-  /* End of '<S45>/Enabled Subsystem' */
+  /* End of '<S42>/Enabled Subsystem' */
 
-  /* Start of '<S38>/MeasurementUpdate' */
+  /* Start of '<S35>/MeasurementUpdate' */
   {
     /* Expression: 0
-     * Referenced by: '<S69>/L*(y[k]-yhat[k|k-1])'
+     * Referenced by: '<S66>/L*(y[k]-yhat[k|k-1])'
      */
     0.0
   }
-  /* End of '<S38>/MeasurementUpdate' */
+  /* End of '<S35>/MeasurementUpdate' */
 };
