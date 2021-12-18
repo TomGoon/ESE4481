@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.39
+ * Model version              : 1.42
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Sat Dec 18 12:54:14 2021
+ * C source code generated on : Sat Dec 18 14:26:17 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -138,6 +138,7 @@ typedef struct {
   real_T rtb_TmpSignalConversionAtGain_f;
   real32_T CastToSingle1[2];           /* '<S1>/Cast To Single1' */
   real32_T CastToSingle[2];            /* '<S1>/Cast To Single' */
+  real32_T CastToSingle3[4];           /* '<S1>/Cast To Single3' */
   real32_T CastToSingle2[2];           /* '<S1>/Cast To Single2' */
   real32_T Sum2;                       /* '<S1>/Sum2' */
   real32_T Sum3;                       /* '<S1>/Sum3' */
@@ -231,7 +232,15 @@ typedef struct {
 
   struct {
     void *LoggedData;
+  } Scope31_PWORK;                     /* '<S1>/Scope31' */
+
+  struct {
+    void *LoggedData;
   } ToWorkspace_PWORK;                 /* '<S1>/To Workspace' */
+
+  struct {
+    void *LoggedData;
+  } Scope28_PWORK;                     /* '<S1>/Scope28' */
 
   struct {
     void *LoggedData;
@@ -255,6 +264,10 @@ typedef struct {
 
   struct {
     void *LoggedData;
+  } Scope29_PWORK;                     /* '<S1>/Scope29' */
+
+  struct {
+    void *LoggedData;
   } Scope12_PWORK;                     /* '<S1>/Scope12' */
 
   struct {
@@ -268,6 +281,10 @@ typedef struct {
   struct {
     void *LoggedData;
   } Scope21_PWORK;                     /* '<S1>/Scope21' */
+
+  struct {
+    void *LoggedData;
+  } Scope32_PWORK;                     /* '<S1>/Scope32' */
 
   struct {
     void *LoggedData;
@@ -335,13 +352,13 @@ struct P_final_project_T_ {
   real_T g;                            /* Variable: g
                                         * Referenced by:
                                         *   '<S1>/Constant'
-                                        *   '<S1>/Constant21'
+                                        *   '<S1>/Constant17'
                                         *   '<S1>/Constant5'
                                         *   '<S1>/Constant8'
                                         */
   real_T m;                            /* Variable: m
                                         * Referenced by:
-                                        *   '<S1>/Constant21'
+                                        *   '<S1>/Constant17'
                                         *   '<S1>/Constant5'
                                         */
   real_T Ramp3_InitialOutput;          /* Mask Parameter: Ramp3_InitialOutput
@@ -448,20 +465,8 @@ struct P_final_project_T_ {
   real_T Constant7_Value;              /* Expression: 0
                                         * Referenced by: '<S1>/Constant7'
                                         */
-  real_T A_Value[4];                   /* Expression: pInitialization.A
-                                        * Referenced by: '<S3>/A'
-                                        */
-  real_T KalmanGainL_Value[4];         /* Expression: pInitialization.L
-                                        * Referenced by: '<S15>/KalmanGainL'
-                                        */
-  real_T A_Value_d[4];                 /* Expression: pInitialization.A
-                                        * Referenced by: '<S4>/A'
-                                        */
-  real_T KalmanGainL_Value_b[4];       /* Expression: pInitialization.L
-                                        * Referenced by: '<S69>/KalmanGainL'
-                                        */
-  real_T A_Value_i[4];                 /* Expression: pInitialization.A
-                                        * Referenced by: '<S5>/A'
+  real_T Motorbias_Value[4];           /* Expression: [10; 5; 0; 5]
+                                        * Referenced by: '<S1>/Motor bias'
                                         */
   real_T X0_Value_o[2];                /* Expression: pInitialization.X0
                                         * Referenced by: '<S5>/X0'
@@ -478,14 +483,29 @@ struct P_final_project_T_ {
   real_T Delay_InitialCondition;       /* Expression: 0.0
                                         * Referenced by: '<S1>/Delay'
                                         */
+  real_T A_Value[4];                   /* Expression: pInitialization.A
+                                        * Referenced by: '<S3>/A'
+                                        */
+  real_T KalmanGainL_Value[4];         /* Expression: pInitialization.L
+                                        * Referenced by: '<S15>/KalmanGainL'
+                                        */
+  real_T A_Value_d[4];                 /* Expression: pInitialization.A
+                                        * Referenced by: '<S4>/A'
+                                        */
+  real_T KalmanGainL_Value_b[4];       /* Expression: pInitialization.L
+                                        * Referenced by: '<S69>/KalmanGainL'
+                                        */
+  real_T A_Value_i[4];                 /* Expression: pInitialization.A
+                                        * Referenced by: '<S5>/A'
+                                        */
+  real_T B_Value[2];                   /* Expression: pInitialization.B
+                                        * Referenced by: '<S5>/B'
+                                        */
   real_T D_Value;                      /* Expression: pInitialization.D
                                         * Referenced by: '<S5>/D'
                                         */
   real_T KalmanGainL_Value_c[2];       /* Expression: pInitialization.L
                                         * Referenced by: '<S123>/KalmanGainL'
-                                        */
-  real_T B_Value[2];                   /* Expression: pInitialization.B
-                                        * Referenced by: '<S5>/B'
                                         */
   real_T D_Value_n[2];                 /* Expression: pInitialization.D
                                         * Referenced by: '<S4>/D'
@@ -629,7 +649,7 @@ extern ExtY_final_project_T final_project_Y;
  */
 extern CommandBus cmd_inport;          /* '<Root>/AC cmd' */
 extern SensorsBus sensor_inport;       /* '<Root>/Sensors' */
-extern real32_T motors_outport[4];     /* '<S1>/Saturation1' */
+extern real32_T motors_outport[4];     /* '<S1>/Sum19' */
 extern uint8_T flag_outport;           /* '<S1>/Manual Switch' */
 
 /* Model entry point functions */

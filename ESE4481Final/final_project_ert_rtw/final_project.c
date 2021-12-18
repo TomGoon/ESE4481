@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.39
+ * Model version              : 1.42
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Sat Dec 18 12:54:14 2021
+ * C source code generated on : Sat Dec 18 14:26:17 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -24,7 +24,7 @@
 /* Exported block signals */
 CommandBus cmd_inport;                 /* '<Root>/AC cmd' */
 SensorsBus sensor_inport;              /* '<Root>/Sensors' */
-real32_T motors_outport[4];            /* '<S1>/Saturation1' */
+real32_T motors_outport[4];            /* '<S1>/Sum19' */
 uint8_T flag_outport;                  /* '<S1>/Manual Switch' */
 
 /* Block signals (default storage) */
@@ -258,7 +258,7 @@ void final_project_step(void)
     [2]) + sensor_inport.HALSensors.HAL_acc_SI.z;
 
   /* MATLAB Function: '<S1>/MATLAB Function' */
-  final_project_B.theta_measured = -final_project_B.Sum2 / (real32_T)sqrt
+  final_project_B.theta_measured = final_project_B.Sum2 / (real32_T)sqrt
     (final_project_B.Sum3 * final_project_B.Sum3 + (real32_T)
      (final_project_B.Sum10 * final_project_B.Sum10));
   final_project_B.phi_measured = final_project_B.Sum3 / (real32_T)
@@ -571,6 +571,14 @@ void final_project_step(void)
     }
   }
 
+  /* DataTypeConversion: '<S1>/Cast To Single3' incorporates:
+   *  Constant: '<S1>/Motor bias'
+   */
+  final_project_B.CastToSingle3[0] = (real32_T)final_project_P.Motorbias_Value[0];
+  final_project_B.CastToSingle3[1] = (real32_T)final_project_P.Motorbias_Value[1];
+  final_project_B.CastToSingle3[2] = (real32_T)final_project_P.Motorbias_Value[2];
+  final_project_B.CastToSingle3[3] = (real32_T)final_project_P.Motorbias_Value[3];
+
   /* Delay: '<S5>/MemoryX' incorporates:
    *  Constant: '<S5>/X0'
    */
@@ -587,7 +595,7 @@ void final_project_step(void)
   /* MATLAB Function: '<S1>/MATLAB Function1' incorporates:
    *  Inport: '<Root>/Sensors'
    */
-  final_project_B.z_p = ((real32_T)log(final_project_B.pressure / 101325.0F) *
+  final_project_B.z_p = -((real32_T)log(final_project_B.pressure / 101325.0F) *
     -8440.23926F - (real32_T)log(sensor_inport.SensorCalibration[6] / 101325.0F)
     * -8440.23926F) / (real32_T)cos(final_project_B.CastToSingle1[1]);
 
@@ -670,9 +678,9 @@ void final_project_step(void)
       + final_project_P.m * final_project_P.g;
   } else {
     /* Switch: '<S1>/Switch2' incorporates:
-     *  Constant: '<S1>/Constant21'
+     *  Constant: '<S1>/Constant17'
      */
-    final_project_B.Switch2 = 1.1 * final_project_P.m * final_project_P.g;
+    final_project_B.Switch2 = 1.05 * final_project_P.m * final_project_P.g;
   }
 
   /* End of Switch: '<S1>/Switch2' */
@@ -750,26 +758,20 @@ void final_project_step(void)
 
     /* Saturate: '<S1>/Saturation1' */
     if (final_project_B.Clock > final_project_P.Saturation1_UpperSat) {
-      /* Saturate: '<S1>/Saturation1' incorporates:
-       *  Sqrt: '<S1>/Sqrt1'
-       */
-      motors_outport[i_0] = final_project_P.Saturation1_UpperSat;
+      final_project_B.Clock = final_project_P.Saturation1_UpperSat;
     } else if (final_project_B.Clock < final_project_P.Saturation1_LowerSat) {
-      /* Saturate: '<S1>/Saturation1' incorporates:
-       *  Sqrt: '<S1>/Sqrt1'
-       */
-      motors_outport[i_0] = final_project_P.Saturation1_LowerSat;
-    } else {
-      /* Saturate: '<S1>/Saturation1' incorporates:
-       *  Sqrt: '<S1>/Sqrt1'
-       */
-      motors_outport[i_0] = (real32_T)final_project_B.Clock;
+      final_project_B.Clock = final_project_P.Saturation1_LowerSat;
     }
 
-    /* End of Saturate: '<S1>/Saturation1' */
+    /* Sum: '<S1>/Sum19' incorporates:
+     *  Saturate: '<S1>/Saturation1'
+     *  Sqrt: '<S1>/Sqrt1'
+     */
+    motors_outport[i_0] = (real32_T)final_project_B.Clock +
+      final_project_B.CastToSingle3[i_0];
 
     /* Outport: '<Root>/Motors' incorporates:
-     *  Saturate: '<S1>/Saturation1'
+     *  Sum: '<S1>/Sum19'
      */
     final_project_Y.Motors[i_0] = motors_outport[i_0];
   }
@@ -865,53 +867,6 @@ void final_project_step(void)
     {
       real32_T up0[1];
       up0[0] = final_project_B.opticalFlow_data[2];
-      rt_UpdateLogVar((LogVar *)var, up0, 0);
-    }
-  }
-
-  /* Scope: '<S1>/Scope15' */
-  {
-    StructLogVar *svar = (StructLogVar *)
-      final_project_DW.Scope15_PWORK.LoggedData;
-    LogVar *var = svar->signals.values;
-
-    /* time */
-    {
-      double locTime = (((final_project_M->Timing.clockTick1+
-                          final_project_M->Timing.clockTickH1* 4294967296.0)) *
-                        0.005);
-      ;
-      rt_UpdateLogVar((LogVar *)svar->time, &locTime, 0);
-    }
-
-    /* signals */
-    {
-      real32_T up0[2];
-      up0[0] = final_project_B.CastToSingle2[0];
-      up0[1] = final_project_B.CastToSingle2[1];
-      rt_UpdateLogVar((LogVar *)var, up0, 0);
-    }
-  }
-
-  /* Scope: '<S1>/Scope26' */
-  {
-    StructLogVar *svar = (StructLogVar *)
-      final_project_DW.Scope26_PWORK.LoggedData;
-    LogVar *var = svar->signals.values;
-
-    /* time */
-    {
-      double locTime = (((final_project_M->Timing.clockTick1+
-                          final_project_M->Timing.clockTickH1* 4294967296.0)) *
-                        0.005);
-      ;
-      rt_UpdateLogVar((LogVar *)svar->time, &locTime, 0);
-    }
-
-    /* signals */
-    {
-      real32_T up0[1];
-      up0[0] = final_project_B.CastToSingle2[0];
       rt_UpdateLogVar((LogVar *)var, up0, 0);
     }
   }
@@ -1107,6 +1062,53 @@ void final_project_step(void)
     final_project_B.CastToDouble2) + final_project_B.MeasurementUpdate.Product3
     [1];
 
+  /* Scope: '<S1>/Scope15' */
+  {
+    StructLogVar *svar = (StructLogVar *)
+      final_project_DW.Scope15_PWORK.LoggedData;
+    LogVar *var = svar->signals.values;
+
+    /* time */
+    {
+      double locTime = (((final_project_M->Timing.clockTick1+
+                          final_project_M->Timing.clockTickH1* 4294967296.0)) *
+                        0.005);
+      ;
+      rt_UpdateLogVar((LogVar *)svar->time, &locTime, 0);
+    }
+
+    /* signals */
+    {
+      real32_T up0[2];
+      up0[0] = final_project_B.CastToSingle2[0];
+      up0[1] = final_project_B.CastToSingle2[1];
+      rt_UpdateLogVar((LogVar *)var, up0, 0);
+    }
+  }
+
+  /* Scope: '<S1>/Scope26' */
+  {
+    StructLogVar *svar = (StructLogVar *)
+      final_project_DW.Scope26_PWORK.LoggedData;
+    LogVar *var = svar->signals.values;
+
+    /* time */
+    {
+      double locTime = (((final_project_M->Timing.clockTick1+
+                          final_project_M->Timing.clockTickH1* 4294967296.0)) *
+                        0.005);
+      ;
+      rt_UpdateLogVar((LogVar *)svar->time, &locTime, 0);
+    }
+
+    /* signals */
+    {
+      real32_T up0[1];
+      up0[0] = final_project_B.CastToSingle2[0];
+      rt_UpdateLogVar((LogVar *)var, up0, 0);
+    }
+  }
+
   /* Scope: '<S1>/Scope' */
   {
     StructLogVar *svar = (StructLogVar *)final_project_DW.Scope_PWORK.LoggedData;
@@ -1292,6 +1294,29 @@ void final_project_step(void)
     }
   }
 
+  /* Scope: '<S1>/Scope31' */
+  {
+    StructLogVar *svar = (StructLogVar *)
+      final_project_DW.Scope31_PWORK.LoggedData;
+    LogVar *var = svar->signals.values;
+
+    /* time */
+    {
+      double locTime = (((final_project_M->Timing.clockTick1+
+                          final_project_M->Timing.clockTickH1* 4294967296.0)) *
+                        0.005);
+      ;
+      rt_UpdateLogVar((LogVar *)svar->time, &locTime, 0);
+    }
+
+    /* signals */
+    {
+      real_T up0[1];
+      up0[0] = final_project_B.MatrixMultiply1[0];
+      rt_UpdateLogVar((LogVar *)var, up0, 0);
+    }
+  }
+
   /* ToWorkspace: '<S1>/To Workspace' */
   {
     double locTime = (((final_project_M->Timing.clockTick1+
@@ -1301,6 +1326,29 @@ void final_project_step(void)
     rt_UpdateStructLogVar((StructLogVar *)
                           final_project_DW.ToWorkspace_PWORK.LoggedData,
                           &locTime, &final_project_B.CastToDouble3);
+  }
+
+  /* Scope: '<S1>/Scope28' */
+  {
+    StructLogVar *svar = (StructLogVar *)
+      final_project_DW.Scope28_PWORK.LoggedData;
+    LogVar *var = svar->signals.values;
+
+    /* time */
+    {
+      double locTime = (((final_project_M->Timing.clockTick1+
+                          final_project_M->Timing.clockTickH1* 4294967296.0)) *
+                        0.005);
+      ;
+      rt_UpdateLogVar((LogVar *)svar->time, &locTime, 0);
+    }
+
+    /* signals */
+    {
+      real_T up0[1];
+      up0[0] = final_project_B.Sum16;
+      rt_UpdateLogVar((LogVar *)var, up0, 0);
+    }
   }
 
   /* Scope: '<S1>/Scope22' */
@@ -1421,6 +1469,29 @@ void final_project_step(void)
     }
   }
 
+  /* Scope: '<S1>/Scope29' */
+  {
+    StructLogVar *svar = (StructLogVar *)
+      final_project_DW.Scope29_PWORK.LoggedData;
+    LogVar *var = svar->signals.values;
+
+    /* time */
+    {
+      double locTime = (((final_project_M->Timing.clockTick1+
+                          final_project_M->Timing.clockTickH1* 4294967296.0)) *
+                        0.005);
+      ;
+      rt_UpdateLogVar((LogVar *)svar->time, &locTime, 0);
+    }
+
+    /* signals */
+    {
+      real32_T up0[1];
+      up0[0] = final_project_B.z_p;
+      rt_UpdateLogVar((LogVar *)var, up0, 0);
+    }
+  }
+
   /* Scope: '<S1>/Scope12' */
   {
     StructLogVar *svar = (StructLogVar *)
@@ -1494,6 +1565,29 @@ void final_project_step(void)
   {
     StructLogVar *svar = (StructLogVar *)
       final_project_DW.Scope21_PWORK.LoggedData;
+    LogVar *var = svar->signals.values;
+
+    /* time */
+    {
+      double locTime = (((final_project_M->Timing.clockTick1+
+                          final_project_M->Timing.clockTickH1* 4294967296.0)) *
+                        0.005);
+      ;
+      rt_UpdateLogVar((LogVar *)svar->time, &locTime, 0);
+    }
+
+    /* signals */
+    {
+      real32_T up0[1];
+      up0[0] = final_project_B.theta_measured;
+      rt_UpdateLogVar((LogVar *)var, up0, 0);
+    }
+  }
+
+  /* Scope: '<S1>/Scope32' */
+  {
+    StructLogVar *svar = (StructLogVar *)
+      final_project_DW.Scope32_PWORK.LoggedData;
     LogVar *var = svar->signals.values;
 
     /* time */
@@ -2726,7 +2820,7 @@ void final_project_initialize(void)
       rtmGetTFinal(final_project_M),
       final_project_M->Timing.stepSize0,
       (&rtmGetErrorStatus(final_project_M)),
-      "v_drone_est",
+      "v_meas",
       1,
       0,
       1,
@@ -2807,6 +2901,76 @@ void final_project_initialize(void)
       return;
   }
 
+  /* SetupRuntimeResources for Scope: '<S1>/Scope31' */
+  {
+    RTWLogSignalInfo rt_ScopeSignalInfo;
+    static int_T rt_ScopeSignalWidths[] = { 1 };
+
+    static int_T rt_ScopeSignalNumDimensions[] = { 1 };
+
+    static int_T rt_ScopeSignalDimensions[] = { 1 };
+
+    static void *rt_ScopeCurrSigDims[] = { (NULL) };
+
+    static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
+
+    static const char_T *rt_ScopeSignalLabels[] = { "" };
+
+    static char_T rt_ScopeSignalTitles[] = "";
+    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+
+    static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
+
+    static int_T rt_ScopeSignalPlotStyles[] = { 0 };
+
+    BuiltInDTypeId dTypes[1] = { SS_DOUBLE };
+
+    static char_T rt_ScopeBlockName[] =
+      "final_project/Flight Control System/Scope31";
+    static int_T rt_ScopeFrameData[] = { 0 };
+
+    static RTWPreprocessingFcnPtr rt_ScopeSignalLoggingPreprocessingFcnPtrs[] =
+      {
+      (NULL)
+    };
+
+    rt_ScopeSignalInfo.numSignals = 1;
+    rt_ScopeSignalInfo.numCols = rt_ScopeSignalWidths;
+    rt_ScopeSignalInfo.numDims = rt_ScopeSignalNumDimensions;
+    rt_ScopeSignalInfo.dims = rt_ScopeSignalDimensions;
+    rt_ScopeSignalInfo.isVarDims = rt_ScopeSignalIsVarDims;
+    rt_ScopeSignalInfo.currSigDims = rt_ScopeCurrSigDims;
+    rt_ScopeSignalInfo.currSigDimsSize = rt_ScopeCurrSigDimsSize;
+    rt_ScopeSignalInfo.dataTypes = dTypes;
+    rt_ScopeSignalInfo.complexSignals = (NULL);
+    rt_ScopeSignalInfo.frameData = rt_ScopeFrameData;
+    rt_ScopeSignalInfo.preprocessingPtrs =
+      rt_ScopeSignalLoggingPreprocessingFcnPtrs;
+    rt_ScopeSignalInfo.labels.cptr = rt_ScopeSignalLabels;
+    rt_ScopeSignalInfo.titles = rt_ScopeSignalTitles;
+    rt_ScopeSignalInfo.titleLengths = rt_ScopeSignalTitleLengths;
+    rt_ScopeSignalInfo.plotStyles = rt_ScopeSignalPlotStyles;
+    rt_ScopeSignalInfo.blockNames.cptr = (NULL);
+    rt_ScopeSignalInfo.stateNames.cptr = (NULL);
+    rt_ScopeSignalInfo.crossMdlRef = (NULL);
+    rt_ScopeSignalInfo.dataTypeConvert = (NULL);
+    final_project_DW.Scope31_PWORK.LoggedData = rt_CreateStructLogVar(
+      final_project_M->rtwLogInfo,
+      0.0,
+      rtmGetTFinal(final_project_M),
+      final_project_M->Timing.stepSize0,
+      (&rtmGetErrorStatus(final_project_M)),
+      "u_meas",
+      1,
+      0,
+      1,
+      0.005,
+      &rt_ScopeSignalInfo,
+      rt_ScopeBlockName);
+    if (final_project_DW.Scope31_PWORK.LoggedData == (NULL))
+      return;
+  }
+
   /* SetupRuntimeResources for ToWorkspace: '<S1>/To Workspace' */
   {
     static int_T rt_ToWksWidths[] = { 1 };
@@ -2874,6 +3038,76 @@ void final_project_initialize(void)
       &rt_ToWksSignalInfo,
       rt_ToWksBlockName);
     if (final_project_DW.ToWorkspace_PWORK.LoggedData == (NULL))
+      return;
+  }
+
+  /* SetupRuntimeResources for Scope: '<S1>/Scope28' */
+  {
+    RTWLogSignalInfo rt_ScopeSignalInfo;
+    static int_T rt_ScopeSignalWidths[] = { 1 };
+
+    static int_T rt_ScopeSignalNumDimensions[] = { 1 };
+
+    static int_T rt_ScopeSignalDimensions[] = { 1 };
+
+    static void *rt_ScopeCurrSigDims[] = { (NULL) };
+
+    static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
+
+    static const char_T *rt_ScopeSignalLabels[] = { "" };
+
+    static char_T rt_ScopeSignalTitles[] = "";
+    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+
+    static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
+
+    static int_T rt_ScopeSignalPlotStyles[] = { 0 };
+
+    BuiltInDTypeId dTypes[1] = { SS_DOUBLE };
+
+    static char_T rt_ScopeBlockName[] =
+      "final_project/Flight Control System/Scope28";
+    static int_T rt_ScopeFrameData[] = { 0 };
+
+    static RTWPreprocessingFcnPtr rt_ScopeSignalLoggingPreprocessingFcnPtrs[] =
+      {
+      (NULL)
+    };
+
+    rt_ScopeSignalInfo.numSignals = 1;
+    rt_ScopeSignalInfo.numCols = rt_ScopeSignalWidths;
+    rt_ScopeSignalInfo.numDims = rt_ScopeSignalNumDimensions;
+    rt_ScopeSignalInfo.dims = rt_ScopeSignalDimensions;
+    rt_ScopeSignalInfo.isVarDims = rt_ScopeSignalIsVarDims;
+    rt_ScopeSignalInfo.currSigDims = rt_ScopeCurrSigDims;
+    rt_ScopeSignalInfo.currSigDimsSize = rt_ScopeCurrSigDimsSize;
+    rt_ScopeSignalInfo.dataTypes = dTypes;
+    rt_ScopeSignalInfo.complexSignals = (NULL);
+    rt_ScopeSignalInfo.frameData = rt_ScopeFrameData;
+    rt_ScopeSignalInfo.preprocessingPtrs =
+      rt_ScopeSignalLoggingPreprocessingFcnPtrs;
+    rt_ScopeSignalInfo.labels.cptr = rt_ScopeSignalLabels;
+    rt_ScopeSignalInfo.titles = rt_ScopeSignalTitles;
+    rt_ScopeSignalInfo.titleLengths = rt_ScopeSignalTitleLengths;
+    rt_ScopeSignalInfo.plotStyles = rt_ScopeSignalPlotStyles;
+    rt_ScopeSignalInfo.blockNames.cptr = (NULL);
+    rt_ScopeSignalInfo.stateNames.cptr = (NULL);
+    rt_ScopeSignalInfo.crossMdlRef = (NULL);
+    rt_ScopeSignalInfo.dataTypeConvert = (NULL);
+    final_project_DW.Scope28_PWORK.LoggedData = rt_CreateStructLogVar(
+      final_project_M->rtwLogInfo,
+      0.0,
+      rtmGetTFinal(final_project_M),
+      final_project_M->Timing.stepSize0,
+      (&rtmGetErrorStatus(final_project_M)),
+      "wdot_meas",
+      1,
+      0,
+      1,
+      0.005,
+      &rt_ScopeSignalInfo,
+      rt_ScopeBlockName);
+    if (final_project_DW.Scope28_PWORK.LoggedData == (NULL))
       return;
   }
 
@@ -3227,6 +3461,76 @@ void final_project_initialize(void)
       return;
   }
 
+  /* SetupRuntimeResources for Scope: '<S1>/Scope29' */
+  {
+    RTWLogSignalInfo rt_ScopeSignalInfo;
+    static int_T rt_ScopeSignalWidths[] = { 1 };
+
+    static int_T rt_ScopeSignalNumDimensions[] = { 1 };
+
+    static int_T rt_ScopeSignalDimensions[] = { 1 };
+
+    static void *rt_ScopeCurrSigDims[] = { (NULL) };
+
+    static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
+
+    static const char_T *rt_ScopeSignalLabels[] = { "" };
+
+    static char_T rt_ScopeSignalTitles[] = "";
+    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+
+    static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
+
+    static int_T rt_ScopeSignalPlotStyles[] = { 0 };
+
+    BuiltInDTypeId dTypes[1] = { SS_SINGLE };
+
+    static char_T rt_ScopeBlockName[] =
+      "final_project/Flight Control System/Scope29";
+    static int_T rt_ScopeFrameData[] = { 0 };
+
+    static RTWPreprocessingFcnPtr rt_ScopeSignalLoggingPreprocessingFcnPtrs[] =
+      {
+      (NULL)
+    };
+
+    rt_ScopeSignalInfo.numSignals = 1;
+    rt_ScopeSignalInfo.numCols = rt_ScopeSignalWidths;
+    rt_ScopeSignalInfo.numDims = rt_ScopeSignalNumDimensions;
+    rt_ScopeSignalInfo.dims = rt_ScopeSignalDimensions;
+    rt_ScopeSignalInfo.isVarDims = rt_ScopeSignalIsVarDims;
+    rt_ScopeSignalInfo.currSigDims = rt_ScopeCurrSigDims;
+    rt_ScopeSignalInfo.currSigDimsSize = rt_ScopeCurrSigDimsSize;
+    rt_ScopeSignalInfo.dataTypes = dTypes;
+    rt_ScopeSignalInfo.complexSignals = (NULL);
+    rt_ScopeSignalInfo.frameData = rt_ScopeFrameData;
+    rt_ScopeSignalInfo.preprocessingPtrs =
+      rt_ScopeSignalLoggingPreprocessingFcnPtrs;
+    rt_ScopeSignalInfo.labels.cptr = rt_ScopeSignalLabels;
+    rt_ScopeSignalInfo.titles = rt_ScopeSignalTitles;
+    rt_ScopeSignalInfo.titleLengths = rt_ScopeSignalTitleLengths;
+    rt_ScopeSignalInfo.plotStyles = rt_ScopeSignalPlotStyles;
+    rt_ScopeSignalInfo.blockNames.cptr = (NULL);
+    rt_ScopeSignalInfo.stateNames.cptr = (NULL);
+    rt_ScopeSignalInfo.crossMdlRef = (NULL);
+    rt_ScopeSignalInfo.dataTypeConvert = (NULL);
+    final_project_DW.Scope29_PWORK.LoggedData = rt_CreateStructLogVar(
+      final_project_M->rtwLogInfo,
+      0.0,
+      rtmGetTFinal(final_project_M),
+      final_project_M->Timing.stepSize0,
+      (&rtmGetErrorStatus(final_project_M)),
+      "Pbz_meas",
+      1,
+      0,
+      1,
+      0.005,
+      &rt_ScopeSignalInfo,
+      rt_ScopeBlockName);
+    if (final_project_DW.Scope29_PWORK.LoggedData == (NULL))
+      return;
+  }
+
   /* SetupRuntimeResources for Scope: '<S1>/Scope12' */
   {
     RTWLogSignalInfo rt_ScopeSignalInfo;
@@ -3426,7 +3730,7 @@ void final_project_initialize(void)
       rtmGetTFinal(final_project_M),
       final_project_M->Timing.stepSize0,
       (&rtmGetErrorStatus(final_project_M)),
-      "phi_drone_est",
+      "phi_meas",
       1,
       0,
       1,
@@ -3504,6 +3808,76 @@ void final_project_initialize(void)
       &rt_ScopeSignalInfo,
       rt_ScopeBlockName);
     if (final_project_DW.Scope21_PWORK.LoggedData == (NULL))
+      return;
+  }
+
+  /* SetupRuntimeResources for Scope: '<S1>/Scope32' */
+  {
+    RTWLogSignalInfo rt_ScopeSignalInfo;
+    static int_T rt_ScopeSignalWidths[] = { 1 };
+
+    static int_T rt_ScopeSignalNumDimensions[] = { 1 };
+
+    static int_T rt_ScopeSignalDimensions[] = { 1 };
+
+    static void *rt_ScopeCurrSigDims[] = { (NULL) };
+
+    static int_T rt_ScopeCurrSigDimsSize[] = { 4 };
+
+    static const char_T *rt_ScopeSignalLabels[] = { "" };
+
+    static char_T rt_ScopeSignalTitles[] = "";
+    static int_T rt_ScopeSignalTitleLengths[] = { 0 };
+
+    static boolean_T rt_ScopeSignalIsVarDims[] = { 0 };
+
+    static int_T rt_ScopeSignalPlotStyles[] = { 0 };
+
+    BuiltInDTypeId dTypes[1] = { SS_SINGLE };
+
+    static char_T rt_ScopeBlockName[] =
+      "final_project/Flight Control System/Scope32";
+    static int_T rt_ScopeFrameData[] = { 0 };
+
+    static RTWPreprocessingFcnPtr rt_ScopeSignalLoggingPreprocessingFcnPtrs[] =
+      {
+      (NULL)
+    };
+
+    rt_ScopeSignalInfo.numSignals = 1;
+    rt_ScopeSignalInfo.numCols = rt_ScopeSignalWidths;
+    rt_ScopeSignalInfo.numDims = rt_ScopeSignalNumDimensions;
+    rt_ScopeSignalInfo.dims = rt_ScopeSignalDimensions;
+    rt_ScopeSignalInfo.isVarDims = rt_ScopeSignalIsVarDims;
+    rt_ScopeSignalInfo.currSigDims = rt_ScopeCurrSigDims;
+    rt_ScopeSignalInfo.currSigDimsSize = rt_ScopeCurrSigDimsSize;
+    rt_ScopeSignalInfo.dataTypes = dTypes;
+    rt_ScopeSignalInfo.complexSignals = (NULL);
+    rt_ScopeSignalInfo.frameData = rt_ScopeFrameData;
+    rt_ScopeSignalInfo.preprocessingPtrs =
+      rt_ScopeSignalLoggingPreprocessingFcnPtrs;
+    rt_ScopeSignalInfo.labels.cptr = rt_ScopeSignalLabels;
+    rt_ScopeSignalInfo.titles = rt_ScopeSignalTitles;
+    rt_ScopeSignalInfo.titleLengths = rt_ScopeSignalTitleLengths;
+    rt_ScopeSignalInfo.plotStyles = rt_ScopeSignalPlotStyles;
+    rt_ScopeSignalInfo.blockNames.cptr = (NULL);
+    rt_ScopeSignalInfo.stateNames.cptr = (NULL);
+    rt_ScopeSignalInfo.crossMdlRef = (NULL);
+    rt_ScopeSignalInfo.dataTypeConvert = (NULL);
+    final_project_DW.Scope32_PWORK.LoggedData = rt_CreateStructLogVar(
+      final_project_M->rtwLogInfo,
+      0.0,
+      rtmGetTFinal(final_project_M),
+      final_project_M->Timing.stepSize0,
+      (&rtmGetErrorStatus(final_project_M)),
+      "theta_meas",
+      1,
+      0,
+      1,
+      0.005,
+      &rt_ScopeSignalInfo,
+      rt_ScopeBlockName);
+    if (final_project_DW.Scope32_PWORK.LoggedData == (NULL))
       return;
   }
 
