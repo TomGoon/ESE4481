@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.42
+ * Model version              : 1.43
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Sat Dec 18 14:26:17 2021
+ * C source code generated on : Sun Dec 19 14:34:30 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -465,7 +465,7 @@ struct P_final_project_T_ {
   real_T Constant7_Value;              /* Expression: 0
                                         * Referenced by: '<S1>/Constant7'
                                         */
-  real_T Motorbias_Value[4];           /* Expression: [10; 5; 0; 5]
+  real_T Motorbias_Value[4];           /* Expression: [0;0;0;0]
                                         * Referenced by: '<S1>/Motor bias'
                                         */
   real_T X0_Value_o[2];                /* Expression: pInitialization.X0

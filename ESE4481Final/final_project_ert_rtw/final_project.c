@@ -7,9 +7,9 @@
  *
  * Code generation for model "final_project".
  *
- * Model version              : 1.42
+ * Model version              : 1.43
  * Simulink Coder version : 9.5 (R2021a) 14-Nov-2020
- * C source code generated on : Sat Dec 18 14:26:17 2021
+ * C source code generated on : Sun Dec 19 14:34:30 2021
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -680,7 +680,7 @@ void final_project_step(void)
     /* Switch: '<S1>/Switch2' incorporates:
      *  Constant: '<S1>/Constant17'
      */
-    final_project_B.Switch2 = 1.05 * final_project_P.m * final_project_P.g;
+    final_project_B.Switch2 = 1.2 * final_project_P.m * final_project_P.g;
   }
 
   /* End of Switch: '<S1>/Switch2' */
